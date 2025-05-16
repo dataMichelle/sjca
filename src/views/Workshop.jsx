@@ -118,12 +118,12 @@ const Workshop = () => {
         </h3>
         <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
           <img
-            src="https://via.placeholder.com/400"
+            src="/assets/workshop/2017_Scottie_Caudle_Workshop.jpg"
             alt="Workshop Highlight 1"
             className="w-full h-64 object-cover rounded-lg shadow-sm hover:scale-105 transition-transform duration-300"
           />
           <img
-            src="https://via.placeholder.com/400"
+            src="/assets/workshop/2017_Workshop.jpg"
             alt="Workshop Highlight 2"
             className="w-full h-64 object-cover rounded-lg shadow-sm hover:scale-105 transition-transform duration-300"
           />
