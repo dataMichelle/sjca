@@ -1,0 +1,369 @@
+/* Import Poppins from Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+/* General styles */
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f1eb; /* Warm off-white */
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background: linear-gradient(135deg, #1a3557 0%, #2e5a8c 100%);
+  color: white;
+  padding: 15px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+  width: 85%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 25px;
+}
+
+nav ul li:first-child {
+  margin-left: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Hero section */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f1eb 100%);
+  color: #333;
+  padding: 60px 5%;
+  position: relative;
+  animation: fadeIn 1s ease-in;
+}
+
+.hero-text {
+  max-width: 55%;
+}
+
+.hero h2 {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.cta-button {
+  background: linear-gradient(135deg, #0073e6 0%, #00a3e0 100%);
+  color: white;
+  padding: 14px 30px;
+  font-size: 18px;
+  text-decoration: none;
+  border-radius: 50px;
+  display: inline-block;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 115, 230, 0.3);
+}
+
+/* Hexagon Section */
+.hexagon-container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px; /* Increased gap for more spacing */
+  align-items: flex-start;
+  position: relative;
+}
+
+.hexagon {
+  width: 280px; /* Larger size */
+  height: 242.8px; /* Regular hexagon: 280 * 0.866 */
+  background-color: #ffffff;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 25px;
+  color: #333;
+  font-size: 16px;
+  text-align: center;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.hexagon:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+.hexagon-lime {
+  background-color: #a8d5ba; /* Softer lime */
+  z-index: 2;
+  margin-left: 0; /* No shift to prevent overlap */
+}
+
+.hexagon-teal {
+  background-color: #7cc8c9; /* Softer teal */
+  margin-top: 150px; /* Stagger 1/3 of 280px */
+  margin-left: -45px; /* Less negative for wider spacing */
+  z-index: 1;
+}
+
+.hexagon h4 {
+  margin-bottom: 12px;
+  font-size: 19px;
+  font-weight: 600;
+}
+
+.hexagon p {
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.hexagon a {
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #ffffff 0%, #f0f4f8 100%);
+  color: #0073e6;
+  text-decoration: none;
+  border: 1px solid #0073e6;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.hexagon a:hover {
+  background: linear-gradient(135deg, #0073e6 0%, #00a3e0 100%);
+  color: white;
+}
+
+/* Testimonials Carousel */
+.testimonials-carousel {
+  padding: 60px 0;
+  text-align: center;
+  background-color: #f8f1eb;
+  animation: fadeIn 1s ease-in;
+}
+
+.testimonials-carousel h3 {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.carousel-container {
+  --item-width: 400px; /* Width of each testimonial */
+  --item-margin: 25px; /* Margin-right of each testimonial */
+  --items-per-set: 4; /* Number of unique testimonials */
+  --set-width: calc(
+    var(--items-per-set) * (var(--item-width) + var(--item-margin))
+  ); /* Width of one set */
+  display: flex;
+  flex-wrap: nowrap;
+  width: calc(2 * var(--set-width)); /* Total width for 2 sets (8 items) */
+  animation: scrollTestimonials 26s linear infinite; /* Slower scroll */
+  overflow: hidden;
+  will-change: transform; /* Optimize animation performance */
+}
+
+.testimonial-item {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  width: var(--item-width); /* Fixed width for consistency */
+  min-height: 200px; /* Minimum height for shorter testimonials */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin-right: var(--item-margin);
+  font-size: 14px;
+  line-height: 1.5;
+  color: #555;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+  position: relative; /* For absolute positioning of quotes */
+  z-index: 3; /* Higher z-index for container */
+}
+
+/* Top-left opening quote image */
+.testimonial-item::before {
+  content: ""; /* Prevent text quote overlay */
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 50px;
+  height: 50px;
+  background-image: url("https://img.icons8.com/ios-filled/100/F0F0F0/quote-left.png"); /* Icons8 very light grey opening quote */
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.7; /* Visible */
+  z-index: 0; /* Behind text */
+}
+
+/* Bottom-right closing quote image */
+.testimonial-item::after {
+  content: ""; /* Prevent text quote overlay */
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 50px;
+  height: 50px;
+  background-image: url("https://img.icons8.com/ios-filled/100/F0F0F0/quote-right.png"); /* Icons8 very light grey closing quote */
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.7; /* Visible */
+  z-index: 0; /* Behind text */
+}
+
+/* Fallback for browsers not loading images */
+@supports not (
+  background-image:
+    url("https://img.icons8.com/ios-filled/100/F0F0F0/quote-left.png")
+) {
+  .testimonial-item::before {
+    content: "“";
+    font-size: 48px;
+    color: #f0f0f0;
+    background-image: none;
+    z-index: 0;
+  }
+  .testimonial-item::after {
+    content: "”";
+    font-size: 48px;
+    color: #f0f0f0;
+    background-image: none;
+    z-index: 0;
+  }
+}
+
+.testimonial-item:hover {
+  transform: translateY(-5px);
+}
+
+@keyframes scrollTestimonials {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(
+      calc(-1 * var(--set-width))
+    ); /* Move by first set's width */
+  }
+}
+
+/* Quick Links */
+.quick-links {
+  padding: 60px 0;
+  text-align: center;
+  animation: fadeIn 1s ease-in;
+}
+
+.quick-links h3 {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.quick-links-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  width: 85%;
+  margin: 0 auto;
+}
+
+.quick-link-item {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.quick-link-item:hover {
+  transform: translateY(-5px);
+}
+
+.quick-link-item h4 {
+  margin-bottom: 15px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.quick-link-item a {
+  font-size: 16px;
+  padding: 12px 25px;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #ffffff 0%, #f0f4f8 100%);
+  color: #0073e6;
+  text-decoration: none;
+  border: 1px solid #0073e6;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.quick-link-item a:hover {
+  background: linear-gradient(135deg, #0073e6 0%, #00a3e0 100%);
+  color: white;
+}
+
+/* Footer */
+footer {
+  background: linear-gradient(135deg, #333 0%, #4a4a4a 100%);
+  color: white;
+  text-align: center;
+  padding: 25px 0;
+  font-size: 14px;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

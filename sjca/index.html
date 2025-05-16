@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>St. Jude Career Alliance</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <h1>St. Jude Career Alliance</h1>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="workshop.html">Workshop</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="spiritual-support.html">Spiritual Support</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Section with Staggered Hexagons Next to Each Other -->
+      <section class="hero">
+        <div class="hero-text">
+          <h1>Welcome to St. Jude Career Alliance</h1>
+          <p>
+            The St. Jude Career Alliance Ministry provides a Christian
+            faith-based program to empower people who seek employment and the
+            ability to thrive in their careers.
+          </p>
+          <a href="workshop.html" class="cta-button">Join Our Next Workshop</a>
+        </div>
+        <div class="hexagon-container">
+          <div class="hexagon-content">
+            <h4>Upcoming Workshop</h4>
+            <p>
+              Join us for our upcoming quarterly workshop and take the first
+              step towards a fulfilling career.
+            </p>
+            <a href="workshop.html" class="cta-button">Learn More</a>
+            <h4>Networking Events</h4>
+            <p>
+              Meet like-minded professionals and grow your network at our
+              monthly networking event.
+            </p>
+            <a href="resources.html#networking-events" class="cta-button"
+              >Find Events</a
+            >
+          </div>
+        </div>
+      </section>
+      <section class="testimonials-carousel">
+        <h2>What Our Participants Say</h2>
+        <div class="carousel-container">
+          <!-- First set of testimonials -->
+          <div class="testimonial-item">
+            The weekly meetings always provided motivation and inspiration to
+            ‘keep moving.’ The program stressed the importance of communicating
+            to a potential employer how I can help them, and not the other way
+            around. - Ty
+          </div>
+          <div class="testimonial-item">
+            Career Alliance helped me in brushing up my skills to best market
+            myself. Networking with people vs being in front of a computer all
+            day was also a morale booster. - Cheryl
+          </div>
+          <div class="testimonial-item">
+            I am delighted to inform you that the efforts were well rewarded. I
+            finally received an offer for THE JOB I prayed, dreamed, and hoped
+            for. I am truly blessed. Thanks! - Perpetua
+          </div>
+          <div class="testimonial-item">
+            Your assistance with resume tips, interview questions and follow
+            through allowed me to gain the confidence needed while interviewing
+            with prospective employers. Not only did the team provide me with
+            the technical aspects of the job search, but the spiritual support
+            was something for which I will be forever grateful. Thanks again! -
+            Laura
+          </div>
+          <!-- Duplicated set for seamless loop -->
+          <div class="testimonial-item">
+            The weekly meetings always provided motivation and inspiration to
+            ‘keep moving.’ The program stressed the importance of communicating
+            to a potential employer how I can help them, and not the other way
+            around. - Ty
+          </div>
+          <div class="testimonial-item">
+            Career Alliance helped me in brushing up my skills to best market
+            myself. Networking with people vs being in front of a computer all
+            day was also a morale booster. - Cheryl
+          </div>
+          <div class="testimonial-item">
+            I am delighted to inform you that the efforts were well rewarded. I
+            finally received an offer for THE JOB I prayed, dreamed, and hoped
+            for. I am truly blessed. Thanks! - Perpetua
+          </div>
+          <div class="testimonial-item">
+            Your assistance with resume tips, interview questions and follow
+            through allowed me to gain the confidence needed while interviewing
+            with prospective employers. Not only did the team provide me with
+            the technical aspects of the job search, but the spiritual support
+            was something for which I will be forever grateful. Thanks again! -
+            Laura
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-links-row">
+          <div class="footer-quick-links">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="workshop.html">Sign Up for Workshop</a></li>
+              <li>
+                <a href="resources.html#networking-events">Networking Events</a>
+              </li>
+            </ul>
+          </div>
+          <a href="contact.html" class="footer-contact-button">Contact Us</a>
+          <div class="footer-address">
+            <p>
+              1515 N. Greenville Ave.<br />
+              Allen, TX 75002<br />
+              972-727-1177
+            </p>
+          </div>
+        </div>
+        <p class="footer-copyright">
+          © <span id="current-year"></span> St. Jude Career Alliance. All rights
+          reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Get the current year
+      const currentYear = new Date().getFullYear();
+      // Set the year in the span with id "current-year"
+      document.getElementById("current-year").textContent = currentYear;
+    </script>
+  </body>
+</html>

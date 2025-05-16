@@ -1,0 +1,51 @@
+import { useState, useEffect } from "react";
+import CtaButton from "./CtaButton";
+
+const Hero = () => {
+  const [workshop, setWorkshop] = useState(null);
+
+  useEffect(() => {
+    fetch("https://your-wordpress-site.com/wp-json/wp/v2/workshops")
+      .then((res) => res.json())
+      .then((data) => setWorkshop(data[0]))
+      .catch((err) => console.error("API Error:", err));
+  }, []);
+
+  return (
+    <section className="flex justify-between items-stretch bg-gradient-to-br from-white to-gray-100 text-gray-900 p-0 relative animateFadeIn min-h-[28rem] overflow-hidden">
+      <div className="max-w-[55%] p-[4.5rem] box-border">
+        <h1 className="text-4xl font-bold text-blue-600 md:text-3xl sm:text-2xl">
+          Welcome to St. Jude Career Alliance
+        </h1>
+        <p className="text-base mb-7 md:text-sm">
+          The St. Jude Career Alliance Ministry provides a Christian faith-based
+          program to empower people who seek employment and the ability to
+          thrive in their careers.
+        </p>
+        <CtaButton to={workshop ? `/workshop/${workshop.id}` : "/workshop"}>
+          Join Our Next Workshop
+        </CtaButton>
+      </div>
+      <div className="w-[40rem] h-[40rem] clipHexagon bgLime50080 flex justify-center absolute z-10 right-[-60px] top-1/2 -translate-y-1/2">
+        <div className="absolute inset-4 clipHexagon bgTeal50080 z-[-1]" />
+        <div className="flex flex-col justify-center items-end max-w-[18.75rem] py-5 pr-0 pl-8 text-right text-gray-900 z-20 -mr-20">
+          <h4 className="mb-1 mr-0 text-xl font-semibold uppercase text-gray-800 md:text-lg">
+            Upcoming Workshop
+          </h4>
+          <p className="mb-5 mr-0 text-base md:text-sm">
+            {workshop?.excerpt ||
+              "Join us for our upcoming quarterly workshop and take the first step towards a fulfilling career."}
+          </p>
+          <CtaButton
+            to={workshop ? `/workshop/${workshop.id}` : "/workshop"}
+            variant="secondary"
+          >
+            Learn More
+          </CtaButton>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Hero;
