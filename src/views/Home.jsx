@@ -1,10 +1,10 @@
-import Hero from "../components/Hero";
+import HeroWrapper from "../components/HeroWrapper";
 import TestimonialCarousel from "../components/TestimonialCarousel";
 
 const Home = () => {
   return (
     <main>
-      <Hero />
+      <HeroWrapper />
       <TestimonialCarousel />
     </main>
   );
