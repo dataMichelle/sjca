@@ -28,7 +28,7 @@ const Navbar = () => {
               { to: "/workshop", label: "Workshop" },
               { to: "/resources", label: "Resources" },
               { to: "/spiritual-support", label: "Spiritual Support" },
-              { to: "/testimonials", label: "Testimonials" },
+              // { to: "/testimonials", label: "Testimonials" },
               { to: "/contact", label: "Contact" },
             ].map(({ to, label }) => (
               <li key={to}>

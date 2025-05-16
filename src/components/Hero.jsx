@@ -19,9 +19,7 @@ const Hero = () => {
           program to empower people who seek employment and the ability to
           thrive in their careers.
         </p>
-        <CtaButton to={`/workshop/${staticWorkshop.id}`}>
-          Join Our Next Workshop
-        </CtaButton>
+        <CtaButton to={`/workshop`}>Join Our Next Workshop</CtaButton>
       </div>
       <div className="w-[40rem] h-[40rem] clipHexagon bgLime50080 flex justify-center absolute z-10 right-[-60px] top-1/2 -translate-y-1/2">
         <div className="absolute inset-4 clipHexagon bgTeal50080 z-[-1]" />

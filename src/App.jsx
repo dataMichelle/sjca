@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import NewsTicker from "./components/NewsTicker";
+import Footer from "./components/Footer";
 import Home from "./views/Home";
 import About from "./views/About";
 import Workshop from "./views/Workshop";
@@ -41,6 +42,7 @@ function App() {
         <Route path="/testimonials" element={<Testimonials />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
+      <Footer />
     </div>
   );
 }
