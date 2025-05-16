@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <header className="bg-gradient-to-br from-[#1a3557] to-[#2e5a8c] text-white py-4 shadow-md">
+    <header className="bg-gradient-to-br from-[#1a3557] to-[#2e5a8c] text-white py-5 shadow-md sticky top-0 z-50">
       <div className="w-[85%] mx-auto flex justify-between items-center">
         <h1 className="text-2xl font-semibold">St. Jude Career Alliance</h1>
         <nav>
