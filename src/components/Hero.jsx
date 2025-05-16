@@ -1,16 +1,13 @@
-import { useState, useEffect } from "react";
 import CtaButton from "./CtaButton";
 
+// Static workshop data (replace with actual data or import from a file)
+const staticWorkshop = {
+  id: 1,
+  excerpt:
+    "Join us for our upcoming quarterly workshop and take the first step towards a fulfilling career.",
+};
+
 const Hero = () => {
-  const [workshop, setWorkshop] = useState(null);
-
-  useEffect(() => {
-    fetch("https://your-wordpress-site.com/wp-json/wp/v2/workshops")
-      .then((res) => res.json())
-      .then((data) => setWorkshop(data[0]))
-      .catch((err) => console.error("API Error:", err));
-  }, []);
-
   return (
     <section className="flex justify-between items-stretch bg-gradient-to-br from-white to-gray-100 text-gray-900 p-0 relative animateFadeIn min-h-[28rem] overflow-hidden">
       <div className="max-w-[55%] p-[4.5rem] box-border">
@@ -22,7 +19,7 @@ const Hero = () => {
           program to empower people who seek employment and the ability to
           thrive in their careers.
         </p>
-        <CtaButton to={workshop ? `/workshop/${workshop.id}` : "/workshop"}>
+        <CtaButton to={`/workshop/${staticWorkshop.id}`}>
           Join Our Next Workshop
         </CtaButton>
       </div>
@@ -33,13 +30,9 @@ const Hero = () => {
             Upcoming Workshop
           </h4>
           <p className="mb-5 mr-0 text-base md:text-sm">
-            {workshop?.excerpt ||
-              "Join us for our upcoming quarterly workshop and take the first step towards a fulfilling career."}
+            {staticWorkshop.excerpt}
           </p>
-          <CtaButton
-            to={workshop ? `/workshop/${workshop.id}` : "/workshop"}
-            variant="secondary"
-          >
+          <CtaButton to={`/workshop/${staticWorkshop.id}`} variant="secondary">
             Learn More
           </CtaButton>
         </div>
