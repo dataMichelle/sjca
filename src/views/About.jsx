@@ -67,7 +67,7 @@ const About = () => {
         {/* Meet Our Team Section */}
         <div className="basis-1/2 md:max-w-[50%] w-full flex justify-center">
           <div className="relative w-full max-w-[35rem]">
-            <h3 className="text-3xl font-semibold text-gray-800 mb-6 md:text-2xl">
+            <h3 className="text-3xl font-semibold text-center text-gray-800 mb-6 md:text-2xl">
               Meet Our Team
             </h3>
 

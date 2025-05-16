@@ -7,9 +7,9 @@ const Footer = () => {
     <footer className="bg-gray-800 text-white py-10">
       <div className="container mx-auto px-6 md:px-12">
         {/* Footer with 2 sections: Quick Links + Resources on the left and Contact Us on the right */}
-        <div className="flex justify-between mb-6">
+        <div className="flex flex-col md:flex-row justify-between mb-6">
           {/* Quick Links and Resources */}
-          <div className="flex gap-12">
+          <div className="flex flex-col md:flex-row gap-12 md:w-2/3 mb-6 md:mb-0">
             <div>
               <h3 className="text-lg font-semibold mb-3">Quick Links</h3>
               <ul>
@@ -76,7 +76,7 @@ const Footer = () => {
           </div>
 
           {/* Contact Us (on the right side) */}
-          <div>
+          <div className="flex flex-col md:w-1/3">
             <h3 className="text-lg font-semibold mb-3">Contact Us</h3>
             <ul>
               <li className="flex items-center gap-2 text-white hover:text-gray-400">
