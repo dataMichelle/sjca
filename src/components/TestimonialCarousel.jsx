@@ -1,115 +1,88 @@
-import { useState, useEffect, useRef } from "react";
-import { motion, useAnimation } from "framer-motion";
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { testimonials as defaultTestimonials } from "../data/testimonials";
 
 const TestimonialCarousel = () => {
-  const [testimonials, setTestimonials] = useState([]);
-  const controls = useAnimation();
-  const carouselRef = useRef(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-  useEffect(() => {
-    fetch("https://your-wordpress-site.com/wp-json/wp/v2/testimonials")
-      .then((res) => res.json())
-      .then((data) => setTestimonials(data))
-      .catch((err) => {
-        console.error("API Error:", err);
-        setTestimonials(defaultTestimonials);
-      });
-  }, []);
+  const displayTestimonials = defaultTestimonials;
+  const totalCards = displayTestimonials.length;
 
-  useEffect(() => {
-    const scroll = async () => {
-      await controls.start({
-        x: "-50%",
-        transition: { duration: 40, ease: "linear", repeat: Infinity },
-      });
-      controls.set({ x: 0 });
-      controls.start({
-        x: "-50%",
-        transition: { duration: 40, ease: "linear", repeat: Infinity },
-      });
-    };
-    scroll();
-  }, [controls]);
+  // Navigate to next/previous card with wrap-around
+  const handleNext = () => {
+    setCurrentIndex((prev) => (prev + 1) % totalCards);
+  };
 
-  const displayTestimonials = [
-    ...(testimonials.length > 0 ? testimonials : defaultTestimonials),
-    ...(testimonials.length > 0 ? testimonials : defaultTestimonials),
-  ];
+  const handlePrev = () => {
+    setCurrentIndex((prev) => (prev - 1 + totalCards) % totalCards);
+  };
 
-  // Card width and gap (in rem)
-  const cardWidth = 25; // 25rem for desktop
-  const cardGap = 1.5625; // 1.5625rem (25px)
-  const totalWidth = `calc(2 * ${displayTestimonials.length / 2} * ${
-    cardWidth + cardGap
-  }rem)`;
+  // Current testimonial
+  const currentTestimonial = displayTestimonials[currentIndex];
 
   return (
-    <>
-      <div className="py-12 px-[8%] text-center bg-[#f8f1eb]">
-        <h2 className="text-5xl font-bold text-gray-800 mb-8 md:text-4xl">
-          What Our Participants Say
-        </h2>
-        <div className="overflow-hidden">
-          <motion.div
-            ref={carouselRef}
-            className="flex flex-nowrap gap-[1.5625rem]"
-            animate={controls}
-            style={{ width: totalWidth }}
-          >
-            {displayTestimonials.map((t, index) => (
-              <div
-                key={index}
-                className="flex-none w-[25rem] min-h-[12.5rem] bg-white p-4 rounded-lg shadow-md text-gray-600 text-sm leading-relaxed flex items-center justify-center text-center relative before:content-[''] before:absolute before:top-2 before:left-2 before:w-12 before:h-12 before:bg-[url('https://img.icons8.com/ios-filled/100/F0F0F0/quote-left.png')] before:bg-no-repeat before:bg-contain before:opacity-70 before:z-0 after:content-[''] after:absolute after:bottom-2 after:right-2 after:w-12 after:h-12 after:bg-[url('https://img.icons8.com/ios-filled/100/F0F0F0/quote-right.png')] after:bg-no-repeat after:bg-contain after:opacity-70 after:z-0 hover:-translate-y-1 transition-transform md:w-[20rem] md:gap-[1rem]"
-              >
-                <div className="relative z-10">
-                  <p>{t.content || t.excerpt?.rendered}</p>
-                  <p className="mt-2 font-semibold text-gray-800">
-                    {t.name || t.title?.rendered}
-                  </p>
-                  <p className="text-gray-600">
-                    {t.role || t.acf?.role || "Participant"}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </motion.div>
-        </div>
+    <div className="py-12 px-[8%] text-center bg-[#f8f1eb]">
+      <h2 className="text-5xl font-bold text-gray-800 mb-8 md:text-4xl">
+        What Our Participants Say
+      </h2>
+      <div className="relative max-w-5xl mx-auto overflow-visible">
+        {/* Testimonial Card */}
+        <motion.div
+          key={currentIndex}
+          className="w-[40rem] min-h-[16rem] bg-white p-4 rounded-lg shadow-md text-gray-600 text-sm leading-relaxed flex items-center justify-center text-center relative before:content-[''] before:absolute before:top-2 before:left-2 before:w-12 before:h-12 before:bg-[url('https://img.icons8.com/ios-filled/100/F0F0F0/quote-left.png')] before:bg-no-repeat before:bg-contain before:opacity-70 before:z-0 after:content-[''] after:absolute after:bottom-2 after:right-2 after:w-12 after:h-12 after:bg-[url('https://img.icons8.com/ios-filled/100/F0F0F0/quote-right.png')] after:bg-no-repeat after:bg-contain after:opacity-70 after:z-0 hover:-translate-y-1 transition-transform md:w-[32rem] max-sm:w-full mx-auto"
+          initial={{ opacity: 0, x: 100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: currentIndex === 0 ? 0.5 : 0.3 }}
+          style={{ animation: "prefers-reduced-motion: no-preference" }}
+        >
+          <div className="relative z-10">
+            <p>
+              {currentTestimonial.content ||
+                currentTestimonial.excerpt?.rendered}
+            </p>
+            <p className="mt-2 font-semibold text-gray-800">
+              {currentTestimonial.name || currentTestimonial.title?.rendered}
+            </p>
+            <p className="text-gray-600">
+              {currentTestimonial.role ||
+                currentTestimonial.acf?.role ||
+                "Participant"}
+            </p>
+          </div>
+        </motion.div>
+
+        {/* Navigation Arrows */}
+        <button
+          onClick={handlePrev}
+          className="absolute left-[-0.15rem] top-1/2 -translate-y-1/2 text-2xl text-gray-600 hover:text-gray-800 p-2 transition-colors max-sm:left-1 max-sm:top-[calc(100%+1rem)] max-sm:translate-y-0"
+          aria-label="Previous testimonial"
+          tabIndex={0}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              handlePrev();
+            }
+          }}
+        >
+          <FaChevronLeft />
+        </button>
+        <button
+          onClick={handleNext}
+          className="absolute right-[-0.15rem] top-1/2 -translate-y-1/2 text-2xl text-gray-600 hover:text-gray-800 p-2 transition-colors max-sm:right-1 max-sm:top-[calc(100%+1rem)] max-sm:translate-y-0"
+          aria-label="Next testimonial"
+          tabIndex={0}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              handleNext();
+            }
+          }}
+        >
+          <FaChevronRight />
+        </button>
       </div>
-      <style>
-        {`
-          /* Ensure box-sizing for consistent sizing */
-          .flex-none {
-            box-sizing: border-box;
-          }
-
-          /* Fallback margin-right for debugging */
-          .flex-none {
-            margin-right: 1.5625rem;
-          }
-
-          /* Remove margin-right for last card in each set */
-          .flex-none:last-child,
-          .flex-none:nth-child(${displayTestimonials.length / 2}) {
-            margin-right: 0;
-          }
-
-          /* Responsive gap adjustment */
-          @media (max-width: 640px) {
-            .gap-\\[1\\.5625rem\\] {
-              gap: 1rem;
-            }
-            .flex-none {
-              margin-right: 1rem;
-            }
-            .flex-none:last-child,
-            .flex-none:nth-child(${displayTestimonials.length / 2}) {
-              margin-right: 0;
-            }
-          }
-        `}
-      </style>
-    </>
+    </div>
   );
 };
 
