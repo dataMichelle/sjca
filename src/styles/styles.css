@@ -10,6 +10,9 @@ body {
   color: #333;
   line-height: 1.6;
 }
+.relative {
+  position: relative;
+}
 
 /* Custom utilities */
 @utility clipHexagon {
@@ -46,5 +49,38 @@ body {
   }
   100% {
     opacity: 1;
+  }
+}
+/* Scrolling animation (for scrolling option) */
+.news-scroll-container {
+  overflow: hidden;
+}
+
+.animate-scroll {
+  display: inline-flex;
+  animation: scroll 20s linear infinite;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Pause animation on hover (optional) */
+.news-scroll-container:hover .animate-scroll {
+  animation-play-state: paused;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .text-lg {
+    font-size: 1rem;
+  }
+  .p-4 {
+    padding: 1rem;
   }
 }

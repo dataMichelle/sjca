@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import News from "./components/NewsTicker";
 import Home from "./views/Home";
 import About from "./views/About";
 import Workshop from "./views/Workshop";
@@ -12,6 +13,7 @@ function App() {
   return (
     <div>
       <Navbar />
+      <News />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
