@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { team } from "../data/team";
 import {
@@ -7,10 +7,13 @@ import {
   FaSeedling,
   FaLightbulb,
   FaTimes,
+  FaInfoCircle,
 } from "react-icons/fa";
 
 const About = () => {
   const [selectedMember, setSelectedMember] = useState(null);
+  const [showInfo, setShowInfo] = useState(false); // Controls icon visibility
+  const [pulseStart, setPulseStart] = useState(false); // Controls pulse animation
 
   const coreValues = [
     {
@@ -43,6 +46,31 @@ const About = () => {
   const closeModal = () => {
     setSelectedMember(null);
   };
+
+  // Effect to control icon visibility and pulse animation
+  useEffect(() => {
+    // Show the icon after 3 seconds
+    const showIconTimer = setTimeout(() => {
+      setShowInfo(true);
+      setPulseStart(true); // Start pulsing
+    }, 3000);
+
+    // Stop pulsing after 8 seconds (3s delay + 5s pulse)
+    const stopPulseTimer = setTimeout(() => {
+      setPulseStart(false);
+    }, 8000);
+
+    // Hide the icon after 10 seconds (3s delay + 5s pulse + 2s fade)
+    const hideIconTimer = setTimeout(() => {
+      setShowInfo(false);
+    }, 10000);
+
+    return () => {
+      clearTimeout(showIconTimer);
+      clearTimeout(stopPulseTimer);
+      clearTimeout(hideIconTimer);
+    };
+  }, []);
 
   return (
     <section className="py-20 px-[4%] bg-[#f8f1eb] animateFadeIn">
@@ -82,17 +110,26 @@ const About = () => {
               <button
                 key={index}
                 onClick={() => openModal(index)}
-                className="aspect-square overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow"
+                className="relative aspect-square rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer"
                 aria-label={`View details for ${member.name}`}
               >
                 {/* Image Container */}
-                <div className="flex items-center justify-center w-full h-full">
+                <div className="relative w-full h-full">
                   <img
                     src={member.image}
                     alt={member.name}
-                    className="object-cover w-full h-full"
-                    style={{ objectPosition: "50% 10%" }} // Fine-tuned position (optional)
+                    className="object-cover w-full h-full rounded-lg"
+                    style={{ objectPosition: "50% 10%" }}
                   />
+                  {/* Information Icon in White Corner */}
+                  <div
+                    className={`absolute top-1.5 right-1.5 z-10 info-icon-container ${
+                      showInfo ? "visible" : ""
+                    } ${pulseStart ? "pulse-icon" : ""}`}
+                    aria-hidden="true"
+                  >
+                    <FaInfoCircle className="text-white w-5 h-5" />
+                  </div>
                 </div>
               </button>
             ))}

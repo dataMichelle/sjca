@@ -84,3 +84,34 @@ body {
     padding: 1rem;
   }
 }
+
+/* Pulse animation for the info icon */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Apply pulse animation to the info icon */
+.pulse-icon {
+  animation: pulse 1.5s ease-in-out infinite; /* Continuous pulse while active */
+}
+
+/* Smooth fade transition for the info icon */
+.info-icon-container {
+  opacity: 0;
+  transition: opacity 1s ease-in-out; /* Smooth fade over 1 second */
+}
+
+.info-icon-container.visible {
+  opacity: 1; /* Fully visible when active */
+}
