@@ -1,10 +1,16 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { team } from "../data/team";
-import { FaPray, FaUsers, FaSeedling, FaLightbulb } from "react-icons/fa";
+import {
+  FaPray,
+  FaUsers,
+  FaSeedling,
+  FaLightbulb,
+  FaTimes,
+} from "react-icons/fa";
 
 const About = () => {
-  const [currentMember, setCurrentMember] = useState(0);
+  const [selectedMember, setSelectedMember] = useState(null);
 
   const coreValues = [
     {
@@ -30,12 +36,12 @@ const About = () => {
     },
   ];
 
-  const nextMember = () => {
-    setCurrentMember((prev) => (prev + 1) % team.length);
+  const openModal = (index) => {
+    setSelectedMember(index);
   };
 
-  const prevMember = () => {
-    setCurrentMember((prev) => (prev - 1 + team.length) % team.length);
+  const closeModal = () => {
+    setSelectedMember(null);
   };
 
   return (
@@ -67,81 +73,96 @@ const About = () => {
         </div>
 
         {/* Meet Our Team Section */}
-        <div className="lg:basis-1/2 w-full flex justify-center">
-          <div className="relative w-full max-w-[35rem] sm:max-w-[90%]">
-            <h3 className="text-3xl font-semibold text-center text-gray-800 mb-6 md:text-2xl sm:text-xl">
-              Meet Our Team
-            </h3>
-
-            {/* Flex container for the arrows and content */}
-            <div className="flex justify-between items-center gap-8 w-full sm:gap-4">
-              {/* Left Arrow */}
+        <div className="lg:basis-1/2 w-full">
+          <h3 className="text-3xl font-semibold text-center text-gray-800 mb-6 md:text-2xl sm:text-xl">
+            Meet Our Team
+          </h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[35rem] mx-auto sm:max-w-[90%]">
+            {team.map((member, index) => (
               <button
-                onClick={prevMember}
-                className="w-12 h-12 bg-teal-500/80 rounded-full flex items-center justify-center text-white text-2xl hover:bg-teal-500 transition-colors sm:w-10 sm:h-10 sm:text-xl"
+                key={index}
+                onClick={() => openModal(index)}
+                className="aspect-square overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow"
+                aria-label={`View details for ${member.name}`}
               >
-                ←
+                {/* Image Container */}
+                <div className="flex items-center justify-center w-full h-full">
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="object-cover w-full h-full"
+                    style={{ objectPosition: "50% 10%" }} // Fine-tuned position (optional)
+                  />
+                </div>
               </button>
-
-              {/* Team Card (content) */}
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={currentMember}
-                  initial={{ opacity: 0, x: 50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -50 }}
-                  transition={{ duration: 0.5 }}
-                  className="bg-white rounded-lg shadow-md p-6 text-left w-full sm:p-4"
-                >
-                  <div className="flex items-center gap-5 mb-4 sm:gap-3">
-                    <img
-                      src={team[currentMember].image}
-                      alt={team[currentMember].name}
-                      className="w-24 h-24 object-contain sm:w-20 sm:h-20"
-                    />
-                    <div>
-                      <h4 className="text-2xl font-semibold text-gray-800 md:text-xl sm:text-lg">
-                        {team[currentMember].name}
-                      </h4>
-                      <p className="text-lg font-medium text-gray-600 md:text-base sm:text-sm">
-                        {team[currentMember].role}
-                      </p>
-                    </div>
-                  </div>
-                  <p className="text-base text-gray-600 mb-4 md:text-sm sm:text-sm">
-                    {team[currentMember].content}
-                  </p>
-                  {team[currentMember].education && (
-                    <p className="text-base text-gray-600 mb-2 md:text-sm sm:text-sm">
-                      <strong>Education:</strong>{" "}
-                      {team[currentMember].education}
-                    </p>
-                  )}
-                  {team[currentMember].certifications && (
-                    <p className="text-base text-gray-600 mb-2 md:text-sm sm:text-sm">
-                      <strong>Certifications:</strong>{" "}
-                      {team[currentMember].certifications}
-                    </p>
-                  )}
-                  {team[currentMember].passions && (
-                    <p className="text-base text-gray-600 md:text-sm sm:text-sm">
-                      <strong>Passions:</strong> {team[currentMember].passions}
-                    </p>
-                  )}
-                </motion.div>
-              </AnimatePresence>
-
-              {/* Right Arrow */}
-              <button
-                onClick={nextMember}
-                className="w-12 h-12 bg-teal-500/80 rounded-full flex items-center justify-center text-white text-2xl hover:bg-teal-500 transition-colors sm:w-10 sm:h-10 sm:text-xl"
-              >
-                →
-              </button>
-            </div>
+            ))}
           </div>
         </div>
       </div>
+
+      {/* Modal */}
+      <AnimatePresence>
+        {selectedMember !== null && (
+          <motion.div
+            className="fixed inset-0 bg-black/50 flex items-center justify-center z-[100] p-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={closeModal}
+          >
+            <motion.div
+              className="bg-white rounded-lg shadow-md p-6 max-w-[35rem] w-full max-h-[90vh] overflow-auto sm:p-4 relative"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 50 }}
+              transition={{ duration: 0.3 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                onClick={closeModal}
+                className="absolute top-4 right-4 text-2xl text-gray-600 hover:text-gray-800"
+                aria-label="Close modal"
+              >
+                <FaTimes />
+              </button>
+              <div className="flex items-center gap-5 mb-4 sm:gap-3">
+                <img
+                  src={team[selectedMember].image}
+                  alt={team[selectedMember].name}
+                  className="w-24 h-24 object-contain sm:w-20 sm:h-20"
+                />
+                <div>
+                  <h4 className="text-2xl font-semibold text-gray-800 md:text-xl sm:text-lg">
+                    {team[selectedMember].name}
+                  </h4>
+                  <p className="text-lg font-medium text-gray-600 md:text-base sm:text-sm">
+                    {team[selectedMember].role}
+                  </p>
+                </div>
+              </div>
+              <p className="text-base text-gray-600 mb-4 md:text-sm sm:text-sm">
+                {team[selectedMember].content}
+              </p>
+              {team[selectedMember].education && (
+                <p className="text-base text-gray-600 mb-2 md:text-sm sm:text-sm">
+                  <strong>Education:</strong> {team[selectedMember].education}
+                </p>
+              )}
+              {team[selectedMember].certifications && (
+                <p className="text-base text-gray-600 mb-2 md:text-sm sm:text-sm">
+                  <strong>Certifications:</strong>{" "}
+                  {team[selectedMember].certifications}
+                </p>
+              )}
+              {team[selectedMember].passions && (
+                <p className="text-base text-gray-600 md:text-sm sm:text-sm">
+                  <strong>Passions:</strong> {team[selectedMember].passions}
+                </p>
+              )}
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };

@@ -43,7 +43,7 @@ export const team = [
     certifications:
       "Certified Consultant, Professional Dynametric Programs (PDP®)",
     passions: "Married, lives in Allen, has four granddaughters.",
-    image: "/assets/team/greg_mechler.png",
+    image: "/assets/team/greg_mechler2.png",
   },
   {
     name: "Richard Panko",
