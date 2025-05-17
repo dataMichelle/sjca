@@ -2,15 +2,15 @@ import { testimonials } from "../data/testimonials";
 
 const Testimonials = () => {
   return (
-    <div className="py-20 px-[8%] text-center bg-[#f8f1eb] animateFadeIn">
-      <h2 className="text-5xl font-bold text-gray-800 mb-8 md:text-4xl">
+    <main className="p-5 bg-gray-50 animateFadeIn">
+      <h1 className="text-xl font-bold font-poppins text-start mb-8 md:text-4xl ">
         What Our Community Says
-      </h2>
-      <div className="flex flex-wrap justify-center gap-8">
+      </h1>
+      <div className="flex flex-wrap py-20 justify-center gap-8 text-center">
         {testimonials.map((t, index) => (
           <div
             key={index}
-            className="bg-white rounded-lg shadow-md p-6 max-w-[350px] w-full"
+            className="bg-white rounded-lg border-1 border-gray-200 p-6 max-w-[350px] w-full"
           >
             <p className="text-lg font-light text-gray-600 leading-relaxed mb-4">
               {t.content}
@@ -24,7 +24,7 @@ const Testimonials = () => {
           </div>
         ))}
       </div>
-    </div>
+    </main>
   );
 };
 

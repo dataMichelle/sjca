@@ -11,13 +11,21 @@ const Hero = () => {
   return (
     <section className="flex justify-between items-stretch bg-gradient-to-br from-white to-gray-100 text-gray-900 p-0 relative animateFadeIn min-h-[28rem] overflow-hidden">
       <div className="max-w-[55%] p-[4.5rem] box-border">
-        <h1 className="text-4xl font-bold text-[#264D7A] md:text-3xl sm:text-2xl">
+        {/* <h1 className=" text-[#264D7A] lg:text-5xl md:text-3xl sm:text-2xl">
           Welcome to St. Jude Career Alliance
+        </h1> */}
+        <h1 className=" text-[#264D7A] lg:text-5xl md:text-3xl sm:text-2xl">
+          Transform Your Career with <br /> Faith-Based Support
         </h1>
-        <p className="mb-7 md:text-sm">
+        {/* <p className="mb-7 lg:text-lg md:text-sm">
           The St. Jude Career Alliance Ministry provides a Christian faith-based
           program to empower people who seek employment and the ability to
           thrive in their careers.
+        </p> */}
+        <p className="mb-7 lg:text-lg md:text-sm">
+          Start your journey today with faith-driven career guidance, tools for
+          success,
+          <br /> and a supportive community that cares about your future.
         </p>
         <CtaButton to={`/workshop`}>Join Our Next Workshop</CtaButton>
       </div>

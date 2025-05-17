@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FaTimes } from "react-icons/fa";
+import { XMarkIcon } from "@heroicons/react/24/solid";
 import { newsItems } from "../data/news";
 
 const NewsTicker = () => {
@@ -47,20 +48,19 @@ const NewsTicker = () => {
       {/* Close Button with React Icon */}
       <button
         onClick={closeNews}
-        className="absolute top-1/2 right-2 -translate-y-1/2 text-2xl text-gray-800 hover:text-black bg-teal-100 hover:bg-gray-300 rounded-full p-1 z-10 transition-transform hover:scale-110"
+        className="absolute top-1/2 right-2 -translate-y-1/2 text-2xl text-gray-800 hover:text-black bg-blue-100 hover:bg-gray-300 rounded-full p-1 z-10 transition-transform hover:scale-110"
         aria-label="Close news ticker"
       >
-        <FaTimes />
+        <XMarkIcon className="w-5 h-5 text-gray-600" />
       </button>
 
       {/* Static Display with Alternating News */}
       <p
         key={newsItems[currentNewsIndex].id}
-        className="text-xl text-gray-600 max-sm:text-base transition-opacity duration-500"
+        className=" text-teal-950 max-sm:text-base transition-opacity duration-500 font-inter font-semibold"
       >
         {newsItems[currentNewsIndex].text}
       </p>
-
       {/* Progress Dots */}
       <div className="flex justify-center mt-2 space-x-2">
         {newsItems.map((_, index) => (

@@ -1,17 +1,33 @@
 @import "tailwindcss";
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Courgette&family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poiret+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 /* Base styles */
 body {
   font-family: "Poppins", Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f8f1eb;
+
   color: #333;
   line-height: 1.6;
 }
 .relative {
   position: relative;
+}
+
+/* Theme */
+@theme {
+  --font-courgette: "Courgette", cursive;
+  --font-nunito: "Nunito", sans-serif;
+  --font-poiret: "Poiret One", cursive;
+  --font-poppins: "Poppins", sans-serif;
+  --font-anton: "Anton", sans-serif;
+  --font-roboto: "Roboto", sans-serif;
+  --font-inter: "Inter Tight", sans-serif;
+
+  --color-darkBlue: #23446d;
+  /* --color-lime: #a8d5ba; */
+  --color-deepTeal: #006f7f;
 }
 
 /* Custom utilities */

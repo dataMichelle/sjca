@@ -4,47 +4,34 @@ import { FaEnvelope, FaPhoneAlt } from "react-icons/fa"; // React Icons for cont
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-white py-10">
-      <div className="container mx-auto px-6 md:px-12">
-        {/* Footer top with logo or branding */}
-        <div className="flex justify-between items-center mb-6">
-          <div className="text-xl font-semibold">
-            <Link to="/" className="text-white hover:text-gray-400">
-              St. Jude Career Alliance
-            </Link>
-          </div>
-        </div>
-
+    <footer className="bg-[#006F7F] py-10 text-teal-50">
+      <div className="container mx-auto px-6 md:px-12 ">
         {/* Footer with 2 sections: Quick Links + Resources on the left and Contact Us on the right */}
-        <div className="flex flex-col md:flex-row justify-between mb-6">
+        <div className="flex flex-col md:flex-row justify-between mb-6 ">
           {/* Quick Links and Resources (stay on the same line) */}
           <div className="flex gap-12 md:w-2/3 mb-6 md:mb-0">
             <div>
-              <h3 className="text-lg font-semibold mb-3">Quick Links</h3>
+              <h3 className="text-lg font-semibold mb-3 text-teal-200">
+                Quick Links
+              </h3>
               <ul>
                 <li>
-                  <Link to="/" className="text-white hover:text-gray-400">
+                  <Link to="/" className=" ">
                     Home
                   </Link>
                 </li>
                 <li>
-                  <Link to="/about" className="text-white hover:text-gray-400">
+                  <Link to="/about" className=" ">
                     About Us
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    to="/testimonials"
-                    className="text-white hover:text-gray-400"
-                  >
+                  <Link to="/testimonials" className=" ">
                     Testimonials
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    to="/contact"
-                    className="text-white hover:text-gray-400"
-                  >
+                  <Link to="/contact" className=" ">
                     Contact
                   </Link>
                 </li>
@@ -52,31 +39,27 @@ const Footer = () => {
             </div>
 
             <div>
-              <h3 className="text-lg font-semibold mb-3">Resources</h3>
+              <h3 className="text-lg font-semibold mb-3 text-teal-300">
+                Resources
+              </h3>
               <ul>
                 <li>
-                  <Link
-                    to="/workshops"
-                    className="text-white hover:text-gray-400"
-                  >
-                    Workshops
+                  <Link to="/workshop" className=" ">
+                    Workshop
                   </Link>
                 </li>
                 <li>
-                  <Link to="/blog" className="text-white hover:text-gray-400">
+                  <Link to="/blog" className=" ">
                     Blog
                   </Link>
                 </li>
                 <li>
-                  <Link to="/faq" className="text-white hover:text-gray-400">
+                  <Link to="/faq" className=" ">
                     FAQ
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    to="/privacy-policy"
-                    className="text-white hover:text-gray-400"
-                  >
+                  <Link to="/privacy-policy" className=" ">
                     Privacy Policy
                   </Link>
                 </li>
@@ -85,33 +68,27 @@ const Footer = () => {
           </div>
 
           {/* Contact Us (on the right side, moves below on mobile) */}
-          <div className="md:w-1/3">
-            <h3 className="text-lg font-semibold mb-3">Contact Us</h3>
+          <div className="md:w-1/3 ">
+            <h3 className="text-lg font-semibold mb-3 text-teal-300">
+              Contact Us
+            </h3>
             <ul>
-              <li className="flex items-center gap-2 text-white hover:text-gray-400">
+              <li className="flex items-center gap-2  hover:text-emerald-100 ">
                 <FaEnvelope />
-                <a
-                  href="mailto:info@stjudecareeralliance.org"
-                  className="hover:text-gray-400"
-                >
+                <a href="mailto:info@stjudecareeralliance.org">
                   info@stjudecareeralliance.org
                 </a>
               </li>
-              <li className="flex items-center gap-2 text-white hover:text-gray-400">
+              <li className="flex items-center gap-2 ">
                 <FaPhoneAlt />
-                <a href="tel:+1234567890" className="hover:text-gray-400">
-                  (123) 456-7890
-                </a>
+                <a href="tel:+1234567890">(123) 456-7890</a>
               </li>
-              <li className="text-white hover:text-gray-400">
-                1515 N. Greenville Ave., Allen, TX 75002
-              </li>
+              <li>1515 N. Greenville Ave., Allen, TX 75002</li>
             </ul>
           </div>
         </div>
-
         {/* Footer bottom with copyright */}
-        <div className="text-center text-sm text-gray-400 mt-6">
+        <div className="text-center text-sm text-teal-100 mt-6">
           <p>
             &copy; {new Date().getFullYear()} St. Jude Career Alliance Ministry.
             All rights reserved.

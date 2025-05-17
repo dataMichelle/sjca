@@ -12,14 +12,13 @@ const Workshop = () => {
     .slice(0, 2); // Show only the next 2 workshops
 
   return (
-    <section className="py-16 px-6 sm:px-8 lg:px-16 bg-[#f8f1eb] mx-auto my-8 rounded-xl shadow-sm">
+    <main className="p-5 bg-gray-50 animateFadeIn">
       {/* Title */}
       <div className="text-center mb-8">
-        <h2 className="text-4xl font-bold text-gray-900 sm:text-3xl">
+        <h1 className="text-xl font-bold font-poppins text-start mb-8 md:text-4xl">
           Foundations Quarterly Workshop
-        </h2>
+        </h1>
       </div>
-
       {/* Main Content Layout */}
       <div className="flex flex-col lg:flex-row justify-between gap-8">
         {/* Left Section (Workshop Details) */}
@@ -35,9 +34,9 @@ const Workshop = () => {
 
           {/* What to Expect */}
           <div className="mt-12 max-w-3xl mx-auto">
-            <h3 className="text-2xl font-semibold text-gray-900 text-center">
+            <h1 className="text-2xl font-semibold text-gray-900 text-center">
               What to Expect
-            </h3>
+            </h1>
             <ul className="mt-6 space-y-4">
               <li className="text-lg text-gray-600 leading-6 sm:text-base">
                 Career Assessment
@@ -98,7 +97,7 @@ const Workshop = () => {
           </div>
         </div>
       </div>
-    </section>
+    </main>
   );
 };
 

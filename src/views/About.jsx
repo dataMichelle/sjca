@@ -73,10 +73,10 @@ const About = () => {
   }, []);
 
   return (
-    <section className="py-20 px-[4%] bg-[#f8f1eb] animateFadeIn">
-      <h2 className="text-5xl font-bold text-gray-800 mb-8 text-center md:text-4xl sm:text-3xl">
+    <main className="p-5 bg-gray-50 animateFadeIn">
+      <h1 className="text-xl font-bold font-poppins text-start mb-8 md:text-4xl">
         About Us
-      </h2>
+      </h1>
       <div className="flex flex-col gap-12 mx-auto max-w-screen-xl lg:flex-row lg:gap-8">
         {/* Core Values Section */}
         <div className="lg:basis-1/2 w-full">
@@ -136,7 +136,6 @@ const About = () => {
           </div>
         </div>
       </div>
-
       {/* Modal */}
       <AnimatePresence>
         {selectedMember !== null && (
@@ -200,7 +199,7 @@ const About = () => {
           </motion.div>
         )}
       </AnimatePresence>
-    </section>
+    </main>
   );
 };
 

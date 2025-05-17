@@ -1,11 +1,7 @@
 const Contact = () => {
   return (
-    <div className="py-12 px-[8%] bg-[#f8f1eb]">
-      {" "}
-      {/* Reduced top padding (py-12) */}
-      <h1 className="text-5xl font-bold text-gray-800 mb-4 text-center md:text-4xl">
-        {" "}
-        {/* Reduced bottom margin (mb-4) */}
+    <main className="p-5 bg-gray-50 animateFadeIn">
+      <h1 className="text-xl font-bold font-poppins text-start mb-8 md:text-4xl">
         Contact Us
       </h1>
       <div className="flex flex-wrap gap-8 mb-12">
@@ -97,7 +93,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </div>
+    </main>
   );
 };
 

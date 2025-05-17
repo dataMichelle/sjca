@@ -14,8 +14,8 @@ const Resources = () => {
   }, [hash]);
 
   return (
-    <div className="py-20 px-[8%] bg-[#f8f1eb]">
-      <h1 className="text-5xl font-bold text-gray-800 mb-8 md:text-4xl">
+    <main className="p-5 bg-gray-50 animateFadeIn">
+      <h1 className="text-xl font-bold font-poppins text-start mb-8 md:text-4xl">
         Resources for Your Career Journey
       </h1>
       <section className="mb-12">
@@ -65,7 +65,7 @@ const Resources = () => {
           Download
         </a>
       </section>
-    </div>
+    </main>
   );
 };
 

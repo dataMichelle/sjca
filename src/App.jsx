@@ -11,6 +11,9 @@ import Resources from "./views/Resources";
 import SpiritualSupport from "./views/SpiritualSupport";
 import Testimonials from "./views/Testimonials";
 import Contact from "./views/Contact";
+import Faq from "./views/Faq";
+import Blog from "./views/Blog";
+import Privacy from "./views/Privacy";
 
 function App() {
   // Unique key to force NewsTicker remount on refresh
@@ -32,7 +35,9 @@ function App() {
   return (
     <div>
       <Navbar />
+
       <NewsTicker key={newsTickerKey} />
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -41,6 +46,9 @@ function App() {
         <Route path="/spiritual-support" element={<SpiritualSupport />} />
         <Route path="/testimonials" element={<Testimonials />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/faq" element={<Faq />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/privacy-policy" element={<Privacy />} />
       </Routes>
       <Footer />
     </div>
