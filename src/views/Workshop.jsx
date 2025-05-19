@@ -28,7 +28,7 @@ const Workshop = () => {
 
         {/* What to Expect Section */}
         <div className="mb-12 mx-auto">
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 ">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {[
               "Career Assessment",
               "Resume and Interview Tips",
@@ -119,6 +119,14 @@ const Workshop = () => {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Ongoing Support Section */}
+        <div className="max-w-5xl mx-auto mt-8 mb-12">
+          <h3 className="text-xl font-semibold text-darkBlue text-center">
+            A mentoring group is available for ongoing job search support after
+            completion of the workshop.
+          </h3>
         </div>
       </div>
     </main>
