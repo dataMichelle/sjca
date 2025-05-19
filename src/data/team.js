@@ -32,6 +32,7 @@ export const team = [
     passions:
       "Passionate about helping others grow and succeed through mentoring, coaching, and sponsorship. Volunteer Work: Dallas Area Parkinson's Society (Board Member), Pacific Community Ventures (HR Advisor).",
     image: "/assets/team/jennifer_levy.png",
+    imageAlign: "top",
   },
   {
     name: "Greg Mechler",

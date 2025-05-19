@@ -14,6 +14,7 @@ import Contact from "./views/Contact";
 import Faq from "./views/Faq";
 import Blog from "./views/Blog";
 import Privacy from "./views/Privacy";
+import Volunteer from "./views/Volunteer";
 
 function App() {
   // Unique key to force NewsTicker remount on refresh
@@ -49,6 +50,8 @@ function App() {
         <Route path="/faq" element={<Faq />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/privacy-policy" element={<Privacy />} />
+        <Route path="/volunteer" element={<Volunteer />} />
+        {/* Add more routes as needed */}
       </Routes>
       <Footer />
     </div>

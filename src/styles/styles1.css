@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Courgette&family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poiret+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import "tailwindcss";
+
+/* Base styles */
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  line-height: 1.6;
+  background-color: #f4f1ed;
+}
+.relative {
+  position: relative;
+}
+
+/* Theme */
+@theme {
+  --font-courgette: "Courgette", cursive;
+  --font-nunito: "Nunito", sans-serif;
+  --font-poiret: "Poiret One", cursive;
+  --font-poppins: "Poppins", sans-serif;
+  --font-anton: "Anton", sans-serif;
+  --font-roboto: "Roboto", sans-serif;
+  --font-inter: "Inter Tight", sans-serif;
+
+  --color-darkBlue: #23446d;
+  --color-deepTeal: #006f7f;
+  --color-primary: #004651;
+  --color-secondary: #00a181;
+  --color-teriary: #a4e473;
+  --color-beige: #f4f1ed;
+}
+
+/* Custom utilities */
+@utility clipHexagonHero {
+  clip-path: polygon(
+    100% 0%,
+    56.7% 0%,
+    20% 50%,
+    56.7% 100%,
+    100% 100%,
+    136.7% 50%
+  );
+}
+
+@utility clipHexagonWorkshop {
+  clip-path: polygon(
+    25% 6.7%,
+    75% 6.7%,
+    100% 50%,
+    75% 93.3%,
+    25% 93.3%,
+    0% 50%
+  );
+}
+
+@utility animateFadeIn {
+  animation: fadeIn 1s ease-in;
+}
+
+@utility bgLime50080 {
+  background-color: rgba(168, 213, 186, 0.8);
+}
+
+@utility bgTeal50080 {
+  background-color: rgba(124, 200, 201, 0.8);
+}
+
+@utility bgTeal600 {
+  background-color: #5ba8a9;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Scrolling animation (for scrolling option) */
+.news-scroll-container {
+  overflow: hidden;
+}
+
+.animate-scroll {
+  display: inline-flex;
+  animation: scroll 20s linear infinite;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Pause animation on hover (optional) */
+.news-scroll-container:hover .animate-scroll {
+  animation-play-state: paused;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .text-lg {
+    font-size: 1rem;
+  }
+  .p-4 {
+    padding: 1rem;
+  }
+}
+
+/* Pulse animation for the info icon */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Apply pulse animation to the info icon */
+.pulse-icon {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* Smooth fade transition for the info icon */
+.info-icon-container {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.info-icon-container.visible {
+  opacity: 1;
+}
+
+/* Use the clip-path property to create a hexagon shape */
+.hexagon-card {
+  width: 200px;
+  height: 200px;
+  background-color: #f8f1eb;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.hexagon-card:hover {
+  transform: scale(1.05);
+}
+
+/* Shine effect for Hero and Footer sections */

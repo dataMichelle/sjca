@@ -14,57 +14,72 @@ const Resources = () => {
   }, [hash]);
 
   return (
-    <main className="p-5 bg-gray-50 animateFadeIn">
-      <h1 className="text-xl font-bold font-poppins text-start mb-8 md:text-4xl">
-        Resources for Your Career Journey
-      </h1>
-      <section className="mb-12">
-        <h2 className="text-3xl font-semibold text-gray-800 mb-4 md:text-2xl">
-          Resume Templates
-        </h2>
-        <p className="text-lg text-gray-600 mb-4 md:text-base">
-          Download our professional resume templates to get started on your
-          career path.
-        </p>
-        <a href="#" className="text-blue-600 hover:underline">
-          Download
-        </a>
-      </section>
-      <section className="mb-12">
-        <h2 className="text-3xl font-semibold text-gray-800 mb-4 md:text-2xl">
-          Job Search Tips
-        </h2>
-        <p className="text-lg text-gray-600 mb-4 md:text-base">
-          Find our expert tips for an effective job search.
-        </p>
-        <a href="#" className="text-blue-600 hover:underline">
-          Download
-        </a>
-      </section>
-      <section id="networking-events" className="mb-12">
-        <h2 className="text-3xl font-semibold text-gray-800 mb-4 md:text-2xl">
-          Networking Events
-        </h2>
-        <ul className="list-disc pl-6">
-          <li className="text-lg text-gray-600 mb-2 md:text-base">
-            Local Networking Event 1
-          </li>
-          <li className="text-lg text-gray-600 md:text-base">
-            Local Networking Event 2
-          </li>
-        </ul>
-      </section>
-      <section>
-        <h2 className="text-3xl font-semibold text-gray-800 mb-4 md:text-2xl">
-          Using AI in Job Search
-        </h2>
-        <p className="text-lg text-gray-600 mb-4 md:text-base">
-          Learn how to use AI tools to enhance your resume and job search.
-        </p>
-        <a href="#" className="text-blue-600 hover:underline">
-          Download
-        </a>
-      </section>
+    <main className="py-12 px-4 sm:px-6 lg:px-8 animateFadeIn relative">
+      {/* Subtle hexagon background */}
+      <div
+        className="absolute inset-0 opacity-10 pointer-events-none"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L0 15v30l30 15 30-15V15L30 0z' fill='%23a4e473' fill-opacity='0.4'/%3E%3C/svg%3E")`,
+          backgroundSize: "60px 60px",
+        }}
+      ></div>
+      <div className="max-w-5xl mx-auto relative z-10">
+        <h1 className="text-4xl font-bold text-darkBlue font-sans mb-10 md:text-5xl">
+          Resources for Your Career Journey
+        </h1>
+
+        {/* Job Search Tips */}
+        <section className="mb-12 bg-white rounded-lg shadow-sm p-6">
+          <h2 className="text-2xl font-semibold text-darkBlue mb-4 md:text-3xl">
+            Job Search Tips
+          </h2>
+          <p className="text-lg text-primary mb-4">
+            Find our expert tips for an effective job search.
+          </p>
+          <a
+            href="#"
+            className="inline-block bg-secondary text-white px-4 py-2 rounded-full font-medium hover:bg-deepTeal transition-all"
+          >
+            Download
+          </a>
+        </section>
+
+        {/* Networking Events */}
+        <section
+          id="networking-events"
+          className="mb-12 bg-white rounded-lg shadow-sm p-6"
+        >
+          <h2 className="text-2xl font-semibold text-darkBlue mb-4 md:text-3xl">
+            Networking Events
+          </h2>
+          <ul className="list-none pl-0">
+            <li className="text-lg text-primary mb-2 flex items-center">
+              <span className="text-secondary mr-2">•</span> Local Networking
+              Event 1
+            </li>
+            <li className="text-lg text-primary flex items-center">
+              <span className="text-secondary mr-2">•</span> Local Networking
+              Event 2
+            </li>
+          </ul>
+        </section>
+
+        {/* Using AI in Job Search */}
+        <section className="mb-12 bg-white rounded-lg shadow-sm p-6">
+          <h2 className="text-2xl font-semibold text-darkBlue mb-4 md:text-3xl">
+            Using AI in Job Search
+          </h2>
+          <p className="text-lg text-primary mb-4">
+            Learn how to use AI tools to enhance your resume and job search.
+          </p>
+          <a
+            href="#"
+            className="inline-block bg-secondary text-white px-4 py-2 rounded-full font-medium hover:bg-deepTeal transition-all"
+          >
+            Download
+          </a>
+        </section>
+      </div>
     </main>
   );
 };

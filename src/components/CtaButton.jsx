@@ -1,17 +1,26 @@
 import { Link } from "react-router-dom";
 
-const CtaButton = ({ to, children, variant = "primary", className = "" }) => {
+const CtaButton = ({
+  to,
+  children,
+  variant = "primary",
+  className = "",
+  textColor = "text-white", // Default to text-white
+}) => {
   const baseStyles =
-    "inline-block px-6 py-3 text-base font-semibold text-white rounded-full shadow-md transition-all";
+    "inline-block px-6 py-3 text-base font-semibold rounded-full shadow-md transition-all";
   const variants = {
     primary:
-      "bg-gradient-to-br from-teal-500 to-lime-500 hover:from-teal-600 hover:to-lime-500 hover:-translate-y-[0.125rem] hover:shadow-lg",
+      "bg-accent hover:from-teal-600 hover:to-lime-500 hover:-translate-y-[0.125rem] hover:shadow-lg",
     secondary:
-      "bg-lime-500 hover:bg-teal-600 hover:scale-105 hover:shadow-lg mb-5",
+      "bg-teal-600 hover:bg-teal-500 hover:scale-105 hover:shadow-lg mb-5",
   };
 
   return (
-    <Link to={to} className={`${baseStyles} ${variants[variant]} ${className}`}>
+    <Link
+      to={to}
+      className={`${baseStyles} ${variants[variant]} ${textColor} ${className}`}
+    >
       {children}
     </Link>
   );

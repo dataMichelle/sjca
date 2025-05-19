@@ -22,15 +22,15 @@ const TestimonialCarousel = () => {
   const currentTestimonial = displayTestimonials[currentIndex];
 
   return (
-    <div className="py-12 px-[8%] text-center">
-      <h2 className="text-5xl font-bold text-bg-navbar mb-8 md:text-4xl">
+    <div className="py-12 px-[8%] text-center bg-[#f8f1eb]">
+      <h2 className="text-5xl font-bold text-gray-800 mb-8 md:text-4xl">
         What Our Participants Say
       </h2>
       <div className="relative max-w-5xl mx-auto overflow-visible">
         {/* Testimonial Card */}
         <motion.div
           key={currentIndex}
-          className="w-[40rem] min-h-[16rem] bg-white p-4 border-y-3 border-y-lime-300 rounded-lg shadow-md text-gray-600 text-sm leading-relaxed flex items-center justify-center text-center relative before:content-[''] before:absolute before:top-2 before:left-2 before:w-12 before:h-12 before:bg-[url('https://img.icons8.com/ios-filled/100/F0F0F0/quote-left.png')] before:bg-no-repeat before:bg-contain before:opacity-70 before:z-0 after:content-[''] after:absolute after:bottom-2 after:right-2 after:w-12 after:h-12 after:bg-[url('https://img.icons8.com/ios-filled/100/F0F0F0/quote-right.png')] after:bg-no-repeat after:bg-contain after:opacity-70 after:z-0 hover:-translate-y-1 transition-transform md:w-[32rem] max-sm:w-full mx-auto"
+          className="w-[40rem] min-h-[16rem] bg-white p-4 rounded-lg shadow-md text-gray-600 text-sm leading-relaxed flex items-center justify-center text-center relative before:content-[''] before:absolute before:top-2 before:left-2 before:w-12 before:h-12 before:bg-[url('https://img.icons8.com/ios-filled/100/F0F0F0/quote-left.png')] before:bg-no-repeat before:bg-contain before:opacity-70 before:z-0 after:content-[''] after:absolute after:bottom-2 after:right-2 after:w-12 after:h-12 after:bg-[url('https://img.icons8.com/ios-filled/100/F0F0F0/quote-right.png')] after:bg-no-repeat after:bg-contain after:opacity-70 after:z-0 hover:-translate-y-1 transition-transform md:w-[32rem] max-sm:w-full mx-auto"
           initial={{ opacity: 0, x: 100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: currentIndex === 0 ? 0.5 : 0.3 }}

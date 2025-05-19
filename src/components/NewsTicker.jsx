@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { FaTimes } from "react-icons/fa";
 import { XMarkIcon } from "@heroicons/react/24/solid";
 import { newsItems } from "../data/news";
 
@@ -37,37 +36,37 @@ const NewsTicker = () => {
 
   return (
     <motion.div
-      className="relative bg-blue-300 p-2 shadow-lg text-center overflow-hidden m-0 z-40"
+      className="relative bg-accent/15 p-3 sm:p-4 shadow-md border-b border-gray-300 text-center overflow-hidden m-0 z-40"
       role="region"
       aria-label="News updates"
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      style={{ animation: "prefers-reduced-motion: no-preference" }}
     >
-      {/* Close Button with React Icon */}
+      {/* Close Button */}
       <button
         onClick={closeNews}
-        className="absolute top-1/2 right-2 -translate-y-1/2 text-2xl text-gray-800 hover:text-black bg-blue-100 hover:bg-gray-300 rounded-full p-1 z-10 transition-transform hover:scale-110"
+        className="absolute top-1/2 right-3 -translate-y-1/2 bg-teal-600 text-teal-50 font-bold hover:bg-[#006f7f] hover:text-white rounded-full transition-all p-1 duration-300 hover:scale-110 focus:ring-2 focus:ring-[#00a181] focus:outline-none cursor-pointer"
         aria-label="Close news ticker"
       >
-        <XMarkIcon className="w-5 h-5 text-gray-600" />
+        <XMarkIcon className="w-5 h-5" />
       </button>
 
-      {/* Static Display with Alternating News */}
+      {/* News Text */}
       <p
         key={newsItems[currentNewsIndex].id}
-        className=" text-teal-950 max-sm:text-base transition-opacity duration-500 font-inter font-semibold"
+        className="text-base sm:text-lg text-[#004651] font-inter font-semibold transition-opacity duration-500 max-sm:text-sm"
       >
         {newsItems[currentNewsIndex].text}
       </p>
+
       {/* Progress Dots */}
-      <div className="flex justify-center mt-2 space-x-2">
+      <div className="flex justify-center mt-2 space-x-1.5">
         {newsItems.map((_, index) => (
           <button
             key={index}
-            className={`w-2 h-2 rounded-full ${
-              index === currentNewsIndex ? "bg-gray-800" : "bg-gray-400"
+            className={`w-2 h-2 rounded-full transition-all duration-300 hover:scale-125 focus:ring-2 focus:ring-[#00a181] focus:outline-none cursor-pointer ${
+              index === currentNewsIndex ? "bg-[#00a181]" : "bg-gray-500"
             }`}
             onClick={() => goToNewsItem(index)}
             aria-label={`Go to news item ${index + 1}`}

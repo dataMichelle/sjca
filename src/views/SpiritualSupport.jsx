@@ -10,138 +10,142 @@ const SpiritualSupport = () => {
   };
 
   return (
-    <main className="p-5 bg-gray-50 animateFadeIn">
-      <h1 className="text-xl font-bold font-poppins text-start mb-8 md:text-4xl">
-        Spiritual Support for Job Seekers
-      </h1>
+    <main className="py-12 px-4 sm:px-6 lg:px-8 animateFadeIn relative">
+      {/* Subtle hexagon background */}
+      <div
+        className="absolute inset-0 opacity-10 pointer-events-none"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L0 15v30l30 15 30-15V15L30 0z' fill='%23a4e473' fill-opacity='0.4'/%3E%3C/svg%3E")`,
+          backgroundSize: "60px 60px",
+        }}
+      ></div>
+      <div className="max-w-5xl mx-auto relative z-10">
+        <h1 className="text-4xl font-bold text-center text-darkBlue font-sans mb-10 md:text-5xl">
+          Spiritual Support
+        </h1>
 
-      {/* Prayers Section */}
-      <section className="mb-12">
-        <h2 className="text-3xl font-semibold text-gray-800 mb-4 md:text-2xl">
-          Uplifting Prayers
-        </h2>
-        <p className="text-lg text-gray-600 mb-4 md:text-base">
-          Find prayers for strength, guidance, and perseverance in your career
-          journey.
-        </p>
+        {/* Prayers Section */}
+        <section className="mb-16">
+          <h2 className="text-3xl font-semibold text-darkBlue mb-6 md:text-2xl">
+            Uplifting Prayers
+          </h2>
+          <p className="text-lg text-primary mb-8">
+            Find prayers for strength, guidance, and perseverance in your career
+            journey.
+          </p>
 
-        {/* Accordion for Prayers */}
-        <div className="space-y-4">
-          {prayers.map((prayer, index) => (
-            <div key={index} className="bg-white rounded-lg shadow-md">
-              <button
-                className="w-full text-left p-5 text-lg font-semibold text-gray-800 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all flex justify-between items-center"
-                onClick={() => togglePrayer(index)}
+          {/* Accordion for Prayers */}
+          <div className="space-y-4">
+            {prayers.map((prayer, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-lg shadow-sm overflow-hidden"
               >
-                <span>{prayer.title}</span>
-                <span className="text-xl">
-                  {openPrayer === index ? (
-                    <FaChevronUp className="text-gray-600" />
-                  ) : (
-                    <FaChevronDown className="text-gray-600" />
-                  )}
-                </span>
-              </button>
+                <button
+                  className={`w-full text-left px-6 py-5 text-lg font-semibold text-darkBlue ${
+                    openPrayer === index ? "bg-secondary/10" : "bg-white"
+                  } hover:bg-secondary/10 focus:outline-none focus:ring-2 focus:ring-secondary transition-all flex justify-between items-center`}
+                  onClick={() => togglePrayer(index)}
+                >
+                  <span>{prayer.title}</span>
+                  <span className="text-xl">
+                    {openPrayer === index ? (
+                      <FaChevronUp className="text-secondary" />
+                    ) : (
+                      <FaChevronDown className="text-secondary" />
+                    )}
+                  </span>
+                </button>
 
-              {/* Show content if prayer is open */}
-              {openPrayer === index && (
-                <div className="p-4 text-lg text-gray-600 bg-gray-50 rounded-b-lg shadow-md">
-                  <p>{prayer.content}</p>
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-      </section>
+                {openPrayer === index && (
+                  <div className="px-6 py-4 text-lg text-primary bg-white">
+                    <p>{prayer.content}</p>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </section>
 
-      {/* Patron Saints Section */}
-      <section className="mb-12">
-        <h2 className="text-3xl font-semibold text-gray-800 mb-4 md:text-2xl">
-          Catholic Patron Saints for Job Seekers
-        </h2>
-        <p className="text-lg text-gray-600 mb-4 md:text-base">
-          Here are some Catholic patron saints known for supporting job seekers
-          and those in need.
-        </p>
-        <div className="space-y-8">
-          {/* St. Cajetan */}
-          <div className="flex space-x-6 items-center">
-            <img
-              src="https://tse4.mm.bing.net/th?id=OIP.pX4zJheeiqnMmGgNuy_pNAHaJL&pid=Api"
-              alt="St. Cajetan"
-              className="w-24 h-24 object-cover rounded-full shadow-md"
-            />
-            <div>
-              <h3 className="text-xl font-semibold text-gray-800">
+        {/* Patron Saints Section */}
+        <section className="mb-16">
+          <h2 className="text-3xl font-semibold text-darkBlue mb-6 md:text-2xl">
+            Catholic Patron Saints for Job Seekers
+          </h2>
+          <p className="text-lg text-primary mb-8">
+            Discover patron saints who support job seekers and those in need.
+          </p>
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {/* St. Cajetan */}
+            <div className="bg-white rounded-lg shadow-sm p-6 flex flex-col items-center text-center">
+              <img
+                src="https://tse4.mm.bing.net/th?id=OIP.pX4zJheeiqnMmGgNuy_pNAHaJL&pid=Api"
+                alt="St. Cajetan"
+                className="w-24 h-24 object-cover rounded-full mb-4"
+              />
+              <h3 className="text-xl font-semibold text-darkBlue">
                 St. Cajetan
               </h3>
-              <p className="text-lg text-gray-600 mt-2">
-                St. Cajetan is the patron saint of job seekers and the
-                unemployed. He founded the Theatine order and worked to provide
-                resources for the poor.
+              <p className="text-primary mt-2 mb-4">
+                Patron saint of job seekers and the unemployed, known for aiding
+                the poor.
               </p>
               <a
                 href="https://en.wikipedia.org/wiki/Saint_Cajetan"
-                className="text-blue-600 hover:text-blue-400 mt-2 inline-block"
+                className="inline-block px-4 py-2 bg-secondary text-white rounded-full hover:bg-deepTeal transition"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Read more
+                Read More
               </a>
             </div>
-          </div>
-          {/* St. Joseph the Worker */}
-          <div className="flex space-x-6 items-center">
-            <img
-              src="https://tse3.mm.bing.net/th?id=OIP.GQEoVAJTXOFyvebY86rKAgHaHa&r=0&pid=Api"
-              alt="St. Joseph"
-              className="w-24 h-24 object-cover rounded-full shadow-md"
-            />
-            <div>
-              <h3 className="text-xl font-semibold text-gray-800">
+            {/* St. Joseph the Worker */}
+            <div className="bg-white rounded-lg shadow-sm p-6 flex flex-col items-center text-center">
+              <img
+                src="https://tse3.mm.bing.net/th?id=OIP.GQEoVAJTXOFyvebY86rKAgHaHa&r=0&pid=Api"
+                alt="St. Joseph"
+                className="w-24 h-24 object-cover rounded-full mb-4"
+              />
+              <h3 className="text-xl font-semibold text-darkBlue">
                 St. Joseph the Worker
               </h3>
-              <p className="text-lg text-gray-600 mt-2">
-                St. Joseph is the patron saint of workers. He is the perfect
-                example of work, dedication, and faithfulness to God.
+              <p className="text-primary mt-2 mb-4">
+                Patron saint of workers, exemplifying dedication and faith.
               </p>
               <a
                 href="https://www.catholic.org/saints/saint.php?saint_id=410"
-                className="text-blue-600 hover:text-blue-400 mt-2 inline-block"
+                className="inline-block px-4 py-2 bg-secondary text-white rounded-full hover:bg-deepTeal transition"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Read more
+                Read More
               </a>
             </div>
-          </div>
-          {/* St. Homobonus */}
-          <div className="flex space-x-6 items-center">
-            <img
-              src="https://tse4.mm.bing.net/th?id=OIP.wOIwLIzGL7RG-i5qxuWSqwHaKT&pid=Api"
-              alt="St. Homobonus"
-              className="w-24 h-24 object-cover rounded-full shadow-md"
-            />
-            <div>
-              <h3 className="text-xl font-semibold text-gray-800">
+            {/* St. Homobonus */}
+            <div className="bg-white rounded-lg shadow-sm p-6 flex flex-col items-center text-center">
+              <img
+                src="https://tse4.mm.bing.net/th?id=OIP.wOIwLIzGL7RG-i5qxuWSqwHaKT&pid=Api"
+                alt="St. Homobonus"
+                className="w-24 h-24 object-cover rounded-full mb-4"
+              />
+              <h3 className="text-xl font-semibold text-darkBlue">
                 St. Homobonus
               </h3>
-              <p className="text-lg text-gray-600 mt-2">
-                St. Homobonus is the patron saint of businessmen and women. He
-                is known for his integrity and honesty in business.
+              <p className="text-primary mt-2 mb-4">
+                Patron saint of businesspeople, known for integrity and honesty.
               </p>
               <a
                 href="https://www.catholicnewsagency.com/saint/st-homobonus"
-                className="text-blue-600 hover:text-blue-400 mt-2 inline-block"
+                className="inline-block px-4 py-2 bg-secondary text-white rounded-full hover:bg-deepTeal transition"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Read more
+                Read More
               </a>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </main>
   );
 };

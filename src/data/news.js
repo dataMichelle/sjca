@@ -5,10 +5,10 @@ export const newsItems = [
   },
   {
     id: 2,
-    text: "Join our Foundations Quarterly Workshop on July 12, 2025, for career and spiritual guidance!",
+    text: "Join us for our next Career Workshop on July 12, 2025! Click on the Workshop page to register.",
   },
   {
     id: 3,
-    text: "New career and spiritual resources now available on our website!",
+    text: "Get involved with St. Jude Career Alliance! We are looking for volunteers to help with our upcoming events. Contact us for more information.",
   },
 ];

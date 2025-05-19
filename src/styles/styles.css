@@ -1,15 +1,15 @@
-@import "tailwindcss";
-
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=Courgette&family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poiret+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import "tailwindcss";
 
 /* Base styles */
 body {
   font-family: "Poppins", Arial, sans-serif;
   margin: 0;
   padding: 0;
-
   color: #333;
   line-height: 1.6;
+  /* background-color: #f4f1ed; */
+  background-color: #f8f0ec;
 }
 .relative {
   position: relative;
@@ -26,12 +26,18 @@ body {
   --font-inter: "Inter Tight", sans-serif;
 
   --color-darkBlue: #23446d;
-  /* --color-lime: #a8d5ba; */
   --color-deepTeal: #006f7f;
+  --color-primary: #004651;
+  --color-secondary: #00a181;
+  --color-teriary: #a4e473;
+  --color-beige: #f4f1ed;
+
+  --color-accent: #d8b829;
+  --color-bg-navbar: #1a3557;
 }
 
 /* Custom utilities */
-@utility clipHexagon {
+@utility clipHexagonHero {
   clip-path: polygon(
     100% 0%,
     56.7% 0%,
@@ -47,15 +53,30 @@ body {
 }
 
 @utility bgLime50080 {
-  background-color: rgba(168, 213, 186, 0.8);
+  background-color: rgba(164, 228, 115, 0.8);
 }
 
 @utility bgTeal50080 {
-  background-color: rgba(124, 200, 201, 0.8);
+  background-color: rgba(0, 161, 129, 0.8);
 }
 
 @utility bgTeal600 {
   background-color: #5ba8a9;
+}
+
+@utility clipHexagonWorkshop {
+  clip-path: polygon(
+    25% 6.7%,
+    75% 6.7%,
+    100% 50%,
+    75% 93.3%,
+    25% 93.3%,
+    0% 50%
+  );
+}
+
+@utility animateFadeIn {
+  animation: fadeIn 1s ease-in;
 }
 
 /* Animations */
@@ -67,6 +88,7 @@ body {
     opacity: 1;
   }
 }
+
 /* Scrolling animation (for scrolling option) */
 .news-scroll-container {
   overflow: hidden;
@@ -119,15 +141,39 @@ body {
 
 /* Apply pulse animation to the info icon */
 .pulse-icon {
-  animation: pulse 1.5s ease-in-out infinite; /* Continuous pulse while active */
+  animation: pulse 1.5s ease-in-out infinite;
 }
 
 /* Smooth fade transition for the info icon */
 .info-icon-container {
   opacity: 0;
-  transition: opacity 1s ease-in-out; /* Smooth fade over 1 second */
+  transition: opacity 1s ease-in-out;
 }
 
 .info-icon-container.visible {
-  opacity: 1; /* Fully visible when active */
+  opacity: 1;
+}
+
+/* Use the clip-path property to create a hexagon shape */
+.hexagon-card {
+  width: 200px;
+  height: 200px;
+  background-color: #f8f1eb;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.hexagon-card:hover {
+  transform: scale(1.05);
+}
+
+/* Fallback for browsers without backdrop-filter support */
+@supports not (backdrop-filter: blur(10px)) {
+  .glass-effect {
+    background: rgba(133, 201, 117, 0.9);
+  }
 }
