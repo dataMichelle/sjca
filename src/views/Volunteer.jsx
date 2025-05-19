@@ -25,7 +25,7 @@ const GetInvolved = () => {
   };
 
   return (
-    <main className="bg-beige py-12 px-4 sm:px-6 lg:px-8 animateFadeIn relative">
+    <main className=" py-12 px-4 sm:px-6 lg:px-8 animateFadeIn relative">
       {/* Subtle hexagon background */}
       <div
         className="absolute inset-0 opacity-10 pointer-events-none"
@@ -47,13 +47,6 @@ const GetInvolved = () => {
             community. Join us in this mission of hope and service by
             volunteering, sharing your gifts, or giving generously.
           </p>
-          <a
-            href="#contact-form"
-            className="inline-block bg-secondary text-white px-8 py-3 rounded-full font-medium hover:bg-deepTeal transition-all"
-            aria-label="Get started with involvement"
-          >
-            Get Started
-          </a>
         </section>
 
         {/* Volunteer Opportunities */}

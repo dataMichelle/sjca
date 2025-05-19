@@ -14,7 +14,7 @@ export default function Accordion({ item }) {
     <div className="border-t first:border-t-0 border-[#244670] max-w-2xl mx-auto ">
       <button
         onClick={toggle}
-        className={`w-full flex justify-between items-center px-5 py-4 text-left transition-colors duration-300 ${
+        className={`w-full  flex justify-between items-center px-5 py-4 text-left transition-colors duration-300 ${
           isOpen ? "bg-[#244670] text-white" : "bg-gray-200 text-gray-800"
         }`}
         aria-expanded={isOpen}

@@ -36,7 +36,7 @@ const NewsTicker = () => {
 
   return (
     <motion.div
-      className="relative bg-accent/15 p-3 sm:p-4 shadow-md border-b border-gray-300 text-center overflow-hidden m-0 z-40"
+      className="relative bg-beige p-3 sm:p-4 shadow-md border-b border-gray-300 text-center overflow-hidden m-0 z-40"
       role="region"
       aria-label="News updates"
       initial={{ opacity: 0, y: -20 }}

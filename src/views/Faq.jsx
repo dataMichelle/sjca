@@ -3,9 +3,12 @@ import { faqData } from "../data/faq"; // Import FAQ data
 
 const Faq = () => {
   return (
-    <main className="p-5 mb-20 animateFadeIn">
-      <h1 className="text-xl font-bold font-poppins text-start mb-8 md:text-4xl">
-        FAQ
+    <main className={`py-12 px-4 sm:px-8 lg:px-12 `}>
+      <h1
+        className="text-4xl md:text-5xl font-bold font-poppins mb-12 text-center"
+        style={{ color: "#23446d" }} // --color-darkBlue
+      >
+        Frequently Asked Questions
       </h1>
       <ul className="space-y-2">
         {/* Use <ul> to wrap the FAQ list */}

@@ -9,7 +9,8 @@ body {
   color: #333;
   line-height: 1.6;
   /* background-color: #f4f1ed; */
-  background-color: #f8f0ec;
+  /* background-color: #f8f0ec; */
+  background-color: var(--color-light-beige);
 }
 .relative {
   position: relative;
@@ -30,7 +31,8 @@ body {
   --color-primary: #004651;
   --color-secondary: #00a181;
   --color-teriary: #a4e473;
-  --color-beige: #f4f1ed;
+  --color-beige: #f2ece7;
+  --color-light-beige: #faf7f5;
 
   --color-accent: #d8b829;
   --color-bg-navbar: #1a3557;
