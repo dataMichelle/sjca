@@ -5,7 +5,7 @@ import { upcomingWorkshops } from "../data/workshops";
 const Hero = () => {
   return (
     <section className="flex justify-between items-stretch bg-gradient-to-br from-[#d6a335] via-[#006f7f] to-[#00a181] text-white p-0 relative animateFadeIn min-h-[28rem] overflow-hidden shine-effect">
-      <div className="max-w-[55%] p-[4.5rem] box-border">
+      <div className="max-w-[55%] p-20 box-border">
         <h1 className="text-4xl sm:text-5xl font-bold font-poppins text-white mb-4">
           Grow Your Career with Faith & Community
         </h1>

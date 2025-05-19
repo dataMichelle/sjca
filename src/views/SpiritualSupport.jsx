@@ -20,7 +20,7 @@ const SpiritualSupport = () => {
         }}
       ></div>
       <div className="max-w-5xl mx-auto relative z-10">
-        <h1 className="text-4xl font-bold text-center text-darkBlue font-sans mb-10 md:text-5xl">
+        <h1 className="text-4xl font-bold text-center text-darkBlue font-sans mb-10 md:text-5xl sm:text-3xl">
           Spiritual Support
         </h1>
 

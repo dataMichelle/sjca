@@ -14,7 +14,7 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-3 text-teal-100 uppercase tracking-wide">
               Quick Links
             </h3>
-            <div className="flex gap-3 text-teal-50 mb-4">
+            <div className="flex gap-3 text-teal-50 mb-4 flex-wrap">
               <Link
                 to="/about"
                 className="hover:text-emerald-100 transition-colors duration-200"

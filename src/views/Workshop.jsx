@@ -22,7 +22,7 @@ const Workshop = () => {
       ></div>
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Title */}
-        <h1 className="text-4xl font-bold text-darkBlue font-sans text-center mb-12 md:text-5xl">
+        <h1 className="text-4xl font-bold text-darkBlue font-sans text-center mb-12 md:text-5xl sm:text-3xl">
           Foundations Quarterly Workshop
         </h1>
 

@@ -5,7 +5,7 @@ const Faq = () => {
   return (
     <main className={`py-12 px-4 sm:px-8 lg:px-12 `}>
       <h1
-        className="text-4xl md:text-5xl font-bold font-poppins mb-12 text-center"
+        className="text-4xl md:text-5xl font-bold font-poppins mb-12 text-center sm:text-3xl"
         style={{ color: "#23446d" }} // --color-darkBlue
       >
         Frequently Asked Questions

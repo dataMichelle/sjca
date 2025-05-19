@@ -27,18 +27,11 @@ const GetInvolved = () => {
   return (
     <main className=" py-12 px-4 sm:px-6 lg:px-8 animateFadeIn relative">
       {/* Subtle hexagon background */}
-      <div
-        className="absolute inset-0 opacity-10 pointer-events-none"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L0 15v30l30 15 30-15V15L30 0z' fill='%23a4e473' fill-opacity='0.4'/%3E%3C/svg%3E")`,
-          backgroundSize: "60px 60px",
-        }}
-      ></div>
 
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Hero Section */}
         <section className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-darkBlue font-sans mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-darkBlue font-sans mb-4 sm:text-3xl">
             Serve with Us to Uplift Careers
           </h1>
           <p className="text-lg text-primary max-w-3xl mx-auto mb-8">

@@ -19,7 +19,7 @@ const Navbar = () => {
             alt="St. Jude Career Alliance Logo"
             className="w-12 h-9"
           />
-          <h1 className="text-2xl font-bold font-nunito text-emerald-50">
+          <h1 className="text-2xl font-bold font-poiret text-emerald-50 tracking-wide">
             St. Jude Career Alliance
           </h1>
         </div>
@@ -64,13 +64,13 @@ const Navbar = () => {
       </div>
       {/* Mobile Menu */}
       {isOpen && (
-        <nav className="max-[1350px]:block hidden bg-[#85C975] glass-effect w-full absolute top-full left-0 z-40">
+        <nav className="max-[1350px]:block hidden bg-beige glass-effect w-full absolute top-full left-0 z-40">
           <ul className="flex flex-col items-center space-y-2 py-4">
             {[
               { to: "/", label: "Home" },
               { to: "/about", label: "About Us" },
               { to: "/workshop", label: "Workshop" },
-              { to: "/resources", label: "Resources" },
+              // { to: "/resources", label: "Resources" },
               { to: "/spiritual-support", label: "Spiritual Support" },
               { to: "/testimonials", label: "Testimonials" },
               { to: "/contact", label: "Contact" },

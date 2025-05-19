@@ -4,7 +4,7 @@ const Contact = () => {
   return (
     <main className=" py-12 px-4 sm:px-8 lg:px-12 animate-fade">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl md:text-5xl font-bold font-poppins text-[#23446d] mb-12 text-center">
+        <h1 className="text-4xl md:text-5xl font-bold font-poppins text-[#23446d] mb-12 text-center sm:text-3xl">
           Contact Us
         </h1>
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 mb-12">

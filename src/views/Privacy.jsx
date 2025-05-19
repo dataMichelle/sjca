@@ -3,7 +3,7 @@ import React from "react";
 const Privacy = () => {
   return (
     <main className="p-5 animateFadeIn">
-      <h1 className="text-xl font-bold font-poppins text-start mb-8 md:text-4xl">
+      <h1 className="text-xl font-bold font-poppins text-start mb-8 md:text-4xl sm:text-3xl">
         Privacy Policy
       </h1>
     </main>
