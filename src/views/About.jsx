@@ -46,11 +46,20 @@ const About = () => {
     setSelectedMember(null);
   };
 
+  // Helper function to determine object-position class
+  const getObjectPosition = (imageAlign) => {
+    if (imageAlign === "top") return "object-top";
+    if (imageAlign === "center") return "object-center";
+    if (imageAlign && imageAlign.endsWith("%"))
+      return `object-[50%_${imageAlign}]`;
+    return "object-center"; // Fallback
+  };
+
   return (
     <main className={`py-12 px-4 sm:px-8 lg:px-12 ${styles.animateFadeIn}`}>
       <div className="max-w-7xl mx-auto">
         <h1
-          className="text-4xl md:text-5xl font-bold font-poppins mb-12 text-center sm:text-3xl"
+          className="text-4xl md:text-5xl font-bold font-poppins mb-12 text-center"
           style={{ color: "#23446d" }} // --color-darkBlue
         >
           About St. Jude Career Alliance
@@ -124,7 +133,9 @@ const About = () => {
                   <img
                     src={member.image}
                     alt={`${member.name}, ${member.role}`}
-                    className="object-cover w-full h-full rounded-xl"
+                    className={`object-cover w-full h-full rounded-xl ${getObjectPosition(
+                      member.imageAlign
+                    )}`}
                     loading="lazy"
                   />
                   <div className="absolute bottom-0 left-0 right-0 h-8 flex justify-between items-center bg-black/50 px-3 py-2">
@@ -162,7 +173,7 @@ const About = () => {
               exit={{ opacity: 0, y: 50 }}
               transition={{ duration: 0.3 }}
               onClick={(e) => e.stopPropagation()}
-              style={{ border: "1px solid #a4e473" }} // --color-teriary
+              style={{ border: "1px solid #a4e473" }} // --color-tertiary
             >
               <button
                 onClick={closeModal}
@@ -180,7 +191,9 @@ const About = () => {
                 <img
                   src={team[selectedMember].image}
                   alt={`${team[selectedMember].name}, ${team[selectedMember].role}`}
-                  className="w-24 h-24 object-cover rounded-full"
+                  className={`w-24 h-24 object-cover rounded-full ${getObjectPosition(
+                    team[selectedMember].imageAlign
+                  )}`}
                   loading="lazy"
                 />
                 <div>

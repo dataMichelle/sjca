@@ -10,6 +10,7 @@ export const team = [
     passions:
       "Loves to coach and develop high-performing employees. Superpower – making the complex simple.",
     image: "/assets/team/devina_valent.png",
+    imageAlign: "17.5%", // Changed to custom percentage
   },
   {
     name: "Kevin Almeida",
@@ -21,6 +22,7 @@ export const team = [
     certifications: "",
     passions: "Sports Fan!",
     image: "/assets/team/kevin_almeida.png",
+    imageAlign: "top", // Set to full top alignment
   },
   {
     name: "Jennifer Levy",
@@ -32,7 +34,7 @@ export const team = [
     passions:
       "Passionate about helping others grow and succeed through mentoring, coaching, and sponsorship. Volunteer Work: Dallas Area Parkinson's Society (Board Member), Pacific Community Ventures (HR Advisor).",
     image: "/assets/team/jennifer_levy.png",
-    imageAlign: "top",
+    imageAlign: "top", // Set to full top alignment
   },
   {
     name: "Greg Mechler",
@@ -45,6 +47,7 @@ export const team = [
       "Certified Consultant, Professional Dynametric Programs (PDP®)",
     passions: "Married, lives in Allen, has four granddaughters.",
     image: "/assets/team/greg_mechler2.png",
+    imageAlign: "17.5%", // Changed to custom percentage
   },
   {
     name: "Richard Panko",
@@ -56,6 +59,7 @@ export const team = [
     certifications: "",
     passions: "",
     image: "/assets/team/richard_panko.png",
+    imageAlign: "top", // Set to full top alignment
   },
   {
     name: "Joe English",
@@ -67,5 +71,6 @@ export const team = [
     passions:
       "Husband, father, family guy, sports guy, cheerleader for my kids, barefoot or flip flops, feet in the sand, follower of God.",
     image: "/assets/team/joe_english.png",
+    imageAlign: "top", // Set to full top alignment
   },
 ];
