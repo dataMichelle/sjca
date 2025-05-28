@@ -73,4 +73,13 @@ export const team = [
     image: "/assets/team/joe_english.png",
     imageAlign: "top", // Set to full top alignment
   },
+  {
+    name: "Aneeliz Alamo",
+    role: "Coming soon",
+    content: "Coming soon",
+    education: "Coming soon",
+    certifications: "",
+    passions: "Coming soon",
+    image: "/assets/team/avatar.png",
+  },
 ];

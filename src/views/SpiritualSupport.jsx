@@ -79,7 +79,7 @@ const SpiritualSupport = () => {
             {/* St. Cajetan */}
             <div className="bg-white rounded-lg shadow-sm p-6 flex flex-col items-center text-center">
               <img
-                src="https://tse4.mm.bing.net/th?id=OIP.pX4zJheeiqnMmGgNuy_pNAHaJL&pid=Api"
+                src="./assets/saints/cajetan.png"
                 alt="St. Cajetan"
                 className="w-24 h-24 object-cover rounded-full mb-4"
               />
@@ -91,7 +91,7 @@ const SpiritualSupport = () => {
                 the poor.
               </p>
               <a
-                href="https://en.wikipedia.org/wiki/Saint_Cajetan"
+                href="https://catholicnovenaapp.com/novenas/st-cajetan-novena/"
                 className="inline-block px-4 py-2 bg-secondary text-white rounded-full hover:bg-deepTeal transition"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -102,7 +102,7 @@ const SpiritualSupport = () => {
             {/* St. Joseph the Worker */}
             <div className="bg-white rounded-lg shadow-sm p-6 flex flex-col items-center text-center">
               <img
-                src="https://tse3.mm.bing.net/th?id=OIP.GQEoVAJTXOFyvebY86rKAgHaHa&r=0&pid=Api"
+                src="./assets/saints/joseph.png"
                 alt="St. Joseph"
                 className="w-24 h-24 object-cover rounded-full mb-4"
               />
@@ -113,7 +113,7 @@ const SpiritualSupport = () => {
                 Patron saint of workers, exemplifying dedication and faith.
               </p>
               <a
-                href="https://www.catholic.org/saints/saint.php?saint_id=410"
+                href="https://www.carmelitefriars.org/novena-to-st-joseph-the-worker"
                 className="inline-block px-4 py-2 bg-secondary text-white rounded-full hover:bg-deepTeal transition"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -121,21 +121,22 @@ const SpiritualSupport = () => {
                 Read More
               </a>
             </div>
-            {/* St. Homobonus */}
+            {/* St. Jude Thaddeus */}
             <div className="bg-white rounded-lg shadow-sm p-6 flex flex-col items-center text-center">
               <img
-                src="https://tse4.mm.bing.net/th?id=OIP.wOIwLIzGL7RG-i5qxuWSqwHaKT&pid=Api"
-                alt="St. Homobonus"
+                src="./assets/saints/jude.png"
+                alt="St. Jude Thaddeus"
                 className="w-24 h-24 object-cover rounded-full mb-4"
               />
               <h3 className="text-xl font-semibold text-darkBlue">
-                St. Homobonus
+                St. Jude Thaddeus
               </h3>
               <p className="text-primary mt-2 mb-4">
-                Patron saint of businesspeople, known for integrity and honesty.
+                Patron saint of desperate situations and hopeless cases, invoked
+                for urgent needs.
               </p>
               <a
-                href="https://www.catholicnewsagency.com/saint/st-homobonus"
+                href="https://www.ewtn.com/catholicism/devotions/novena-to-st-jude--desperate-situations-and-hopeless-cases-305"
                 className="inline-block px-4 py-2 bg-secondary text-white rounded-full hover:bg-deepTeal transition"
                 target="_blank"
                 rel="noopener noreferrer"
