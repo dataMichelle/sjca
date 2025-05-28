@@ -99,9 +99,6 @@ const Workshop = () => {
                   alt="Vertical Workshop Flyer"
                   className="w-28 h-40 object-cover rounded shadow group-hover:scale-105 transition"
                 />
-                <span className="mt-2 text-sm text-[#00a181] underline">
-                  Vertical Flyer
-                </span>
               </a>
               <a
                 href="./assets/workshop/horizontal-flyer.png"
@@ -114,9 +111,6 @@ const Workshop = () => {
                   alt="Horizontal Workshop Flyer"
                   className="w-40 h-28 object-cover rounded shadow group-hover:scale-105 transition"
                 />
-                <span className="mt-2 text-sm text-[#00a181] underline">
-                  Horizontal Flyer
-                </span>
               </a>
             </div>
           </fieldset>
