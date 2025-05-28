@@ -191,102 +191,14 @@ const GetInvolved = () => {
           <h2 className="text-2xl font-semibold text-darkBlue mb-4">
             Ready to Join Our Ministry?
           </h2>
-          <p className="text-lg text-primary mb-6">
-            We’re excited to welcome you to St. Jude Career Alliance! Fill out
-            the form below to volunteer, share your skills, give, or learn more.
-            Our team will reach out to guide you in taking the next step.
-          </p>
-          <form
-            onSubmit={handleSubmit}
-            className="bg-white p-8 rounded-lg shadow-sm max-w-2xl mx-auto"
-          >
-            <div className="mb-4">
-              <label
-                htmlFor="name"
-                className="block text-primary font-medium mb-2"
-              >
-                Name
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                className="w-full rounded-md border border-gray-300 focus:ring-secondary focus:border-secondary transition-all"
-                required
-                aria-required="true"
-              />
-            </div>
-            <div className="mb-4">
-              <label
-                htmlFor="email"
-                className="block text-primary font-medium mb-2"
-              >
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                className="w-full rounded-md border border-gray-300 focus:ring-secondary focus:border-secondary transition-all"
-                required
-                aria-required="true"
-              />
-            </div>
-            <div className="mb-4">
-              <label
-                htmlFor="involvement"
-                className="block text-primary font-medium mb-2"
-              >
-                How Would You Like to Help?
-              </label>
-              <select
-                id="involvement"
-                name="involvement"
-                value={formData.involvement}
-                onChange={handleChange}
-                className="w-full rounded-md border border-gray-300 focus:ring-secondary focus:border-secondary transition-all"
-                required
-                aria-required="true"
-              >
-                <option value="">Select an option</option>
-                <option value="volunteer">Volunteer</option>
-                <option value="speaker">Speaker</option>
-                <option value="mentor">Mentor</option>
-                <option value="donate">Donate</option>
-              </select>
-            </div>
-            <div className="mb-4">
-              <label
-                htmlFor="message"
-                className="block text-primary font-medium mb-2"
-              >
-                Message
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                className="w-full rounded-md border border-gray-300 focus:ring-secondary focus:border-secondary transition-all"
-                rows="4"
-                aria-describedby="message-help"
-              ></textarea>
-              <p id="message-help" className="text-sm text-primary mt-1">
-                Share your thoughts or questions about joining our ministry.
-              </p>
-            </div>
-            <button
-              type="submit"
-              className="bg-secondary text-white px-6 py-2 rounded-full font-medium hover:bg-deepTeal transition-all"
-              aria-label="Submit involvement form"
+          <p>
+            <a
+              href="mailto:info@stjudecareeralliance.org?subject=Get%20Involved%20with%20SJCA"
+              className="text-blue-600 underline"
             >
-              Send Your Interest
-            </button>
-          </form>
+              Email us to find out more.
+            </a>
+          </p>
         </section>
       </div>
     </main>
