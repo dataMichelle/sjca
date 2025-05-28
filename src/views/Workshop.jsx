@@ -46,38 +46,80 @@ const Workshop = () => {
         </div>
 
         {/* Upcoming Workshop Section */}
-        <div className="mb-12 max-w-[31.25rem] mx-auto pb-12">
-          <div className="bg-[#006F7F] rounded-lg shadow-md p-6 text-teal-50 w-full">
-            <div className="flex items-center justify-between mb-4">
-              <h3 className="text-xl font-semibold text-teal-100">
-                Upcoming Workshop
-              </h3>
-              <CtaButton
-                to={upcoming?.registrationLink || "#"}
-                variant="primary"
-                textColor="text-teal-950"
-                className="px-6 py-2"
-              >
-                Register Now
-              </CtaButton>
-            </div>
-            {upcoming ? (
-              <div>
-                <h4 className="text-lg font-semibold text-teal-100 mb-2">
-                  {upcoming.date}
-                </h4>
-                <p className="text-sm text-teal-50 mb-2">{upcoming.time}</p>
-                <p className="text-sm text-teal-50 mb-2">
-                  {upcoming.description}
-                </p>
-                <p className="text-sm text-teal-50">
-                  <span className="font-bold">Fee:</span> {upcoming.fee}
-                </p>
+        {/* Upcoming Workshop + Flyers Section */}
+        <div className="mb-12 mx-auto pb-12 flex flex-col md:flex-row justify-between max-w-5xl">
+          {/* Upcoming Workshop Card */}
+          <div className="w-full md:max-w-[31.25rem]">
+            <div className="bg-[#006F7F] rounded-lg shadow-md p-6 text-teal-50 w-full">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-xl font-semibold text-teal-100">
+                  Upcoming Workshop
+                </h3>
+                <CtaButton
+                  to={upcoming?.registrationLink || "#"}
+                  variant="primary"
+                  textColor="text-teal-950"
+                  className="px-6 py-2"
+                >
+                  Register Now
+                </CtaButton>
               </div>
-            ) : (
-              <p className="text-teal-50">No upcoming workshops scheduled.</p>
-            )}
+              {upcoming ? (
+                <div>
+                  <h4 className="text-lg font-semibold text-teal-100 mb-2">
+                    {upcoming.date}
+                  </h4>
+                  <p className="text-sm text-teal-50 mb-2">{upcoming.time}</p>
+                  <p className="text-sm text-teal-50 mb-2">
+                    {upcoming.description}
+                  </p>
+                  <p className="text-sm text-teal-50">
+                    <span className="font-bold">Fee:</span> {upcoming.fee}
+                  </p>
+                </div>
+              ) : (
+                <p className="text-teal-50">No upcoming workshops scheduled.</p>
+              )}
+            </div>
           </div>
+          {/* Workshop Flyers Fieldset */}
+          <fieldset className="w-full md:max-w-sm border-2 border-[#00a181] rounded-lg py-4 px-4 flex flex-col items-center">
+            <legend className="px-2 text-[#00a181] font-semibold text-base">
+              Workshop Flyers
+            </legend>
+            <div className="flex flex-col md:flex-row gap-4 w-full items-center justify-center px-2">
+              <a
+                href="./assets/workshop/vertical-flyer.png"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex flex-col items-center group"
+              >
+                <img
+                  src="./assets/workshop/vertical-flyer.png"
+                  alt="Vertical Workshop Flyer"
+                  className="w-28 h-40 object-cover rounded shadow group-hover:scale-105 transition"
+                />
+                <span className="mt-2 text-sm text-[#00a181] underline">
+                  Vertical Flyer
+                </span>
+              </a>
+              <a
+                href="./assets/workshop/horizontal-flyer.png"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex flex-col items-center group"
+              >
+                <img
+                  src="./assets/workshop/horizontal-flyer.png"
+                  alt="Horizontal Workshop Flyer"
+                  className="w-40 h-28 object-cover rounded shadow group-hover:scale-105 transition"
+                />
+                <span className="mt-2 text-sm text-[#00a181] underline">
+                  Horizontal Flyer
+                </span>
+              </a>
+            </div>
+          </fieldset>
         </div>
 
         {/* Join Us Section */}
