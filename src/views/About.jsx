@@ -120,7 +120,7 @@ const About = () => {
                 <motion.button
                   key={index}
                   onClick={() => openModal(index)}
-                  className={`relative aspect-square rounded-xl shadow-sm hover:shadow-md transition-all duration-300 bg-white overflow-hidden ${styles.animateGlow}`}
+                  className={`relative aspect-square rounded-xl shadow-sm hover:shadow-md transition-all duration-300 bg-white overflow-hidden ${styles.animateGlow} min-w-[13rem] `}
                   aria-label={`View details for ${member.name}`}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
