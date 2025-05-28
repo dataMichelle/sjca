@@ -1,11 +1,5 @@
 export const testimonials = [
   {
-    name: "Ty",
-    role: "Participant",
-    content:
-      "The weekly meetings always provided motivation and inspiration to ‘keep moving.’ The program stressed the importance of communicating to a potential employer how I can help them, and not the other way around.",
-  },
-  {
     name: "Cheryl",
     role: "Participant",
     content:

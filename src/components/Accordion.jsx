@@ -32,9 +32,8 @@ export default function Accordion({ item }) {
           isOpen ? "max-h-96 py-3 bg-[#f1f5f9]" : "max-h-0 py-0"
         }`}
         style={{ transitionProperty: "max-height, padding" }}
-      >
-        {item.content}
-      </div>
+        dangerouslySetInnerHTML={{ __html: item.content }}
+      />
     </div>
   );
 }

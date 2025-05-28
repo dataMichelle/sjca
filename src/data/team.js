@@ -1,5 +1,14 @@
 export const team = [
   {
+    name: "Mary Jane Brounoff",
+    role: "Media Relations Representative",
+    content: "Coming soon",
+    education: "Coming soon",
+    certifications: "",
+    passions: "Coming soon",
+    image: "/assets/team/avatar.png",
+  },
+  {
     name: "Devina Valent",
     role: "Director HR Business Partner",
     content:
@@ -22,18 +31,6 @@ export const team = [
     certifications: "",
     passions: "Sports Fan!",
     image: "/assets/team/kevin_almeida.png",
-    imageAlign: "top", // Set to full top alignment
-  },
-  {
-    name: "Jennifer Levy",
-    role: "HR Executive and Life Coach",
-    content:
-      "HR executive with 15+ years' experience in the healthcare space. Recently started my own business as an Executive and Life Coach. Committed to driving people-centric initiatives and fostering a culture of collaboration and growth. Tagline: I transform workplaces into dynamic spaces that turn strategic vision into tangible results, driving success through a people-first approach.",
-    education: "BBA – University of North Texas; MBA – University of Dallas",
-    certifications: "SPHR, SHRM SCP",
-    passions:
-      "Passionate about helping others grow and succeed through mentoring, coaching, and sponsorship. Volunteer Work: Dallas Area Parkinson's Society (Board Member), Pacific Community Ventures (HR Advisor).",
-    image: "/assets/team/jennifer_levy.png",
     imageAlign: "top", // Set to full top alignment
   },
   {
@@ -76,6 +73,15 @@ export const team = [
   {
     name: "Aneeliz Alamo",
     role: "Coming soon",
+    content: "Coming soon",
+    education: "Coming soon",
+    certifications: "",
+    passions: "Coming soon",
+    image: "/assets/team/avatar.png",
+  },
+  {
+    name: "Brandon Powell",
+    role: "Multimedia Coordinator",
     content: "Coming soon",
     education: "Coming soon",
     certifications: "",
