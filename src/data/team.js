@@ -78,6 +78,7 @@ export const team = [
     certifications: "",
     passions: "Coming soon",
     image: "/assets/team/avatar.png",
+    imageAlign: "top", // Set to full top alignment
   },
   {
     name: "Brandon Powell",
@@ -87,5 +88,6 @@ export const team = [
     certifications: "",
     passions: "Coming soon",
     image: "/assets/team/avatar.png",
+    imageAlign: "top", // Set to full top alignment
   },
 ];
