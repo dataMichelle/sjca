@@ -15,14 +15,14 @@ const Navbar = () => {
         {/* Combined Logo (Image + Title) */}
         <div className="flex items-center gap-2">
           <img
-            src="/logo-cross9.png"
+            src="/logo-path.png"
             alt="St. Jude Career Alliance Logo"
-            className="w-20 h-auto
+            className="w-30 h-auto
             "
           />
-          <h1 className="text-2xl font-bold font-poiret text-emerald-50 tracking-wide">
+          {/* <h1 className="text-xl font-bold font-poiret text-emerald-50 tracking-wide">
             St. Jude Career Alliance
-          </h1>
+          </h1> */}
         </div>
         {/* Navigation Links with Spacing */}
         <div className="flex items-center gap-8">
