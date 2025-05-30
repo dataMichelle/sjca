@@ -113,6 +113,9 @@ const Workshop = () => {
                 />
               </a>
             </div>
+            <p className="mt-3 text-sm text-gray-700 text-center">
+              Click on a flyer to view the full-size version.
+            </p>
           </fieldset>
         </div>
 
@@ -160,8 +163,8 @@ const Workshop = () => {
         {/* Ongoing Support Section */}
         <div className="max-w-5xl mx-auto mt-8 mb-12">
           <h3 className="text-xl font-semibold text-darkBlue text-center">
-            A mentoring group is available for ongoing job search support after
-            completion of the workshop.
+            A free mentoring group is available for ongoing job search support
+            after completion of the workshop.
           </h3>
         </div>
       </div>

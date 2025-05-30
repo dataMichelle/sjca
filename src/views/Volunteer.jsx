@@ -43,7 +43,7 @@ const GetInvolved = () => {
         </section>
 
         {/* Volunteer Opportunities */}
-        <section className="mb-16 rounded-lg shadow-sm p-8">
+        <section className="mb-16 rounded-lg shadow-sm p-8 bg-white">
           <h2 className="text-2xl font-semibold text-darkBlue mb-4 flex items-center gap-2">
             <FaHandsHelping className="text-secondary" /> Volunteer Your Time
           </h2>
@@ -83,7 +83,7 @@ const GetInvolved = () => {
             meaningful connections, and grow in your own journey of giving.
           </p>
           <a
-            href="#volunteer-form"
+            href="mailto:careeralliance@stjudeparish.com?subject=Volunteer%20with%20SJCA&body=I%20am%20interested%20in%20volunteering%20with%20SJCA.%20Please%20let%20me%20know%20how%20I%20can%20help."
             className="inline-block bg-secondary text-white px-6 py-2 rounded-full font-medium hover:bg-deepTeal transition-all"
             aria-label="Apply to volunteer"
           >
@@ -132,7 +132,7 @@ const GetInvolved = () => {
             community.
           </p>
           <a
-            href="#speaker-mentor-form"
+            href="mailto:careeralliance@stjudeparish.com?subject=Volunteer%20with%20SJCA&body=I%20would%20like%20to%20offer%20my%20gifts%20as%20a%20speaker%20or%20mentor.%20Please%20contact%20me%20with%20more%20information."
             className="inline-block bg-secondary text-white px-6 py-2 rounded-full font-medium hover:bg-deepTeal transition-all"
             aria-label="Submit speaker or mentor proposal"
           >
@@ -177,8 +177,9 @@ const GetInvolved = () => {
             <strong>Why Give?</strong> Reflect God’s generosity, empower lives,
             and be part of our ministry’s mission.
           </p>
+
           <a
-            href="#donation-form"
+            href="mailto:careeralliance@stjudeparish.com?subject=Donation%20for%20SJCA&body=I%20would%20like%20to%20make%20a%20donation%20to%20support%20SJCA.%20Please%20let%20me%20know%20how%20to%20proceed."
             className="inline-block bg-secondary text-white px-6 py-2 rounded-full font-medium hover:bg-deepTeal transition-all"
             aria-label="Donate now"
           >
@@ -193,7 +194,7 @@ const GetInvolved = () => {
           </h2>
           <p>
             <a
-              href="mailto:info@stjudecareeralliance.org?subject=Get%20Involved%20with%20SJCA"
+              href="mailto:careeralliance@stjudeparish.com?subject=Get%20Involved%20with%20SJCA"
               className="text-blue-600 underline"
             >
               Email us to find out more.

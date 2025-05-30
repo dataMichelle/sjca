@@ -26,12 +26,12 @@ const CornerHexagons = () => (
       >
         <polygon points={hexPoints} fill="var(--color-secondary)" />
       </svg>
-      {/* Extra Hexagon 1 */}
+      {/* Lime Hexagon */}
       <svg
         width="90"
         height="90"
         viewBox="0 0 100 100"
-        className="absolute top-[160px] left-[10px]"
+        className="absolute top-[160px] left-[40px]"
       >
         <polygon points={hexPoints} fill="var(--color-teriary)" />
       </svg>

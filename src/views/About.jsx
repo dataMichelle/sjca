@@ -120,7 +120,7 @@ const About = () => {
                 <motion.button
                   key={index}
                   onClick={() => openModal(index)}
-                  className={`relative aspect-square rounded-xl shadow-sm hover:shadow-md transition-all duration-300 bg-white overflow-hidden ${styles.animateGlow} min-w-[13rem] `}
+                  className={`relative aspect-[3/5] rounded-xl shadow-sm hover:shadow-md transition-all duration-300 bg-white overflow-hidden ${styles.animateGlow} min-w-[8rem] min-h-[19rem]`}
                   aria-label={`View details for ${member.name}`}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -138,15 +138,19 @@ const About = () => {
                     )}`}
                     loading="lazy"
                   />
-                  <div className="absolute bottom-0 left-0 right-0 h-8 flex justify-between items-center bg-black/50 px-3 py-2">
+                  <div className="absolute bottom-0 left-0 right-0 flex flex-col items-start bg-black/50 px-3 py-2">
                     <p className="text-white text-sm font-medium">
                       {member.name}
                     </p>
+                    <p className="text-xs text-[#a4e473] font-semibold">
+                      {member.title}
+                    </p>
+
                     <div
                       className="bg-[--color-secondary]/70 rounded-full p-1.5"
                       style={{ "--color-secondary": "#00a181" }}
                     >
-                      <FaInfoCircle className="text-white w-5 h-5" />
+                      {/* <FaInfoCircle className="text-white w-5 h-5" /> */}
                     </div>
                   </div>
                 </motion.button>

@@ -75,8 +75,8 @@ const Footer = () => {
             <ul>
               <li className="flex items-center gap-2  hover:text-emerald-100 ">
                 <FaEnvelope />
-                <a href="mailto:info@stjudecareeralliance.org">
-                  info@stjudecareeralliance.org
+                <a href="mailto:careeralliance@stjudeparish.com">
+                  careeralliance@stjudeparish.com
                 </a>
               </li>
               <li className="flex items-center gap-2 ">

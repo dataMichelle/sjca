@@ -28,11 +28,11 @@ const Contact = () => {
             <p className="text-lg">
               <span className="text-[#004651]">Email: </span>
               <a
-                href="mailto:info@stjudecareeralliance.org"
+                href="mailto:careeralliance@stjudeparish.com"
                 className="text-[#00a181] hover:text-[#006f7f] hover:underline focus:ring-2 focus:ring-[#00a181] focus:outline-none cursor-pointer"
                 aria-label="Email St. Jude Career Alliance"
               >
-                info@stjudecareeralliance.org
+                careeralliance@stjudeparish.com
               </a>
             </p>
             <p className="text-lg">
@@ -43,6 +43,18 @@ const Contact = () => {
                 aria-label="Call St. Jude Career Alliance"
               >
                 972-727-1401
+              </a>
+            </p>
+            <p className="text-lg">
+              <span className="text-[#004651]">Website: </span>
+              <a
+                href="https://stjudecareeralliance.com"
+                className="text-[#00a181] hover:text-[#006f7f] hover:underline focus:ring-2 focus:ring-[#00a181] focus:outline-none cursor-pointer"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit St. Jude Career Alliance website"
+              >
+                stjudecareeralliance.com
               </a>
             </p>
 

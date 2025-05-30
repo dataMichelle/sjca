@@ -100,11 +100,11 @@ const Footer = () => {
               <li className="flex items-center gap-2 hover:text-[#a4e473] transition-all duration-300">
                 <FaEnvelope />
                 <a
-                  href="mailto:info@stjudecareeralliance.org"
+                  href="mailto:careeralliance@stjudeparish.com"
                   className="hover:underline focus:ring-2 focus:ring-[#00a181] focus:underline focus:outline-none"
                   aria-label="Email St. Jude Career Alliance"
                 >
-                  info@stjudecareeralliance.org
+                  careeralliance@stjudeparish.com
                 </a>
               </li>
               <li className="flex items-center gap-2 hover:text-[#a4e473] transition-all duration-300">

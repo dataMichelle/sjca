@@ -60,8 +60,8 @@ const Footer = () => {
             <ul className="space-y-2">
               <li className="flex items-center gap-2 hover:text-emerald-100 transition-colors duration-200">
                 <FaEnvelope />
-                <a href="mailto:info@stjudecareeralliance.org">
-                  info@stjudecareeralliance.org
+                <a href="mailto:careeralliance@stjudeparish.com">
+                  careeralliance@stjudeparish.com
                 </a>
               </li>
               <li className="flex items-center gap-2 hover:text-emerald-100 transition-colors duration-200">
