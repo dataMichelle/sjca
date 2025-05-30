@@ -15,7 +15,7 @@ const Navbar = () => {
         {/* Combined Logo (Image + Title) */}
         <div className="flex items-center gap-2">
           <img
-            src="/logo2.png"
+            src="/logo-cross9.png"
             alt="St. Jude Career Alliance Logo"
             className="w-20 h-auto
             "
