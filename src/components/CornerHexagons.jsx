@@ -27,64 +27,45 @@ const Hexagon = ({ width, height, className, color, rotate }) => (
 const CornerHexagons = () => (
   <>
     {/* Top Left Cluster */}
-    <div className="fixed top-[70px] left-[-80px] z-0 pointer-events-none">
+    <div className="fixed top-[60px] left-[-100px] z-0 pointer-events-none">
       {/* Large Hexagon - lime */}
       <Hexagon width={180} height={180} color="lime" />
 
-      {/* Small Hexagon - gold */}
+      {/* Large Hexagon - gold */}
       <Hexagon
-        width={150}
-        height={150}
+        width={250}
+        height={250}
         color="gold"
-        className="absolute top-[10px] left-[110px]"
+        className="absolute top-[-40px] left-[110px]"
         rotate
       />
-      {/* Beige small (mixed in) */}
-      <Hexagon
-        width={60}
-        height={60}
-        color="beige"
-        className="absolute top-[100px] left-[160px]"
-      />
+
       {/* Medium Hexagon - teal */}
       <Hexagon
-        width={140}
-        height={140}
+        width={250}
+        height={250}
         color="teal"
-        className="absolute top-[110px] left-[90px]"
+        className="absolute top-[100px] left-[30px]"
         rotate
       />
-      {/* Beige medium (mixed in, a bit lower) */}
-      <Hexagon
-        width={90}
-        height={90}
-        color="beige"
-        className="absolute top-[250px] left-[130px]"
-      />
-      {/* Small Hexagon - lime */}
-      <Hexagon
-        width={90}
-        height={90}
-        color="kellyGreen"
-        className="absolute top-[230px] left-[40px]"
-      />
+
       {/* Beige large (further down) */}
       <Hexagon
         width={120}
         height={120}
         color="beige"
-        className="absolute top-[150px] left-[20px]"
+        className="absolute top-[260px] left-[80px]"
       />
     </div>
 
     {/* Top Right Cluster */}
-    <div className="fixed top-[30px] right-[-80px] z-0 pointer-events-none">
-      {/* Large Hexagon - gold */}
+    <div className="fixed top-[10px] right-[-110px] z-0 pointer-events-none">
+      {/* Large Hexagon - lime */}
       <Hexagon
-        width={130}
-        height={130}
+        width={350}
+        height={350}
         color="lime"
-        className="absolute top-[130px] right-[50px]"
+        className="absolute top-[30px] right-[20px]"
         rotate
       />
       {/* Medium Hexagon - deepTeal */}
@@ -92,7 +73,7 @@ const CornerHexagons = () => (
         width={200}
         height={200}
         color="deepTeal"
-        className="absolute top-[30px] right-[100px] "
+        className="absolute top-[0px] right-[180px]"
         rotate
       />
       {/* Small Hexagon - Kelly Green */}
@@ -100,33 +81,35 @@ const CornerHexagons = () => (
         width={150}
         height={150}
         color="kellyGreen"
-        className="absolute top-[40px] right-[30px]"
+        className="absolute top-[280px] right-[50px]"
       />
       {/* Medium Hexagon near navbar- beige */}
       <Hexagon
         width={120}
         height={120}
         color="beige"
-        className="absolute top-[40px] right-[240px]"
+        className="absolute top-[60px] right-[300px]"
       />
       {/* Beige large (further down) */}
       <Hexagon
         width={120}
         height={120}
         color="beige"
-        className="absolute top-[150px] right-[120px]"
+        className="absolute top-[250px] right-[170px]"
       />
+      {/* Gold hexagon higher up */}
       <Hexagon
         width={90}
         height={90}
         color="gold"
-        className="absolute top-[220px] right-[40px]"
+        className="absolute top-[40px] right-[20px]"
       />
+      {/* Beige small (scattered lower) */}
       <Hexagon
         width={80}
         height={80}
         color="beige"
-        className="absolute top-[300px] right-[80px]"
+        className="absolute top-[370px] right-[120px]"
       />
     </div>
   </>

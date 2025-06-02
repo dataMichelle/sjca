@@ -42,6 +42,7 @@ const Navbar = () => {
                 // { to: "/resources", label: "Resources" },
                 { to: "/spiritual-support", label: "Spiritual Support" },
                 { to: "/volunteer", label: "Get Involved" },
+                { to: "/news", label: "News" },
                 { to: "/contact", label: "Contact" },
               ].map(({ to, label }) => (
                 <li key={to}>
@@ -73,7 +74,8 @@ const Navbar = () => {
               { to: "/workshop", label: "Workshop" },
               // { to: "/resources", label: "Resources" },
               { to: "/spiritual-support", label: "Spiritual Support" },
-              { to: "/testimonials", label: "Testimonials" },
+              { to: "/volunteer", label: "Get Involved" },
+              { to: "/news", label: "News" },
               { to: "/contact", label: "Contact" },
             ].map(({ to, label }) => (
               <li key={to}>
