@@ -17,7 +17,7 @@ const Navbar = () => {
           <img
             src="/logo-path.png"
             alt="St. Jude Career Alliance Logo"
-            className="w-30 h-auto
+            className="w-40 h-auto
             "
           />
           {/* <h1 className="text-xl font-bold font-poiret text-emerald-50 tracking-wide">

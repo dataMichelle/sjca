@@ -87,6 +87,14 @@ const SpiritualSupport = () => {
                   aiding the poor.
                 </p>
                 <a
+                  href="https://www.catholicculture.org/culture/liturgicalyear/prayers/view.cfm?id=1318"
+                  className="text-secondary underline hover:text-darkBlue mb-2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Novena
+                </a>
+                <a
                   href="https://catholicnovenaapp.com/novenas/st-cajetan-novena/"
                   className="inline-block px-4 py-2 bg-secondary text-white rounded-full hover:bg-deepTeal transition"
                   target="_blank"
@@ -108,6 +116,14 @@ const SpiritualSupport = () => {
                 <p className="text-primary mt-2 mb-4">
                   Patron saint of workers, exemplifying dedication and faith.
                 </p>
+                <a
+                  href="https://hozana.org/en/prayer/novena/st-joseph/employment?utm_source=chatgpt.com"
+                  className="text-secondary underline ml-2 hover:text-darkBlue mb-2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Novena
+                </a>
                 <a
                   href="https://www.carmelitefriars.org/novena-to-st-joseph-the-worker"
                   className="inline-block px-4 py-2 bg-secondary text-white rounded-full hover:bg-deepTeal transition"
@@ -131,6 +147,45 @@ const SpiritualSupport = () => {
                   Patron saint of desperate situations and hopeless cases,
                   invoked for urgent needs.
                 </p>
+                <a
+                  href="https://www.ewtn.com/catholicism/devotions/novena-to-st-jude--desperate-situations-and-hopeless-cases-305"
+                  className="text-secondary underline hover:text-darkBlue mb-2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Novena
+                </a>
+                <a
+                  href="https://www.ewtn.com/catholicism/devotions/novena-to-st-jude--desperate-situations-and-hopeless-cases-305"
+                  className="inline-block px-4 py-2 bg-secondary text-white rounded-full hover:bg-deepTeal transition"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Read More
+                </a>
+              </div>
+
+              <div className="bg-white rounded-lg shadow-sm p-6 flex flex-col items-center text-center">
+                <img
+                  src="./assets/saints/anthony.png"
+                  alt="St. Jude Thaddeus"
+                  className="w-24 h-24 object-cover rounded-full mb-4"
+                />
+                <h3 className="text-xl font-semibold text-darkBlue">
+                  St. Anthony of Padua
+                </h3>
+                <p className="text-primary mt-2 mb-4">
+                  Patron saint of lost items and causes, known for answering
+                  prayers for help in finding jobs and opportunities.
+                </p>
+                <a
+                  href="https://hallow.com/blog/saint-anthony-novena/"
+                  className="text-secondary underline hover:text-darkBlue mb-2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Novena
+                </a>
                 <a
                   href="https://www.ewtn.com/catholicism/devotions/novena-to-st-jude--desperate-situations-and-hopeless-cases-305"
                   className="inline-block px-4 py-2 bg-secondary text-white rounded-full hover:bg-deepTeal transition"
