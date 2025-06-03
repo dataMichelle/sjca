@@ -43,7 +43,7 @@ const News = () => {
                   Published May 30, 2025
                 </p>
                 <a
-                  href="/news/news_TX_Catholic_250531.pdf"
+                  href="assets/news/news_TX_Catholic_250531.pdf"
                   className="inline-flex items-center px-4 py-2 bg-secondary text-white rounded-full font-semibold hover:bg-deepTeal transition my-2"
                   target="_blank"
                   rel="noopener noreferrer"
