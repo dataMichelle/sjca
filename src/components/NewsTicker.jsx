@@ -56,9 +56,8 @@ const NewsTicker = () => {
       <p
         key={newsItems[currentNewsIndex].id}
         className="text-base sm:text-lg text-[#004651] font-inter font-semibold transition-opacity duration-500 max-sm:text-sm"
-      >
-        {newsItems[currentNewsIndex].text}
-      </p>
+        dangerouslySetInnerHTML={{ __html: newsItems[currentNewsIndex].text }}
+      />
 
       {/* Progress Dots */}
       <div className="flex justify-center mt-2 space-x-1.5">

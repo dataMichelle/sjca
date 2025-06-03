@@ -6,8 +6,8 @@ const Footer = () => {
   return (
     <footer className="bg-[#006F7F] py-10 text-teal-50">
       <div className="container mx-auto px-20">
-        {/* Footer with Quick Links/Copyright (left) and Contact Us (right) */}
-        <div className="flex flex-col md:flex-row md:justify-between gap-8">
+        {/* Footer with Quick Links/Copyright (left), Logo (center), and Contact Us (right) */}
+        <div className="flex flex-col md:flex-row md:justify-between gap-8 items-center">
           {/* Quick Links and Copyright (left column) */}
           <div className="md:w-1/3">
             {/* Quick Links (on one line with | separator) */}
@@ -52,7 +52,17 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Contact Us (left-aligned, far right) */}
+          {/* Logo (center) */}
+          <div className="my-6 md:my-0 md:w-1/3 flex justify-center">
+            <img
+              src="/assets/logos/SJ_logo.png"
+              alt="St. Jude Church Logo"
+              className="h-32 w-auto mx-auto" // h-32 = 8rem = 128px
+              style={{ maxHeight: "128px" }}
+            />
+          </div>
+
+          {/* Contact Us (right) */}
           <div className="md:w-1/3">
             <h3 className="text-lg font-semibold mb-4 text-teal-100 uppercase tracking-wide">
               Contact Us

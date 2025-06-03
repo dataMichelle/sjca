@@ -10,7 +10,7 @@ import {
   FaInfoCircle,
 } from "react-icons/fa";
 import styles from "../styles/about.module.css";
-import CornerHexagons from "../components/CornerHexagons";
+import HexagonGrid from "../components/HexagonGrid";
 
 const About = () => {
   const [selectedMember, setSelectedMember] = useState(null);
@@ -58,12 +58,12 @@ const About = () => {
 
   return (
     <>
-      <CornerHexagons />
+      <HexagonGrid />
       <main className={`py-12 px-4 sm:px-8 lg:px-12 ${styles.animateFadeIn}`}>
         <div className="max-w-7xl mx-auto">
           <h1
             className="text-4xl md:text-5xl font-bold font-poppins mb-12 text-center"
-            style={{ color: "#23446d" }} // --color-darkBlue
+            style={{ color: "#23446d" }}
           >
             About St. Jude Career Alliance
           </h1>
@@ -72,7 +72,7 @@ const About = () => {
             <div className="lg:w-1/2">
               <h2
                 className="text-2xl font-semibold mb-8"
-                style={{ color: "#23446d" }} // --color-darkBlue
+                style={{ color: "#23446d" }}
               >
                 Our Core Values & Spiritual Foundation
               </h2>
@@ -93,8 +93,7 @@ const About = () => {
                       <value.icon
                         className="w-6 h-6"
                         style={{ color: "#00a181" }}
-                      />{" "}
-                      {/* --color-secondary */}
+                      />
                       <h3
                         className="text-xl font-semibold"
                         style={{ color: "#23446d" }}
@@ -114,7 +113,7 @@ const About = () => {
             <div className="lg:w-1/2">
               <h2
                 className="text-2xl font-semibold mb-8 text-center"
-                style={{ color: "#23446d" }} // --color-darkBlue
+                style={{ color: "#23446d" }}
               >
                 Meet Our Team
               </h2>
@@ -129,8 +128,8 @@ const About = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.2, duration: 0.5 }}
                     style={{
-                      animationDelay: `${index * 0.2}s`, // Stagger glow
-                      animationDuration: `${3 + (index % 2) * 0.5}s`, // Randomize glow duration (3s or 3.5s)
+                      animationDelay: `${index * 0.2}s`,
+                      animationDuration: `${3 + (index % 2) * 0.5}s`,
                     }}
                   >
                     <img
@@ -148,17 +147,38 @@ const About = () => {
                       <p className="text-xs text-[#a4e473] font-semibold">
                         {member.title}
                       </p>
-
                       <div
                         className="bg-[--color-secondary]/70 rounded-full p-1.5"
                         style={{ "--color-secondary": "#00a181" }}
-                      >
-                        {/* <FaInfoCircle className="text-white w-5 h-5" /> */}
-                      </div>
+                      ></div>
                     </div>
                   </motion.button>
                 ))}
               </div>
+              {/* St. Jude Staff Support Section as a card/fieldset */}
+              <fieldset className="mt-12 border-2 border-[#a4e473] rounded-xl p-6 bg-[#faf7f5] shadow-sm">
+                <legend className="px-3 text-lg font-semibold text-[#23446d]">
+                  St. Jude Support Staff
+                </legend>
+                <ul className="space-y-4 text-center mt-2">
+                  <li>
+                    <span className="font-bold text-darkBlue">
+                      Deacon Ken Steponaitis
+                    </span>
+                    <span className="block text-primary text-sm">
+                      Staff Liaison
+                    </span>
+                  </li>
+                  <li>
+                    <span className="font-bold text-darkBlue">
+                      Brandon Powell
+                    </span>
+                    <span className="block text-primary text-sm">
+                      Multimedia Coordinator
+                    </span>
+                  </li>
+                </ul>
+              </fieldset>
             </div>
           </div>
         </div>
@@ -180,7 +200,7 @@ const About = () => {
                 exit={{ opacity: 0, y: 50 }}
                 transition={{ duration: 0.3 }}
                 onClick={(e) => e.stopPropagation()}
-                style={{ border: "1px solid #a4e473" }} // --color-tertiary
+                style={{ border: "1px solid #a4e473" }}
               >
                 <button
                   onClick={closeModal}

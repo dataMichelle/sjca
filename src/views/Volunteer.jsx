@@ -5,8 +5,7 @@ import {
   FaDonate,
   FaCheck,
 } from "react-icons/fa";
-import CornerHexagons from "../components/CornerHexagons";
-
+import HexagonGrid from "../components/HexagonGrid"; // Importing HexagonGrid component
 const GetInvolved = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -27,7 +26,7 @@ const GetInvolved = () => {
 
   return (
     <>
-      <CornerHexagons />
+      <HexagonGrid />
       <main className=" py-12 px-4 sm:px-6 lg:px-8 animateFadeIn relative">
         {/* Subtle hexagon background */}
 
@@ -108,9 +107,8 @@ const GetInvolved = () => {
               <li className="flex items-start gap-2 text-lg text-primary">
                 <FaCheck className="text-secondary mt-1" />
                 <div>
-                  <strong>Workshop Speaker:</strong> Lead a session on job
-                  search strategies, leadership, or career growth, offering
-                  wisdom and encouragement.
+                  <strong>Workshop Presenter:</strong> Lead a session on job
+                  search strategies, offering wisdom and encouragement.
                 </div>
               </li>
               <li className="flex items-start gap-2 text-lg text-primary">
@@ -121,14 +119,14 @@ const GetInvolved = () => {
                   confidence.
                 </div>
               </li>
-              <li className="flex items-start gap-2 text-lg text-primary">
+              {/* <li className="flex items-start gap-2 text-lg text-primary">
                 <FaCheck className="text-secondary mt-1" />
                 <div>
-                  <strong>Panelist:</strong> Share your story of faith and
-                  career success at our events, uplifting others with your
+                  <strong>Workshop Presenter:</strong> Share your story of faith
+                  and career success at our events, uplifting others with your
                   journey.
                 </div>
-              </li>
+              </li> */}
             </ul>
             <p className="text-lg text-primary mb-4">
               <strong>Why Share?</strong> Bless others with your knowledge,
@@ -136,7 +134,7 @@ const GetInvolved = () => {
               community.
             </p>
             <a
-              href="mailto:careeralliance@stjudeparish.com?subject=Volunteer%20with%20SJCA&body=I%20would%20like%20to%20offer%20my%20gifts%20as%20a%20speaker%20or%20mentor.%20Please%20contact%20me%20with%20more%20information."
+              href="mailto:careeralliance@stjudeparish.com?subject=Volunteer%20with%20SJCA%20as%20a%20Presenter&body=I%20would%20like%20to%20offer%20my%20gifts%20as%20a%20speaker%20or%20mentor.%20Please%20contact%20me%20with%20more%20information."
               className="inline-block bg-secondary text-white px-6 py-2 rounded-full font-medium hover:bg-deepTeal transition-all"
               aria-label="Submit speaker or mentor proposal"
             >
@@ -145,7 +143,7 @@ const GetInvolved = () => {
           </section>
 
           {/* Donate */}
-          <section className="mb-16 bg-white rounded-lg shadow-sm p-8">
+          {/* <section className="mb-16 bg-white rounded-lg shadow-sm p-8">
             <h2 className="text-2xl font-semibold text-darkBlue mb-4 flex items-center gap-2">
               <FaDonate className="text-secondary" /> Give Generously
             </h2>
@@ -173,7 +171,7 @@ const GetInvolved = () => {
                 <FaCheck className="text-secondary mt-1" />
                 <div>
                   <strong>Resource Creation:</strong> Support the development of
-                  guides, videos, and tools for career growth.
+                  guides, videos, and tools.
                 </div>
               </li>
             </ul>
@@ -189,7 +187,7 @@ const GetInvolved = () => {
             >
               Make a Gift
             </a>
-          </section>
+          </section> */}
 
           {/* Contact Form */}
           <section id="contact-form" className="mb-16">

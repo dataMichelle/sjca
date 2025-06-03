@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa"; // Icons for accordion toggle
 import { prayers } from "../data/prayers"; // Importing prayers data
-import CornerHexagons from "../components/CornerHexagons";
-
+import HexagonGrid from "../components/HexagonGrid"; // Importing HexagonGrid component
 const SpiritualSupport = () => {
   const [openPrayer, setOpenPrayer] = useState(null); // To track which prayer is open
 
@@ -12,7 +11,7 @@ const SpiritualSupport = () => {
 
   return (
     <>
-      <CornerHexagons />
+      <HexagonGrid />
 
       <main className="py-12 px-4 sm:px-6 lg:px-8 animateFadeIn relative overflow-visible pb-32">
         <div className="max-w-5xl mx-auto relative z-10">

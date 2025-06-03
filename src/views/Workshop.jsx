@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { upcomingWorkshops } from "../data/workshops";
 import CtaButton from "../components/CtaButton";
-import CornerHexagons from "../components/CornerHexagons";
+import workshopTopics from "../data/workshopTopics";
+import HexagonGrid from "../components/HexagonGrid";
 
 const Workshop = () => {
+  const [openTopic, setOpenTopic] = useState(null);
+
   // Get the next upcoming workshop based on the current date
   const today = new Date();
   const upcoming = upcomingWorkshops.filter((workshop) => {
@@ -13,7 +16,7 @@ const Workshop = () => {
 
   return (
     <>
-      <CornerHexagons />
+      <HexagonGrid />
       <main className="py-12 px-4 sm:px-6 lg:px-8 animateFadeIn relative">
         {/* Subtle hexagon background */}
         <div
@@ -29,27 +32,51 @@ const Workshop = () => {
             Quarterly Workshop
           </h1>
 
-          {/* What to Expect Section */}
+          {/* What to Expect Section with Popup Buttons */}
           <div className="mb-12 mx-auto">
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {[
-                "Career Assessment",
-                "Resume and Interview Tips",
-                "Networking Strategies",
-                "Spiritual Guidance",
-              ].map((item, index) => (
-                <div
+              {workshopTopics.map((topic, index) => (
+                <button
                   key={index}
-                  className="text-md text-gray-900 text-center p-4 border border-[#e8d8d0] rounded-lg hover:bg-[#faf7f5] transition"
+                  className="w-full text-md text-gray-900 text-center p-4 border border-[#e8d8d0] rounded-lg font-semibold focus:outline-none focus:ring-2 focus:ring-secondary
+                    shadow-md bg-gradient-to-b from-white to-[#f3edea] hover:from-[#f3edea] hover:to-white
+                    active:translate-y-0.5 active:shadow-sm transition
+                  "
+                  onClick={() => setOpenTopic(index)}
+                  type="button"
+                  style={{
+                    boxShadow:
+                      "0 2px 6px 0 rgba(0,0,0,0.07), 0 1.5px 0 0 #e8d8d0",
+                  }}
                 >
-                  {item}
-                </div>
+                  {topic.title}
+                </button>
               ))}
             </div>
+            {/* Modal Popup */}
+            {openTopic !== null && (
+              <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40">
+                <div className="bg-white rounded-lg shadow-lg max-w-md w-full p-8 relative animate-fadeIn">
+                  <button
+                    className="absolute top-3 right-3 text-2xl text-secondary hover:text-deepTeal focus:outline-none"
+                    onClick={() => setOpenTopic(null)}
+                    aria-label="Close"
+                  >
+                    &times;
+                  </button>
+                  <h3 className="text-xl font-bold text-darkBlue mb-4">
+                    {workshopTopics[openTopic].title}
+                  </h3>
+                  <p className="text-primary text-lg">
+                    {workshopTopics[openTopic].content}
+                  </p>
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Upcoming Workshop Section */}
-          {/* Upcoming Workshop + Flyers Section */}
+          {/* ...existing code for upcoming workshop and rest of the page... */}
           <div className="mb-12 mx-auto pb-12 flex flex-col md:flex-row justify-between max-w-5xl">
             {/* Upcoming Workshop Card */}
             <div className="w-full md:max-w-[31.25rem]">
@@ -124,6 +151,7 @@ const Workshop = () => {
             </fieldset>
           </div>
 
+          {/* ...rest of your component remains unchanged... */}
           {/* Join Us Section */}
           <div className="mb-12 max-w-5xl mx-auto">
             <div className="flex flex-col lg:flex-row gap-8">

@@ -1,10 +1,9 @@
 import React from "react";
-import CornerHexagons from "../components/CornerHexagons";
-
+import HexagonGrid from "../components/HexagonGrid"; // Importing HexagonGrid component
 const News = () => {
   return (
     <>
-      <CornerHexagons />
+      <HexagonGrid />
       <main className="py-12 px-4 sm:px-6 lg:px-8 animateFadeIn relative">
         <div className="relative z-10 max-w-7xl mx-auto">
           {/* Hero Section */}
@@ -28,27 +27,31 @@ const News = () => {
               {/* Featured Article */}
               <div className="bg-white rounded-lg shadow-sm p-6">
                 <h3 className="text-xl font-semibold text-darkBlue mb-2">
-                  St. Jude Career Alliance empowers job seekers with hope,
-                  guidance
+                  Texas Catholic Features St. Jude Career Alliance
                 </h3>
+                <h4 className="text-lg text-secondary mb-2">
+                  Programs empower job seekers with hope, guidance
+                </h4>
                 <p className="text-lg text-primary mb-4">
-                  St. Jude Career Alliance continues to empower job seekers with
-                  faith-based support, practical tools, and a new curriculum
-                  focused on strengths, networking, and interviewing. Read more
-                  about our mission and impact in this recent article from{" "}
-                  <span className="italic">The Texas Catholic</span>.
+                  Looking for a new job can be difficult and confusing, not to
+                  mention demoralizing; but the helpful guidance of informed
+                  mentors can make all the difference in the process, St. Jude
+                  parishioner Richard Panko said.
+                </p>
+
+                <p className="text-sm text-gray-600 m-2">
+                  Published May 30, 2025
                 </p>
                 <a
                   href="/news/news_TX_Catholic_250531.pdf"
-                  className="text-secondary underline hover:text-darkBlue"
+                  className="inline-flex items-center px-4 py-2 bg-secondary text-white rounded-full font-semibold hover:bg-deepTeal transition my-2"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  More
+                  Read Full Article
+                  <span className="ml-2">&#8594;</span>{" "}
+                  {/* Unicode right arrow, or use an icon */}
                 </a>
-                <p className="text-sm text-gray-600 mt-2">
-                  Published May 30, 2025
-                </p>
               </div>
               {/* More news items can be added here */}
             </div>
