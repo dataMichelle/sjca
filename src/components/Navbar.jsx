@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
@@ -14,12 +14,13 @@ const Navbar = () => {
       <div className="w-[85%] mx-auto flex justify-between items-center">
         {/* Combined Logo (Image + Title) */}
         <div className="flex items-center gap-2">
-          <img
-            src="/assets/logos/logo-path.png"
-            alt="St. Jude Career Alliance Logo"
-            className="w-40 h-auto
-            "
-          />
+          <Link to="/">
+            <img
+              src="/assets/logos/logo-path.png"
+              alt="St. Jude Career Alliance Logo"
+              className="w-40 h-auto"
+            />
+          </Link>
           {/* <h1 className="text-xl font-bold font-poiret text-emerald-50 tracking-wide">
             St. Jude Career Alliance
           </h1> */}
