@@ -49,8 +49,7 @@ const News = () => {
                   rel="noopener noreferrer"
                 >
                   Read Full Article
-                  <span className="ml-2">&#8594;</span>{" "}
-                  {/* Unicode right arrow, or use an icon */}
+                  <span className="ml-2">&#8594;</span>
                 </a>
               </div>
               {/* More news items can be added here */}
