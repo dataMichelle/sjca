@@ -117,12 +117,22 @@ const About = () => {
               >
                 Meet Our Team
               </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div
+                className="
+    grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6
+    max-sm:flex max-sm:flex-col max-sm:items-center max-sm:-my-10
+  "
+              >
                 {team.map((member, index) => (
                   <motion.button
                     key={index}
                     onClick={() => openModal(index)}
-                    className={`relative aspect-[3/5] rounded-xl shadow-sm hover:shadow-md transition-all duration-300 bg-white overflow-hidden ${styles.animateGlow} min-w-[8rem] min-h-[19rem]`}
+                    className={`
+        relative aspect-[3/5] rounded-xl shadow-sm hover:shadow-md transition-all duration-300 bg-white overflow-hidden
+        ${styles.animateGlow}
+        min-w-[8rem] min-h-[19rem]
+        max-sm:scale-[0.8] max-sm:min-w-0 max-sm:min-h-0 max-sm:mb-[-2rem]
+      `}
                     aria-label={`View details for ${member.name}`}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
