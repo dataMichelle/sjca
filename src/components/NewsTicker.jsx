@@ -57,10 +57,19 @@ const NewsTicker = () => {
       {/* Close Button */}
       <button
         onClick={closeNews}
-        className="absolute top-1/2 right-3 -translate-y-1/2 bg-teal-600 text-teal-50 font-bold hover:bg-[#006f7f] hover:text-white rounded-full transition-all p-1 duration-300 hover:scale-110 focus:ring-2 focus:ring-[#00a181] focus:outline-none cursor-pointer"
+        className={`
+      absolute
+      top-1/2 right-3 -translate-y-1/2
+      bg-teal-600 text-teal-50 font-bold rounded-full transition-all p-1 duration-300
+      hover:bg-[#006f7f] hover:text-white hover:scale-110 focus:ring-2 focus:ring-[#00a181] focus:outline-none cursor-pointer
+      max-[1200px]:top-auto max-[1200px]:bottom-2 max-[1200px]:right-2 max-[1200px]:-translate-y-0 max-[1200px]:p-0.5
+    `}
         aria-label="Close news ticker"
+        style={{
+          fontSize: "inherit",
+        }}
       >
-        <XMarkIcon className="w-5 h-5" />
+        <XMarkIcon className="w-5 h-5 max-[1200px]:w-4 max-[1200px]:h-4" />
       </button>
 
       {/* News Text */}
