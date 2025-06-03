@@ -155,7 +155,7 @@ const SpiritualSupport = () => {
                   Novena
                 </a>
                 <a
-                  href="https://www.ewtn.com/catholicism/devotions/novena-to-st-jude--desperate-situations-and-hopeless-cases-305"
+                  href="https://shrineofstjude.org/the-shrine/st-jude/"
                   className="inline-block px-4 py-2 bg-secondary text-white rounded-full hover:bg-deepTeal transition"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -186,7 +186,7 @@ const SpiritualSupport = () => {
                   Novena
                 </a>
                 <a
-                  href="https://www.ewtn.com/catholicism/devotions/novena-to-st-jude--desperate-situations-and-hopeless-cases-305"
+                  href="https://www.stanthony.org/who-st-anthony/"
                   className="inline-block px-4 py-2 bg-secondary text-white rounded-full hover:bg-deepTeal transition"
                   target="_blank"
                   rel="noopener noreferrer"
