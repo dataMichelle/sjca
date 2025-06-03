@@ -2,10 +2,12 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { XMarkIcon } from "@heroicons/react/24/solid";
 import { newsItems } from "../data/news";
+import { useNavigate } from "react-router-dom";
 
 const NewsTicker = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [currentNewsIndex, setCurrentNewsIndex] = useState(0);
+  const navigate = useNavigate();
 
   // Reset isVisible on mount to ensure remount on refresh
   useEffect(() => {
@@ -32,6 +34,15 @@ const NewsTicker = () => {
     setCurrentNewsIndex(index);
   };
 
+  // Intercept anchor clicks in news text and use React Router navigation
+  const handleNewsClick = (e) => {
+    if (e.target.tagName === "A") {
+      e.preventDefault();
+      const href = e.target.getAttribute("href");
+      if (href) navigate(href);
+    }
+  };
+
   if (!isVisible) return null;
 
   return (
@@ -55,8 +66,10 @@ const NewsTicker = () => {
       {/* News Text */}
       <p
         key={newsItems[currentNewsIndex].id}
-        className="text-base sm:text-lg text-[#004651] font-inter font-semibold transition-opacity duration-500 max-sm:text-sm"
+        className="text-base sm:text-lg text-[#004651] font-inter  transition-opacity duration-500 max-sm:text-sm"
         dangerouslySetInnerHTML={{ __html: newsItems[currentNewsIndex].text }}
+        onClick={handleNewsClick}
+        style={{ cursor: "pointer" }}
       />
 
       {/* Progress Dots */}
