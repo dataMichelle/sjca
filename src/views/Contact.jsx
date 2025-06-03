@@ -28,7 +28,13 @@ const Contact = () => {
               <p className="text-lg text-[#004651] mb-2">
                 1515 N. Greenville Ave., Allen, TX 75002
               </p>
-              <p className="text-lg">
+              <p className="text-lg text-primary my-6">
+                Email: {}
+                <span className="underline text-blue-600">
+                  careeralliance@stjudeparish.com
+                </span>
+              </p>
+              {/* <p className="text-lg">
                 <span className="text-[#004651]">Email: </span>
                 <a
                   href="mailto:careeralliance@stjudeparish.com"
@@ -37,7 +43,7 @@ const Contact = () => {
                 >
                   careeralliance@stjudeparish.com
                 </a>
-              </p>
+              </p> */}
               <p className="text-lg">
                 <span className="text-[#004651]">Phone: </span>
                 <a

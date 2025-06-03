@@ -84,13 +84,20 @@ const GetInvolved = () => {
               <strong>Why Volunteer?</strong> Serve others in faith, build
               meaningful connections, and grow in your own journey of giving.
             </p>
-            <a
+            <p className="text-lg text-primary my-6">
+              Email us at{" "}
+              <span className="underline text-blue-600">
+                careeralliance@stjudeparish.com
+              </span>{" "}
+              to let us know if you can volunteer!
+            </p>
+            {/* <a
               href="mailto:careeralliance@stjudeparish.com?subject=Volunteer%20with%20SJCA&body=I%20am%20interested%20in%20volunteering%20with%20SJCA.%20Please%20let%20me%20know%20how%20I%20can%20help."
               className="inline-block bg-secondary text-white px-6 py-2 rounded-full font-medium hover:bg-deepTeal transition-all"
               aria-label="Apply to volunteer"
             >
               Join as a Volunteer
-            </a>
+            </a> */}
           </section>
 
           {/* Become a Speaker or Mentor */}
@@ -133,13 +140,20 @@ const GetInvolved = () => {
               deepen your faith through service, and connect with our supportive
               community.
             </p>
-            <a
+            <p className="text-lg text-primary my-6">
+              Email us at{" "}
+              <span className="underline text-blue-600">
+                careeralliance@stjudeparish.com
+              </span>{" "}
+              to let us know if you can volunteer!
+            </p>
+            {/* <a
               href="mailto:careeralliance@stjudeparish.com?subject=Volunteer%20with%20SJCA%20as%20a%20Presenter&body=I%20would%20like%20to%20offer%20my%20gifts%20as%20a%20speaker%20or%20mentor.%20Please%20contact%20me%20with%20more%20information."
               className="inline-block bg-secondary text-white px-6 py-2 rounded-full font-medium hover:bg-deepTeal transition-all"
               aria-label="Submit speaker or mentor proposal"
             >
               Offer Your Gifts
-            </a>
+            </a> */}
           </section>
 
           {/* Donate */}
@@ -194,14 +208,21 @@ const GetInvolved = () => {
             <h2 className="text-2xl font-semibold text-darkBlue mb-4">
               Ready to Join Our Ministry?
             </h2>
-            <p>
+            <p className="text-lg text-primary mb-6">
+              Email us at{" "}
+              <span className="underline text-blue-600">
+                careeralliance@stjudeparish.com
+              </span>{" "}
+              for more information about our ministry, or if you have questions.
+            </p>
+            {/* <p>
               <a
                 href="mailto:careeralliance@stjudeparish.com?subject=Get%20Involved%20with%20SJCA"
                 className="text-blue-600 underline"
               >
                 Email us to find out more.
               </a>
-            </p>
+            </p> */}
           </section>
         </div>
       </main>

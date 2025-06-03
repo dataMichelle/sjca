@@ -70,9 +70,10 @@ const Footer = () => {
             <ul className="space-y-2">
               <li className="flex items-center gap-2 hover:text-emerald-100 transition-colors duration-200">
                 <FaEnvelope />
-                <a href="mailto:careeralliance@stjudeparish.com">
+                <p>careeralliance@stjudeparish.com</p>
+                {/* <a href="mailto:careeralliance@stjudeparish.com">
                   careeralliance@stjudeparish.com
-                </a>
+                </a> */}
               </li>
               <li className="flex items-center gap-2 hover:text-emerald-100 transition-colors duration-200">
                 <FaPhoneAlt />
