@@ -3,10 +3,10 @@ export const team = [
     name: "Martha Jane Brounoff",
     title: "Media Relations",
     role: "Media Relations Representative",
-    content: "Coming soon",
-    education: "Coming soon",
-    certifications: "",
-    passions: "Coming soon",
+    // content: "Coming soon",
+    // education: "Coming soon",
+    // certifications: "",
+    // passions: "Coming soon",
     image: "/assets/team/avatar.png",
   },
   {
@@ -21,7 +21,6 @@ export const team = [
     passions:
       "Loves to coach and develop high-performing employees. Superpower – making the complex simple.",
     image: "/assets/team/devina_valent.png",
-    imageAlign: "17.5%",
   },
   {
     name: "Kevin Almeida",
@@ -34,7 +33,6 @@ export const team = [
     certifications: "",
     passions: "Sports Fan!",
     image: "/assets/team/kevin_almeida.png",
-    imageAlign: "top",
   },
   {
     name: "Greg Mechler",
@@ -48,12 +46,12 @@ export const team = [
       "Certified Consultant, Professional Dynametric Programs (PDP®)",
     passions: "Married, lives in Allen, has four granddaughters.",
     image: "/assets/team/greg_mechler2.png",
-    imageAlign: "17.5%",
   },
 
   {
     name: "Peter Papa",
     title: "Presenter",
+    role: "Presenter",
     image: "/assets/team/peter.jpg",
   },
   // {
@@ -72,13 +70,12 @@ export const team = [
   {
     name: "Aneeliz Alamo",
     title: "Presenter",
-    role: "Coming soon",
-    content: "Coming soon",
-    education: "Coming soon",
-    certifications: "",
-    passions: "Coming soon",
+    role: "Presenter",
+    // content: "Coming soon",
+    // education: "Coming soon",
+    // certifications: "",
+    // passions: "Coming soon",
     image: "/assets/team/aneeliz.jpg",
-    imageAlign: "top",
   },
   {
     name: "Richard Panko",
@@ -91,7 +88,6 @@ export const team = [
     certifications: "",
     passions: "",
     image: "/assets/team/richard_panko.png",
-    imageAlign: "top",
   },
   {
     name: "Michelle Salazar",
@@ -102,6 +98,5 @@ export const team = [
     certifications: "",
     passions: "",
     image: "/assets/team/avatar.png",
-    imageAlign: "top",
   },
 ];

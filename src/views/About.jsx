@@ -147,6 +147,11 @@ const About = () => {
                       <p className="text-xs text-[#a4e473] font-semibold">
                         {member.title}
                       </p>
+                      <FaInfoCircle
+                        className="ml-auto text-[#a4e473] text-base"
+                        aria-label="More info"
+                        title="More info"
+                      />
                       <div
                         className="bg-[--color-secondary]/70 rounded-full p-1.5"
                         style={{ "--color-secondary": "#00a181" }}
@@ -218,9 +223,7 @@ const About = () => {
                   <img
                     src={team[selectedMember].image}
                     alt={`${team[selectedMember].name}, ${team[selectedMember].role}`}
-                    className={`w-24 h-24 object-cover rounded-full ${getObjectPosition(
-                      team[selectedMember].imageAlign
-                    )}`}
+                    className="w-24 h-24 rounded-full object-cover object-[top]"
                     loading="lazy"
                   />
                   <div>
