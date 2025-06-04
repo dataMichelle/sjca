@@ -7,7 +7,7 @@ export const team = [
     // education: "Coming soon",
     // certifications: "",
     // passions: "Coming soon",
-    image: "/assets/team/avatar.png",
+    image: "/assets/team/martha.png",
   },
   {
     name: "Devina Valent",
@@ -50,8 +50,8 @@ export const team = [
 
   {
     name: "Peter Papa",
-    title: "Presenter",
-    role: "Presenter",
+    title: "Committee Member",
+    role: "Committee Member",
     image: "/assets/team/peter.jpg",
   },
   // {
@@ -90,6 +90,12 @@ export const team = [
     image: "/assets/team/richard_panko.png",
   },
   {
+    name: "Elaine Flesch",
+    title: "Committee Member",
+    role: "Committee Member",
+    image: "/assets/team/elaine.jpg",
+  },
+  {
     name: "Michelle Salazar",
     title: "Web Developer",
     role: "Web Developer",
@@ -97,6 +103,6 @@ export const team = [
     education: "",
     certifications: "",
     passions: "",
-    image: "/assets/team/avatar.png",
+    image: "/assets/team/michelle.png",
   },
 ];
