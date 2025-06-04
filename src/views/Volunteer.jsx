@@ -211,10 +211,10 @@ const GetInvolved = () => {
               >
                 Join as a Volunteer
               </a>
-              <span className="inline-flex items-center ml-0 sm:ml-4 select-all text-gray-700">
+              {/* <span className="inline-flex items-center ml-0 sm:ml-4 select-all text-gray-700">
                 <span className="no-underline">{EMAIL}</span>
                 <CopyEmailButton />
-              </span>
+              </span> */}
             </div>
           </section>
 
@@ -259,10 +259,10 @@ const GetInvolved = () => {
               >
                 Share Your Gifts
               </a>
-              <span className="inline-flex items-center ml-0 sm:ml-4 select-all text-gray-700">
+              {/* <span className="inline-flex items-center ml-0 sm:ml-4 select-all text-gray-700">
                 <span className="no-underline">{EMAIL}</span>
                 <CopyEmailButton />
-              </span>
+              </span> */}
             </div>
           </section>
 
