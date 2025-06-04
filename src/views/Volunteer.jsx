@@ -1,11 +1,68 @@
 import { useState } from "react";
 import {
+  FaCheck,
   FaHandsHelping,
   FaMicrophone,
-  FaDonate,
-  FaCheck,
+  FaRegCopy,
 } from "react-icons/fa";
 import HexagonGrid from "../components/HexagonGrid"; // Importing HexagonGrid component
+
+// --- Toast Component ---
+function Toast({ show, onClose, email }) {
+  return (
+    show && (
+      <div className="fixed bottom-6 left-1/2 z-[9999] -translate-x-1/2 bg-white border border-gray-300 shadow-lg rounded-lg px-4 py-3 flex items-center gap-2 animate-fade-in">
+        <span className="text-gray-800 text-sm">
+          If you do not have an email application set up, please copy this
+          email:
+        </span>
+        <span className="font-medium text-gray-900">{email}</span>
+        <CopyEmailButton email={email} />
+        <button
+          onClick={onClose}
+          className="ml-2 text-gray-400 hover:text-gray-700 text-lg px-1"
+          aria-label="Close"
+        >
+          ×
+        </button>
+      </div>
+    )
+  );
+}
+
+const EMAIL = "careeralliance@stjudeparish.com";
+
+function CopyEmailButton({ email }) {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(email);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1500);
+  };
+
+  return (
+    <button
+      type="button"
+      onClick={handleCopy}
+      className="ml-2 text-sm text-blue-700 underline hover:text-blue-900 transition inline-flex items-center"
+      aria-label="Copy email address"
+    >
+      {copied ? (
+        <>
+          <FaCheck className="text-green-600 mr-1" />
+          Copied!
+        </>
+      ) : (
+        <>
+          <FaRegCopy className="mr-1" />
+          Copy
+        </>
+      )}
+    </button>
+  );
+}
+
 const GetInvolved = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -13,6 +70,7 @@ const GetInvolved = () => {
     involvement: "",
     message: "",
   });
+  const [showToast, setShowToast] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -24,10 +82,70 @@ const GetInvolved = () => {
     console.log("Form submitted:", formData);
   };
 
+  const handleVolunteerClick = (e) => {
+    e.preventDefault();
+    const mailto = `mailto:${EMAIL}?subject=SJCA%20-%20Volunteer%20My%20Time&body=I%20am%20interested%20in%20volunteering%20my%20time%20with%20SJCA.%0A%0APlease%20let%20me%20know%20how%20I%20can%20help.%0A%0ASincerely,`;
+    const now = Date.now();
+    window.location.href = mailto;
+    setTimeout(() => {
+      const stillHere = Date.now() - now > 1000;
+      if (stillHere) setShowToast(true);
+    }, 1500);
+  };
+
+  const handleSpeakerClick = (e) => {
+    e.preventDefault();
+    const mailto = `mailto:${EMAIL}?subject=SJCA%20-%20Volunteer%20as%20a%20Speaker&body=I%20am%20interested%20in%20volunteering%20as%20a%20speaker%20or%20mentor%20with%20SJCA.%0A%0APlease%20let%20me%20know%20how%20I%20can%20share%20my%20gifts.%0A%0ASincerely,`;
+    const now = Date.now();
+    window.location.href = mailto;
+    setTimeout(() => {
+      const stillHere = Date.now() - now > 1000;
+      if (stillHere) setShowToast(true);
+    }, 1500);
+  };
+
+  const handleMailClick = (e) => {
+    e.preventDefault();
+    const mailto = `mailto:${EMAIL}?subject=Volunteering%20with%20St.%20Jude%20Career%20Alliance&body=I%20am%20considering%20volunteering%20but%20would%20like%20more%20information%20first.%0A%0ASincerely,`;
+    const now = Date.now();
+    window.location.href = mailto;
+    setTimeout(() => {
+      const stillHere = Date.now() - now > 1000;
+      if (stillHere) setShowToast(true);
+    }, 1500);
+  };
+
+  function Toast({ show, onClose, email }) {
+    return (
+      show && (
+        <div className="fixed inset-0 z-[9999] flex items-center justify-center">
+          <div className="bg-[#FFF9C4] border border-yellow-400 shadow-xl rounded-lg px-6 py-5 max-w-md w-full text-center animate-fade-in relative">
+            <p className="text-gray-800 text-sm mb-1 font-semibold">
+              If you do not have an email application set up,
+            </p>
+            <p className="text-gray-800 text-sm mb-3">
+              please copy this email:
+            </p>
+            <p className="font-medium text-gray-900 mb-3">{email}</p>
+            <CopyEmailButton email={email} />
+            <button
+              onClick={onClose}
+              className="absolute top-2 right-2 text-gray-400 hover:text-gray-700 text-4xl px-2"
+              aria-label="Close"
+              style={{ lineHeight: 1, width: "2.5rem", height: "2.5rem" }}
+            >
+              ×
+            </button>
+          </div>
+        </div>
+      )
+    );
+  }
+
   return (
     <>
       <HexagonGrid />
-      <main className=" py-12 px-4 sm:px-6 lg:px-8 animateFadeIn relative">
+      <main className="py-12 px-4 sm:px-6 lg:px-8 animateFadeIn relative">
         {/* Subtle hexagon background */}
 
         <div className="relative z-10 max-w-7xl mx-auto">
@@ -84,20 +202,20 @@ const GetInvolved = () => {
               <strong>Why Volunteer?</strong> Serve others in faith, build
               meaningful connections, and grow in your own journey of giving.
             </p>
-            <p className="text-lg text-primary my-6">
-              Email us at{" "}
-              <span className="underline text-blue-600">
-                careeralliance@stjudeparish.com
-              </span>{" "}
-              to let us know if you can volunteer!
-            </p>
-            {/* <a
-              href="mailto:careeralliance@stjudeparish.com?subject=Volunteer%20with%20SJCA&body=I%20am%20interested%20in%20volunteering%20with%20SJCA.%20Please%20let%20me%20know%20how%20I%20can%20help."
-              className="inline-block bg-secondary text-white px-6 py-2 rounded-full font-medium hover:bg-deepTeal transition-all"
-              aria-label="Apply to volunteer"
-            >
-              Join as a Volunteer
-            </a> */}
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-start gap-2 mt-4">
+              <a
+                href={`mailto:${EMAIL}?subject=SJCA%20-%20Volunteer%20My%20Time&body=I%20am%20interested%20in%20volunteering%20my%20time%20with%20SJCA.%20Please%20let%20me%20know%20how%20I%20can%20help.`}
+                onClick={handleVolunteerClick}
+                className="inline-block bg-secondary text-white px-6 py-2 rounded-full font-medium hover:bg-deepTeal transition-all"
+                aria-label="Apply to volunteer"
+              >
+                Join as a Volunteer
+              </a>
+              <span className="inline-flex items-center ml-0 sm:ml-4 select-all text-gray-700">
+                <span className="no-underline">{EMAIL}</span>
+                <CopyEmailButton />
+              </span>
+            </div>
           </section>
 
           {/* Become a Speaker or Mentor */}
@@ -126,34 +244,26 @@ const GetInvolved = () => {
                   confidence.
                 </div>
               </li>
-              {/* <li className="flex items-start gap-2 text-lg text-primary">
-                <FaCheck className="text-secondary mt-1" />
-                <div>
-                  <strong>Workshop Presenter:</strong> Share your story of faith
-                  and career success at our events, uplifting others with your
-                  journey.
-                </div>
-              </li> */}
             </ul>
             <p className="text-lg text-primary mb-4">
               <strong>Why Share?</strong> Bless others with your knowledge,
               deepen your faith through service, and connect with our supportive
               community.
             </p>
-            <p className="text-lg text-primary my-6">
-              Email us at{" "}
-              <span className="underline text-blue-600">
-                careeralliance@stjudeparish.com
-              </span>{" "}
-              to let us know if you can volunteer!
-            </p>
-            {/* <a
-              href="mailto:careeralliance@stjudeparish.com?subject=Volunteer%20with%20SJCA%20as%20a%20Presenter&body=I%20would%20like%20to%20offer%20my%20gifts%20as%20a%20speaker%20or%20mentor.%20Please%20contact%20me%20with%20more%20information."
-              className="inline-block bg-secondary text-white px-6 py-2 rounded-full font-medium hover:bg-deepTeal transition-all"
-              aria-label="Submit speaker or mentor proposal"
-            >
-              Offer Your Gifts
-            </a> */}
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-start gap-2 mt-4">
+              <a
+                href={`mailto:${EMAIL}?subject=SJCA%20-%20Volunteer%20as%20a%20Speaker&body=I%20am%20interested%20in%20volunteering%20as%20a%20speaker%20or%20mentor%20with%20SJCA.%20Please%20let%20me%20know%20how%20I%20can%20share%20my%20gifts.`}
+                onClick={handleSpeakerClick}
+                className="inline-block bg-secondary text-white px-6 py-2 rounded-full font-medium hover:bg-deepTeal transition-all"
+                aria-label="Volunteer as a speaker"
+              >
+                Share Your Gifts
+              </a>
+              <span className="inline-flex items-center ml-0 sm:ml-4 select-all text-gray-700">
+                <span className="no-underline">{EMAIL}</span>
+                <CopyEmailButton />
+              </span>
+            </div>
           </section>
 
           {/* Donate */}
@@ -204,17 +314,25 @@ const GetInvolved = () => {
           </section> */}
 
           {/* Contact Form */}
-          <section id="contact-form" className="mb-16">
+          <section id="contact-form" className="mb-16 text-center">
             <h2 className="text-2xl font-semibold text-darkBlue mb-4">
-              Ready to Join Our Ministry?
+              Still considering how to help?
             </h2>
-            <p className="text-lg text-primary mb-6">
+            <a
+              href={`mailto:${EMAIL}?subject=Volunteering%20with%20St.%20Jude%20Career%20Alliance&body=I%20am%20considering%20volunteering%20but%20would%20like%20more%20information%20first.`}
+              onClick={handleMailClick}
+              className="inline-block bg-secondary text-white px-6 py-2 rounded-full font-medium hover:bg-deepTeal transition-all"
+              aria-label="Apply to volunteer"
+            >
+              Contact Us
+            </a>
+
+            {/* <p className="text-lg text-primary mb-6">
               Email us at{" "}
-              <span className="underline text-blue-600">
-                careeralliance@stjudeparish.com
-              </span>{" "}
-              for more information about our ministry, or if you have questions.
-            </p>
+              <span className="underline text-blue-600">{EMAIL}</span>
+              <CopyEmailButton /> for more information about our ministry, or if
+              you have questions.
+            </p> */}
             {/* <p>
               <a
                 href="mailto:careeralliance@stjudeparish.com?subject=Get%20Involved%20with%20SJCA"
@@ -226,6 +344,11 @@ const GetInvolved = () => {
           </section>
         </div>
       </main>
+      <Toast
+        show={showToast}
+        onClose={() => setShowToast(false)}
+        email={EMAIL}
+      />
     </>
   );
 };
