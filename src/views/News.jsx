@@ -29,7 +29,7 @@ const News = () => {
                 <h3 className="text-xl font-semibold text-darkBlue mb-2">
                   Texas Catholic Features St. Jude Career Alliance
                 </h3>
-                <h4 className="text-lg text-secondary mb-2">
+                <h4 className="text-lg italic text-primary mb-4">
                   Programs empower job seekers with hope, guidance
                 </h4>
                 <p className="text-lg text-primary mb-4">
@@ -40,7 +40,7 @@ const News = () => {
                 </p>
 
                 <p className="text-sm text-gray-600 m-2">
-                  Published May 30, 2025
+                  Published in the Texas Catholic • May 30, 2025
                 </p>
                 <a
                   href="/news_TX_Catholic_250531.pdf"
@@ -53,6 +53,34 @@ const News = () => {
                 </a>
               </div>
               {/* More news items can be added here */}
+              {/* New LinkedIn Workshop Post */}
+              <div className="bg-white rounded-lg shadow-sm p-6">
+                <h3 className="text-xl font-semibold text-darkBlue mb-2">
+                  2025 Career Alliance Workshop Announced!
+                </h3>
+                <h4 className="text-lg italic text-primary mb-4">
+                  Unlock proven strategies, AI tools, and networking to land
+                  your dream job
+                </h4>
+                <p className="text-lg text-primary mb-4">
+                  Are you ready to take the next step in your career journey?
+                  The 2025 Career Alliance Workshop is your ultimate guide to
+                  job search success!
+                  <br />
+                </p>
+                <p className="text-sm text-gray-600 m-2">
+                  Published on LinkedIn • April 2025
+                </p>
+                <a
+                  href="https://www.linkedin.com/feed/update/urn:li:activity:7309336808511717377/?rcm=ACoAAABvxHsBqARTAjhiBq1hy2fm1MnPyVyO3cc"
+                  className="inline-flex items-center px-4 py-2 bg-secondary text-white rounded-full font-semibold hover:bg-deepTeal transition my-2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View LinkedIn Post
+                  <span className="ml-2">&#8594;</span>
+                </a>
+              </div>
             </div>
           </section>
         </div>
