@@ -93,7 +93,7 @@ export const team = [
     name: "Elaine Flesch",
     title: "Committee Member",
     role: "Committee Member",
-    image: "/assets/team/elaine.jpg",
+    image: "/assets/team/avatar.png",
   },
   {
     name: "Michelle Salazar",
