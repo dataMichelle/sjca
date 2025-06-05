@@ -71,10 +71,14 @@ export const team = [
     name: "Aneeliz Alamo",
     title: "Presenter",
     role: "Presenter",
-    // content: "Coming soon",
-    // education: "Coming soon",
-    // certifications: "",
-    // passions: "Coming soon",
+    content:
+      "Aneeliz is a seasoned Human Resources professional with over 20 years of experience across various industries. An active member of the Diocese of Dallas and parishioner at St. Jude Catholic Church, she and her family have served as youth music ministers since 2005 at All Saints, Our Lady of Angels, and currently at the University Catholic Center at UTD.",
+    education:
+      "Bachelor of Arts in Psychology, University of Texas at Dallas (UTD)",
+    certifications:
+      "Professional in Human Resources (PHR), Predictive Index Professional Certification",
+    passions:
+      "Aneeliz is passionate about serving others and joined the St. Jude Career Alliance to share her HR expertise with job seekers and career changers.",
     image: "/assets/team/aneeliz.jpg",
   },
   {
