@@ -54,7 +54,7 @@ const News = () => {
               </div>
               {/* More news items can be added here */}
               {/* New LinkedIn Workshop Post */}
-              <div className="bg-white rounded-lg shadow-sm p-6">
+              {/* <div className="bg-white rounded-lg shadow-sm p-6">
                 <h3 className="text-xl font-semibold text-darkBlue mb-2">
                   2025 Career Alliance Workshop Announced!
                 </h3>
@@ -80,7 +80,7 @@ const News = () => {
                   View LinkedIn Post
                   <span className="ml-2">&#8594;</span>
                 </a>
-              </div>
+              </div> */}
             </div>
           </section>
         </div>
