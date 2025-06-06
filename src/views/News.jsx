@@ -1,8 +1,16 @@
 import React from "react";
 import HexagonGrid from "../components/HexagonGrid"; // Importing HexagonGrid component
+import SEO from "../components/SEO"; // Importing SEO component
+
 const News = () => {
   return (
     <>
+      <SEO
+        title="News and Updates - St. Jude Career Alliance"
+        description="Stay updated with the latest news, events, and success stories from St. Jude Career Alliance. Empowering job seekers with hope, guidance, and practical tools."
+        image="https://stjudecareeralliance.com/assets/og-image.png"
+        url="https://stjudecareeralliance.com/news"
+      />
       <HexagonGrid />
       <main className="py-12 px-4 sm:px-6 lg:px-8 animateFadeIn relative">
         <div className="relative z-10 max-w-7xl mx-auto">
@@ -47,9 +55,12 @@ const News = () => {
                   className="inline-flex items-center px-4 py-2 bg-secondary text-white rounded-full font-semibold hover:bg-deepTeal transition my-2"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Read the full article titled Texas Catholic Features St. Jude Career Alliance (PDF)"
                 >
                   Read Full Article
-                  <span className="ml-2">&#8594;</span>
+                  <span className="ml-2" aria-hidden="true">
+                    &#8594;
+                  </span>
                 </a>
               </div>
               {/* More news items can be added here */}

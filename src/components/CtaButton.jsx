@@ -13,7 +13,7 @@ const CtaButton = ({
     primary:
       "bg-accent hover:from-teal-600 hover:to-lime-500 hover:-translate-y-[0.125rem] hover:shadow-lg",
     secondary:
-      "bg-teal-600 hover:bg-teal-500 hover:scale-105 hover:shadow-lg mb-5",
+      "bg-teal-600 hover:bg-teal-700 hover:scale-105 hover:shadow-lg mb-5",
   };
 
   return (

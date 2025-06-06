@@ -16,7 +16,7 @@ const COLORS = {
   darkBlue: "var(--color-darkBlue)",
   deepTeal: "var(--color-deepTeal)",
   navy: "var(--color-primary)",
-  lime: "var(--color-teriary)",
+  lime: "var(--color-tertiary)",
   teal: "var(--color-secondary)",
   gold: "var(--color-accent)",
   beige: "var(--color-beige)",

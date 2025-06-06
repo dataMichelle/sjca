@@ -1,5 +1,5 @@
 // src/components/SEO.jsx
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 const defaultTitle = "St. Jude Career Alliance";
 const defaultDescription =

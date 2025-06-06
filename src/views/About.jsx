@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { team } from "../data/team";
 import {
@@ -15,6 +15,13 @@ import SEO from "../components/SEO";
 
 const About = () => {
   const [selectedMember, setSelectedMember] = useState(null);
+  const modalRef = useRef(null);
+
+  useEffect(() => {
+    if (selectedMember !== null && modalRef.current) {
+      modalRef.current.focus();
+    }
+  }, [selectedMember]);
 
   const coreValues = [
     {
@@ -48,13 +55,12 @@ const About = () => {
     setSelectedMember(null);
   };
 
-  // Helper function to determine object-position class
   const getObjectPosition = (imageAlign) => {
     if (imageAlign === "top") return "object-top";
     if (imageAlign === "center") return "object-center";
     if (imageAlign && imageAlign.endsWith("%"))
       return `object-[50%_${imageAlign}]`;
-    return "object-center"; // Fallback
+    return "object-center";
   };
 
   return (
@@ -65,7 +71,10 @@ const About = () => {
         url="https://stjudecareeralliance.com/about"
       />
       <HexagonGrid />
-      <main className={`py-12 px-4 sm:px-8 lg:px-12 ${styles.animateFadeIn}`}>
+      <main
+        id="main"
+        className={`py-12 px-4 sm:px-8 lg:px-12 ${styles.animateFadeIn}`}
+      >
         <div className="max-w-7xl mx-auto">
           <h1
             className="text-4xl md:text-5xl font-bold font-poppins mb-12 text-center"
@@ -74,9 +83,9 @@ const About = () => {
             About St. Jude Career Alliance
           </h1>
           <div className="flex flex-col gap-16 lg:flex-row lg:gap-12">
-            {/* Core Values Section */}
-            <div className="lg:w-1/2">
+            <section className="lg:w-1/2" aria-labelledby="core-values-heading">
               <h2
+                id="core-values-heading"
                 className="text-2xl font-semibold mb-8"
                 style={{ color: "#23446d" }}
               >
@@ -99,6 +108,7 @@ const About = () => {
                       <value.icon
                         className="w-6 h-6"
                         style={{ color: "#00a181" }}
+                        aria-hidden="true"
                       />
                       <h3
                         className="text-xl font-semibold"
@@ -113,70 +123,55 @@ const About = () => {
                   </motion.div>
                 ))}
               </div>
-            </div>
+            </section>
 
-            {/* Meet Our Team Section */}
-            <div className="lg:w-1/2">
+            <section className="lg:w-1/2" aria-labelledby="team-heading">
               <h2
+                id="team-heading"
                 className="text-2xl font-semibold mb-8 text-center"
                 style={{ color: "#23446d" }}
               >
                 Meet Our Team
               </h2>
-              <div
-                className="
-    grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6
-    max-sm:flex max-sm:flex-col max-sm:items-center max-sm:-my-10
-  "
-              >
+              <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {team.map((member, index) => (
-                  <motion.button
-                    key={index}
-                    onClick={() => openModal(index)}
-                    className={`
-        relative aspect-[3/5] rounded-xl shadow-sm hover:shadow-md transition-all duration-300 bg-white overflow-hidden
-        ${styles.animateGlow}
-        min-w-[8rem] min-h-[19rem]
-        max-sm:scale-[0.8] max-sm:min-w-0 max-sm:min-h-0 max-sm:mb-[-2rem]
-      `}
-                    aria-label={`View details for ${member.name}`}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.2, duration: 0.5 }}
-                    style={{
-                      animationDelay: `${index * 0.2}s`,
-                      animationDuration: `${3 + (index % 2) * 0.5}s`,
-                    }}
-                  >
-                    <img
-                      src={member.image}
-                      alt={`${member.name}, ${member.role}`}
-                      className={`object-cover w-full h-full rounded-xl ${getObjectPosition(
-                        member.imageAlign
-                      )}`}
-                      loading="lazy"
-                    />
-                    <div className="absolute bottom-0 left-0 right-0 flex flex-col items-start bg-black/50 px-3 py-2">
-                      <p className="text-white text-sm font-medium">
-                        {member.name}
-                      </p>
-                      <p className="text-xs text-[#a4e473] font-semibold">
-                        {member.title}
-                      </p>
-                      <FaInfoCircle
-                        className="ml-auto text-[#a4e473] text-base"
-                        aria-label="More info"
-                        title="More info"
+                  <li key={index}>
+                    <motion.button
+                      onClick={() => openModal(index)}
+                      className={`
+                        relative aspect-[3/5] rounded-xl shadow-sm hover:shadow-md transition-all duration-300 bg-white overflow-hidden
+                        ${styles.animateGlow}
+                        min-w-[8rem] min-h-[19rem]
+                      `}
+                      aria-label={`View details for ${member.name}`}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: index * 0.2, duration: 0.5 }}
+                    >
+                      <img
+                        src={member.image}
+                        alt={`${member.name}, ${member.role}`}
+                        className={`object-cover w-full h-full rounded-xl ${getObjectPosition(
+                          member.imageAlign
+                        )}`}
+                        loading="lazy"
                       />
-                      <div
-                        className="bg-[--color-secondary]/70 rounded-full p-1.5"
-                        style={{ "--color-secondary": "#00a181" }}
-                      ></div>
-                    </div>
-                  </motion.button>
+                      <div className="absolute bottom-0 left-0 right-0 flex flex-col items-start bg-black/50 px-3 py-2">
+                        <p className="text-white text-sm font-medium">
+                          {member.name}
+                        </p>
+                        <p className="text-xs text-[#a4e473] font-semibold">
+                          {member.title}
+                        </p>
+                        <FaInfoCircle
+                          className="ml-auto text-[#a4e473] text-base"
+                          aria-hidden="true"
+                        />
+                      </div>
+                    </motion.button>
+                  </li>
                 ))}
-              </div>
-              {/* St. Jude Staff Support Section as a card/fieldset */}
+              </ul>
               <fieldset className="mt-12 border-2 border-[#a4e473] rounded-xl p-6 bg-[#faf7f5] shadow-sm">
                 <legend className="px-3 text-lg font-semibold text-[#23446d]">
                   St. Jude Support Staff
@@ -200,7 +195,7 @@ const About = () => {
                   </li>
                 </ul>
               </fieldset>
-            </div>
+            </section>
           </div>
         </div>
 
@@ -215,6 +210,12 @@ const About = () => {
               onClick={closeModal}
             >
               <motion.div
+                ref={modalRef}
+                tabIndex="-1"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="modal-title"
+                aria-describedby="modal-description"
                 className="bg-white rounded-xl shadow-lg p-8 max-w-lg w-full max-h-[90vh] overflow-auto relative"
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -225,13 +226,8 @@ const About = () => {
               >
                 <button
                   onClick={closeModal}
-                  className="absolute top-4 right-4 text-2xl text-[--color-primary] hover:text-[--color-deepTeal] focus:ring-2 focus:ring-[--color-secondary] rounded-full p-1"
+                  className="absolute top-4 right-4 text-2xl text-[#004651] hover:text-[#006f7f] focus:ring-2 focus:ring-[#00a181] rounded-full p-1"
                   aria-label="Close team member details"
-                  style={{
-                    "--color-primary": "#004651",
-                    "--color-deepTeal": "#006f7f",
-                    "--color-secondary": "#00a181",
-                  }}
                 >
                   <FaTimes />
                 </button>
@@ -244,6 +240,7 @@ const About = () => {
                   />
                   <div>
                     <h3
+                      id="modal-title"
                       className="text-2xl font-semibold"
                       style={{ color: "#23446d" }}
                     >
@@ -257,7 +254,11 @@ const About = () => {
                     </p>
                   </div>
                 </div>
-                <p className="text-lg" style={{ color: "#004651" }}>
+                <p
+                  id="modal-description"
+                  className="text-lg"
+                  style={{ color: "#004651" }}
+                >
                   {team[selectedMember].content}
                 </p>
                 {team[selectedMember].education && (

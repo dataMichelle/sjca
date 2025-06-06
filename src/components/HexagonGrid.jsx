@@ -5,7 +5,7 @@ const COLORS = {
   darkBlue: "var(--color-darkBlue)",
   deepTeal: "var(--color-deepTeal)",
   navy: "var(--color-primary)",
-  lime: "var(--color-teriary)",
+  lime: "var(--color-tertiary)",
   teal: "var(--color-secondary)",
   gold: "var(--color-accent)",
   beige: "var(--color-beige)",
@@ -26,6 +26,9 @@ const HexagonOutline = ({ width, height, color, strokeWidth = 3, style }) => (
     viewBox="0 0 100 100"
     className="absolute"
     style={style}
+    aria-hidden="true"
+    focusable="false"
+    role="presentation"
   >
     <polygon
       points={hexPoints}
@@ -48,6 +51,8 @@ const Hexagon = ({
     width={width}
     height={height}
     viewBox="0 0 100 100"
+    aria-hidden="true"
+    focusable="false"
     className={className}
     style={{
       ...style,
@@ -102,7 +107,8 @@ function renderHexGrid({
   return hexes;
 }
 
-function renderFixedFills(side, hexSize) {
+const renderFixedFills = (side, hexSize) => {
+  const isSmall = typeof window !== "undefined" && window.innerWidth < 1500;
   const config = {
     left: [
       { top: 80, left: 10, size: hexSize * 1.7, color: "teal", rotate: true },
@@ -115,7 +121,18 @@ function renderFixedFills(side, hexSize) {
         rotate: false,
       },
       { top: 200, left: 100, size: hexSize, color: "beige", rotate: false },
-      { top: 350, left: 20, size: hexSize, color: "kellyGreen", rotate: false },
+      // Only show kellyGreen if not small
+      ...(!isSmall
+        ? [
+            {
+              top: 350,
+              left: 20,
+              size: hexSize,
+              color: "kellyGreen",
+              rotate: false,
+            },
+          ]
+        : []),
     ],
     right: [
       {
@@ -125,13 +142,18 @@ function renderFixedFills(side, hexSize) {
         color: "beige",
         rotate: false,
       },
-      {
-        top: 270,
-        right: 100,
-        size: hexSize * 1.15,
-        color: "beige",
-        rotate: false,
-      },
+      // Only show this beige hex if not small
+      ...(!isSmall
+        ? [
+            {
+              top: 270,
+              right: 100,
+              size: hexSize * 1.15,
+              color: "beige",
+              rotate: false,
+            },
+          ]
+        : []),
       { top: 70, right: -40, size: hexSize * 1.4, color: "gold", rotate: true },
       { top: 60, right: 60, size: hexSize * 1.3, color: "teal", rotate: true },
       { top: 190, right: 20, size: hexSize, color: "navy", rotate: false },
@@ -164,7 +186,7 @@ function renderFixedFills(side, hexSize) {
       );
     }
   );
-}
+};
 
 const CornerHexagons = () => {
   const [hexSize, setHexSize] = useState(getHexSize());
@@ -189,6 +211,7 @@ const CornerHexagons = () => {
           max-[1500px]:w-[400px] max-[1500px]:h-[600px]
           max-md:hidden
         "
+        aria-hidden="true"
       >
         {renderHexGrid({
           colCounts: [4, 4, 3, 2, 2, 2, 2, 1],
@@ -207,6 +230,7 @@ const CornerHexagons = () => {
           max-[1500px]:w-[400px] max-[1500px]:h-[600px]
           max-md:hidden
         "
+        aria-hidden="true"
       >
         {renderHexGrid({
           colCounts: [4, 3, 3, 2, 3, 1, 2, 1],
