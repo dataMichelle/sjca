@@ -77,7 +77,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-2 hover:text-emerald-100 transition-colors duration-200">
                 <FaPhoneAlt />
-                <a href="tel:+19727271401">972-727-1401</a>
+                <a href="tel:+19727271401">972-727-1177</a>
               </li>
               <li>1515 N. Greenville Ave., Allen, TX 75002</li>
             </ul>

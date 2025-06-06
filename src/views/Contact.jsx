@@ -55,7 +55,7 @@ const Contact = () => {
                   className="text-[#00a181] hover:text-[#006f7f] hover:underline focus:ring-2 focus:ring-[#00a181] focus:outline-none cursor-pointer"
                   aria-label="Call St. Jude Career Alliance"
                 >
-                  972-727-1401
+                  972-727-1177
                 </a>
               </p>
               <p className="text-lg">
