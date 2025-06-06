@@ -11,6 +11,7 @@ import {
 } from "react-icons/fa";
 import styles from "../styles/about.module.css";
 import HexagonGrid from "../components/HexagonGrid";
+import SEO from "../components/SEO";
 
 const About = () => {
   const [selectedMember, setSelectedMember] = useState(null);
@@ -58,6 +59,11 @@ const About = () => {
 
   return (
     <>
+      <SEO
+        title="About Us – St. Jude Career Alliance"
+        description="Learn more about our mission to help job seekers through career-building workshops and faith-based support."
+        url="https://stjudecareeralliance.com/about"
+      />
       <HexagonGrid />
       <main className={`py-12 px-4 sm:px-8 lg:px-12 ${styles.animateFadeIn}`}>
         <div className="max-w-7xl mx-auto">
