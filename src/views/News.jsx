@@ -64,6 +64,36 @@ const News = () => {
                 </a>
               </div>
               {/* More news items can be added here */}
+              <div className="bg-white rounded-lg shadow-sm p-6">
+                <h3 className="text-xl font-semibold text-darkBlue mb-2">
+                  Our upcoming workshop is featured on City of Allen Calendar
+                </h3>
+                {/* <h4 className="text-lg italic text-primary mb-4">
+                  Our upcoming event is now listed on the City of Allen's
+                  official calendar!
+                </h4> */}
+                <p className="text-lg text-primary mb-4">
+                  We are excited to share that St. Jude Career Alliance is
+                  featured on the City of Allen's community calendar. Check out
+                  the event details and join us for our next workshop!
+                </p>
+                <p className="text-sm text-gray-600 m-2">
+                  Published on City of Allen Calendar • July 2025
+                </p>
+                <a
+                  href="https://www.cityofallen.org/calendar.php?view=day&month=07&day=12&year=2025&event=881&calendar=1"
+                  className="inline-flex items-center px-4 py-2 bg-secondary text-white rounded-full font-semibold hover:bg-deepTeal transition my-2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="View St. Jude Career Alliance event on City of Allen calendar"
+                >
+                  View Event on City Calendar
+                  <span className="ml-2" aria-hidden="true">
+                    &#8594;
+                  </span>
+                </a>
+              </div>
+
               {/* New LinkedIn Workshop Post */}
               {/* <div className="bg-white rounded-lg shadow-sm p-6">
                 <h3 className="text-xl font-semibold text-darkBlue mb-2">
