@@ -7,7 +7,7 @@ export const team = [
     // education: "Coming soon",
     // certifications: "",
     // passions: "Coming soon",
-    image: "/assets/team/martha6.png",
+    image: "/assets/team/martha4.png",
   },
   {
     name: "Devina Valent",
