@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { routes } from "../data/routes";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,16 +37,7 @@ const Navbar = () => {
           </button>
           <nav className="max-[1350px]:hidden block">
             <ul className="flex space-x-2">
-              {[
-                { to: "/", label: "Home" },
-                { to: "/about", label: "About Us" },
-                { to: "/workshop", label: "Workshop" },
-                // { to: "/resources", label: "Resources" },
-                { to: "/spiritual-support", label: "Spiritual Support" },
-                { to: "/volunteer", label: "Get Involved" },
-                { to: "/news", label: "News" },
-                { to: "/contact", label: "Contact" },
-              ].map(({ to, label }) => (
+              {routes.map(({ to, label }) => (
                 <li key={to}>
                   <NavLink
                     to={to}
@@ -69,16 +61,7 @@ const Navbar = () => {
       {isOpen && (
         <nav className="max-[1350px]:block hidden bg-beige glass-effect w-full absolute top-full left-0 z-40">
           <ul className="flex flex-col items-center space-y-2 py-4">
-            {[
-              { to: "/", label: "Home" },
-              { to: "/about", label: "About Us" },
-              { to: "/workshop", label: "Workshop" },
-              // { to: "/resources", label: "Resources" },
-              { to: "/spiritual-support", label: "Spiritual Support" },
-              { to: "/volunteer", label: "Get Involved" },
-              { to: "/news", label: "News" },
-              { to: "/contact", label: "Contact" },
-            ].map(({ to, label }) => (
+            {routes.map(({ to, label }) => (
               <li key={to}>
                 <NavLink
                   to={to}

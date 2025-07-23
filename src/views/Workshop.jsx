@@ -4,6 +4,8 @@ import CtaButton from "../components/CtaButton";
 import workshopTopics from "../data/workshopTopics";
 import HexagonGrid from "../components/HexagonGrid";
 import SEO from "../components/SEO";
+import OptimizedImage from "../components/OptimizedImage";
+import { FaArrowRight } from "react-icons/fa";
 
 const Workshop = () => {
   const [openTopic, setOpenTopic] = useState(null);
@@ -94,14 +96,15 @@ const Workshop = () => {
                   <h3 className="text-xl font-semibold text-teal-100">
                     Upcoming Workshop
                   </h3>
-                  <CtaButton
+                  {/* Add the CTA Button in once we have the new barcode */}
+                  {/* <CtaButton
                     to={upcoming?.registrationLink || "#"}
                     variant="primary"
                     textColor="text-teal-950"
                     className="px-6 py-2"
                   >
                     Register Now
-                  </CtaButton>
+                  </CtaButton> */}
                 </div>
                 {upcoming ? (
                   <div>
@@ -127,8 +130,10 @@ const Workshop = () => {
             <fieldset className="w-full md:max-w-sm border-2 border-[#00a181] rounded-lg py-4 px-4 flex flex-col items-center">
               <legend className="px-2 text-[#00a181] font-semibold text-base">
                 Workshop Flyers
-              </legend>
+              </legend> 
+              <div>July workshop for reference</div>
               <div className="flex flex-col md:flex-row gap-4 w-full items-center justify-center px-2">
+               
                 <a
                   href="/assets/workshop/vertical-flyer.png"
                   target="_blank"
@@ -169,18 +174,18 @@ const Workshop = () => {
                   skills.
                 </p>
                 <ul className="text-base text-gray-900 leading-7 space-y-2">
-                  <li>
-                    <span className="text-[#047857] font-bold">\u2794</span>{" "}
+                  <li className="flex items-center">
+                    <FaArrowRight className="text-[#047857] mr-3 flex-shrink-0" />
                     Presented by leading experts in leadership and career
                     advancement
                   </li>
-                  <li>
-                    <span className="text-[#047857] font-bold">\u2794</span>{" "}
+                  <li className="flex items-center">
+                    <FaArrowRight className="text-[#047857] mr-3 flex-shrink-0" />
                     Focused on building confidence, networking, and interviewing
                     skills
                   </li>
-                  <li>
-                    <span className="text-[#047857] font-bold">\u2794</span>{" "}
+                  <li className="flex items-center">
+                    <FaArrowRight className="text-[#047857] mr-3 flex-shrink-0" />
                     Includes guidance on LinkedIn, role-playing, networking
                     scenarios, and resume reviews
                   </li>
@@ -189,10 +194,13 @@ const Workshop = () => {
               <div className="lg:w-1/2">
                 <div className="max-w-md mx-auto">
                   <div className="relative w-full h-64 rounded-lg overflow-hidden shadow-sm">
-                    <img
+                    <OptimizedImage
                       src="/assets/workshop/2017_Workshop.jpg"
-                      alt="Workshop"
+                      alt="Workshop participants learning career development skills"
                       className="w-full h-full object-cover"
+                      width={400}
+                      height={256}
+                      loading="lazy"
                     />
                   </div>
                 </div>

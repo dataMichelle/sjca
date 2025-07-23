@@ -27,9 +27,9 @@ const HeroMobile = () => {
         {/* Workshop Info Div */}
         <div className="w-full bg-beige p-6 rounded-lg shadow-md border-t-4 border-b-4 border-[#a4e473] sm:p-4">
           <FaCalendarPlus className="w-8 h-8 text-teal-700 mx-auto mb-3 animate-pulse" />
-          <h4 className="text-lg font-semibold uppercase text-teal-900 mb-3 sm:text-base">
+          <h2 className="text-lg font-semibold uppercase text-teal-900 mb-3 sm:text-base">
             Upcoming Workshop
-          </h4>
+          </h2>
           <p className="text-base text-teal-800 mb-4 sm:text-sm">
             {staticWorkshop.excerpt}
           </p>

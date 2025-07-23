@@ -1,22 +1,13 @@
 // data/workshops.js
 export const upcomingWorkshops = [
-  {
-    title: "3Q2025 Job Search Workshop",
-    date: "Saturday, July 12, 2025",
-    time: "8:45 AM – 3:00 PM",
-    description:
-      "Join us for our 3rd Quarter workshop focused on job search strategies.",
-    fee: "$25 fee includes lunch and a program book.",
-    registrationLink:
-      "https://www.osvhub.com/stjudeparish/forms/career-alliance-quarterly-workshop-7-12-2025",
-  },
+
   {
     title: "4Q2025 Job Search Workshop",
     date: "Saturday, October 18, 2025",
     time: "8:45 AM – 3:00 PM",
     description: "Our 4th Quarter workshop focused on job search strategies.",
     fee: "$25 fee includes lunch and a program book.",
-    registrationLink: "#",
+    // registrationLink: "",
   },
   {
     title: "1Q2026 Job Search Workshop",

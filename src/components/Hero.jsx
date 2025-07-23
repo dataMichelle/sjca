@@ -1,5 +1,4 @@
 import CtaButton from "./CtaButton";
-import { FaCalendarPlus } from "react-icons/fa";
 import { upcomingWorkshops } from "../data/workshops";
 
 const Hero = () => {
@@ -22,9 +21,9 @@ const Hero = () => {
         <div className="absolute inset-4 clipHexagonHero bg-[#dfd366] z-[-1]" />
         <div className="flex flex-col justify-center items-end  pr-0 pl-8 text-right z-20 -mr-20">
           {/* <FaCalendarPlus className="w-10 h-10 text-teal-700 animate-pulse  mb-5" /> */}
-          <h4 className="text-2xl font-bold text-teal-900 uppercase my-2">
+          <h2 className="text-2xl font-bold text-teal-900 uppercase my-2">
             Upcoming Workshop
-          </h4>
+          </h2>
           {upcomingWorkshops.length > 0 && (
             <p className="text-lg font-medium text-teal-800 italic mb-4">
               {upcomingWorkshops[0].date}

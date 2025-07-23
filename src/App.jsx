@@ -1,21 +1,27 @@
 import { Routes, Route } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, lazy, Suspense } from "react";
 import { useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import NewsTicker from "./components/NewsTicker";
 import Footer from "./components/Footer";
+import GoogleAnalytics from "./components/GoogleAnalytics";
+import { siteConfig } from "./config/siteConfig";
+
+// Keep critical/popular pages as regular imports for faster initial load
 import Home from "./views/Home";
 import About from "./views/About";
 import Workshop from "./views/Workshop";
-import Resources from "./views/Resources";
-import SpiritualSupport from "./views/SpiritualSupport";
-import Testimonials from "./views/Testimonials";
 import Contact from "./views/Contact";
-import Faq from "./views/Faq";
-import Blog from "./views/Blog";
-import Privacy from "./views/Privacy";
-import Volunteer from "./views/Volunteer";
-import News from "./views/News";
+
+// Only lazy load less frequently visited pages
+const Resources = lazy(() => import("./views/Resources"));
+const SpiritualSupport = lazy(() => import("./views/SpiritualSupport"));
+const Testimonials = lazy(() => import("./views/Testimonials"));
+const Faq = lazy(() => import("./views/Faq"));
+const Blog = lazy(() => import("./views/Blog"));
+const Privacy = lazy(() => import("./views/Privacy"));
+const Volunteer = lazy(() => import("./views/Volunteer"));
+const News = lazy(() => import("./views/News"));
 
 function App() {
   // Unique key to force NewsTicker remount on refresh
@@ -36,23 +42,61 @@ function App() {
 
   return (
     <div>
+      {/* Google Analytics */}
+      <GoogleAnalytics trackingId={siteConfig.googleAnalyticsId} />
+      
       <Navbar />
 
       <NewsTicker key={newsTickerKey} />
 
       <Routes>
+        {/* Critical routes without Suspense for fastest loading */}
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/workshop" element={<Workshop />} />
-        <Route path="/resources" element={<Resources />} />
-        <Route path="/spiritual-support" element={<SpiritualSupport />} />
-        <Route path="/testimonials" element={<Testimonials />} />
-        <Route path="/news" element={<News />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/faq" element={<Faq />} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/privacy-policy" element={<Privacy />} />
-        <Route path="/volunteer" element={<Volunteer />} />
+        
+        {/* Less critical routes with lazy loading */}
+        <Route path="/resources" element={
+          <Suspense fallback={<div className="flex justify-center items-center min-h-screen">Loading...</div>}>
+            <Resources />
+          </Suspense>
+        } />
+        <Route path="/spiritual-support" element={
+          <Suspense fallback={<div className="flex justify-center items-center min-h-screen">Loading...</div>}>
+            <SpiritualSupport />
+          </Suspense>
+        } />
+        <Route path="/testimonials" element={
+          <Suspense fallback={<div className="flex justify-center items-center min-h-screen">Loading...</div>}>
+            <Testimonials />
+          </Suspense>
+        } />
+        <Route path="/news" element={
+          <Suspense fallback={<div className="flex justify-center items-center min-h-screen">Loading...</div>}>
+            <News />
+          </Suspense>
+        } />
+        <Route path="/faq" element={
+          <Suspense fallback={<div className="flex justify-center items-center min-h-screen">Loading...</div>}>
+            <Faq />
+          </Suspense>
+        } />
+        <Route path="/blog" element={
+          <Suspense fallback={<div className="flex justify-center items-center min-h-screen">Loading...</div>}>
+            <Blog />
+          </Suspense>
+        } />
+        <Route path="/privacy-policy" element={
+          <Suspense fallback={<div className="flex justify-center items-center min-h-screen">Loading...</div>}>
+            <Privacy />
+          </Suspense>
+        } />
+        <Route path="/volunteer" element={
+          <Suspense fallback={<div className="flex justify-center items-center min-h-screen">Loading...</div>}>
+            <Volunteer />
+          </Suspense>
+        } />
         {/* Add more routes as needed */}
       </Routes>
       <Footer />
