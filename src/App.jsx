@@ -12,6 +12,7 @@ import Home from "./views/Home";
 import About from "./views/About";
 import Workshop from "./views/Workshop";
 import Contact from "./views/Contact";
+import NotFound from "./views/NotFound";
 
 // Only lazy load less frequently visited pages
 const Resources = lazy(() => import("./views/Resources"));
@@ -97,6 +98,9 @@ function App() {
             <Volunteer />
           </Suspense>
         } />
+        
+        {/* 404 catch-all route - must be last */}
+        <Route path="*" element={<NotFound />} />
         {/* Add more routes as needed */}
       </Routes>
       <Footer />

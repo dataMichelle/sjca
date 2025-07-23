@@ -8,6 +8,8 @@ export default defineConfig({
   build: {
     // Enable CSS minification and optimization
     cssMinify: true,
+    // Copy .htaccess file to build output for HostGator
+    copyPublicDir: true,
     // Optimize for mobile - fewer chunks, faster initial load
     rollupOptions: {
       output: {
