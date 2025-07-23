@@ -15,7 +15,6 @@ import Contact from "./views/Contact";
 import NotFound from "./views/NotFound";
 
 // Only lazy load less frequently visited pages
-const Resources = lazy(() => import("./views/Resources"));
 const SpiritualSupport = lazy(() => import("./views/SpiritualSupport"));
 const Testimonials = lazy(() => import("./views/Testimonials"));
 const Faq = lazy(() => import("./views/Faq"));
@@ -58,11 +57,6 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         
         {/* Less critical routes with lazy loading */}
-        <Route path="/resources" element={
-          <Suspense fallback={<div className="flex justify-center items-center min-h-screen">Loading...</div>}>
-            <Resources />
-          </Suspense>
-        } />
         <Route path="/spiritual-support" element={
           <Suspense fallback={<div className="flex justify-center items-center min-h-screen">Loading...</div>}>
             <SpiritualSupport />

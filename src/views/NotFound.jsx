@@ -6,23 +6,19 @@ export default function NotFound() {
     <>
       <SEO 
         title="Page Not Found - 404"
-        description="The page you're looking for doesn't exist. Return to St. Joseph Catholic Academy homepage."
+        description="The page you're looking for doesn't exist. Return to St. Jude Career Alliance homepage."
         noindex={true}
       />
       
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-blue-50 to-white px-4">
-        <div className="text-center max-w-md">
-          {/* Logo or Cross Icon */}
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-blue-50 to-white px-4 py-8">
+        <main className="text-center max-w-md" role="main">
+          {/* Organization Name */}
           <div className="mb-8">
-            <img 
-              src="/logo-cross.png" 
-              alt="St. Joseph Catholic Academy" 
-              className="w-24 h-24 mx-auto opacity-50"
-            />
+            <h3 className="text-xl font-semibold text-blue-800 opacity-70">St. Jude Career Alliance</h3>
           </div>
           
           {/* 404 Message */}
-          <h1 className="text-6xl font-bold text-blue-900 mb-4">404</h1>
+          <h1 className="text-6xl font-bold text-blue-900 mb-4" role="alert">404</h1>
           <h2 className="text-2xl font-semibold text-gray-800 mb-4">Page Not Found</h2>
           
           <p className="text-gray-600 mb-8 leading-relaxed">
@@ -48,7 +44,7 @@ export default function NotFound() {
               </div>
             </div>
           </div>
-        </div>
+        </main>
       </div>
     </>
   );

@@ -3,7 +3,7 @@ import { routes } from './src/data/routes.js';
 import { SitemapStream, streamToPromise } from 'sitemap';
 import { createWriteStream } from 'fs';
 
-const hostname = 'https://www.stjudecareeralliance.com'; // Your actual domain
+const hostname = 'https://stjudecareeralliance.com'; // Your actual domain (non-www canonical)
 
 const links = routes.map(route => ({
   url: route.to,

@@ -21,8 +21,15 @@ export default function SEO({
   
   const seoDescription = description || siteConfig.defaultDescription;
   const seoImage = image || siteConfig.defaultImage;
-  const seoUrl = url || siteConfig.url;
-  const seoCanonical = canonical || seoUrl;
+  
+  // Ensure URL is always non-www for consistency
+  const normalizeUrl = (url) => {
+    if (!url) return siteConfig.url;
+    return url.replace(/^https?:\/\/www\./, 'https://');
+  };
+  
+  const seoUrl = normalizeUrl(url || siteConfig.url);
+  const seoCanonical = normalizeUrl(canonical || seoUrl);
   return (
     <Helmet>
       {/* Basic meta tags */}
