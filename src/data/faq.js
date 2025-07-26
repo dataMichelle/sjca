@@ -24,7 +24,6 @@ export const faqData = [
     
     <strong>Upcoming Quarterly Workshops:</strong><br />
     <ul style="margin-left:1em;list-style:disc;">
-      <li>3Q2025 – Saturday, July 12, 2025</li>
       <li>4Q2025 – Saturday, October 18, 2025</li>
       <li>1Q2026 – Saturday, January 24, 2026</li>
       <li>2Q2026 – Saturday, April 18, 2026</li>

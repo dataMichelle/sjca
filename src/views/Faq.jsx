@@ -7,6 +7,21 @@ import { useRef, useEffect } from "react";
 const Faq = () => {
   const buttonRefs = useRef([]);
 
+    // Generate FAQ Schema from existing data
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqData.map(item => ({
+      "@type": "Question",
+      "name": item.title,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.content.replace(/<[^>]*>/g, '') // Strip HTML for schema
+      }
+    }))
+  };
+
+
   useEffect(() => {
     const handleKeyDown = (e) => {
       const focusable = buttonRefs.current.filter(Boolean);
@@ -29,11 +44,13 @@ const Faq = () => {
 
   return (
     <>
-      <SEO
+     <SEO
         title="FAQ - St. Jude Career Alliance"
         description="Find answers to common questions about St. Jude Career Alliance, our programs, and how we can support you in your job search or career change."
         image="https://stjudecareeralliance.com/assets/og-image.png"
         url="https://stjudecareeralliance.com/faq"
+        keywords="FAQ, questions, career coaching, job search, St. Jude Career Alliance, employment assistance"
+        schema={faqSchema}
       />
       <HexagonGrid />
       <main

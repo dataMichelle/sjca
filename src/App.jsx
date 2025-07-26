@@ -18,8 +18,6 @@ import NotFound from "./views/NotFound";
 const SpiritualSupport = lazy(() => import("./views/SpiritualSupport"));
 const Testimonials = lazy(() => import("./views/Testimonials"));
 const Faq = lazy(() => import("./views/Faq"));
-const Blog = lazy(() => import("./views/Blog"));
-const Privacy = lazy(() => import("./views/Privacy"));
 const Volunteer = lazy(() => import("./views/Volunteer"));
 const News = lazy(() => import("./views/News"));
 
@@ -75,16 +73,6 @@ function App() {
         <Route path="/faq" element={
           <Suspense fallback={<div className="flex justify-center items-center min-h-screen">Loading...</div>}>
             <Faq />
-          </Suspense>
-        } />
-        <Route path="/blog" element={
-          <Suspense fallback={<div className="flex justify-center items-center min-h-screen">Loading...</div>}>
-            <Blog />
-          </Suspense>
-        } />
-        <Route path="/privacy-policy" element={
-          <Suspense fallback={<div className="flex justify-center items-center min-h-screen">Loading...</div>}>
-            <Privacy />
           </Suspense>
         } />
         <Route path="/volunteer" element={
