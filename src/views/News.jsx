@@ -1,15 +1,106 @@
 import React from "react";
-import HexagonGrid from "../components/HexagonGrid"; // Importing HexagonGrid component
-import SEO from "../components/SEO"; // Importing SEO component
+import HexagonGrid from "../components/HexagonGrid";
+import SEO from "../components/SEO";
 
 const News = () => {
-  return (
+  // Generate NewsArticle Schema for each news item
+  const newsSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "News and Updates - St. Jude Career Alliance",
+    "description": "Latest news, events, and success stories from St. Jude Career Alliance",
+    "url": "https://stjudecareeralliance.com/news",
+    "mainEntity": [
+      {
+        "@type": "NewsArticle",
+        "headline": "Texas Catholic Features St. Jude Career Alliance",
+        "description": "Programs empower job seekers with hope, guidance",
+        "author": {
+          "@type": "Organization",
+          "name": "Texas Catholic"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Texas Catholic",
+          "url": "https://texascatholic.com"
+        },
+        "datePublished": "2025-05-30",
+        "url": "https://stjudecareeralliance.com/news_TX_Catholic_250531.pdf",
+        "about": {
+          "@type": "Organization",
+          "name": "St. Jude Career Alliance"
+        }
+      },
+      {
+        "@type": "NewsArticle", 
+        "headline": "St. Jude Career Alliance Featured on City of Allen Calendar",
+        "description": "Workshop event listed on the City of Allen's official community calendar",
+        "author": {
+          "@type": "Organization",
+          "name": "St. Jude Career Alliance"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "City of Allen",
+          "url": "https://www.cityofallen.org"
+        },
+        "datePublished": "2025-07-01",
+        "url": "https://www.cityofallen.org/calendar.php?view=day&month=07&day=12&year=2025&event=881&calendar=1",
+        "about": {
+          "@type": "Event",
+          "name": "St. Jude Career Alliance Job Search Workshop"
+        }
+      },
+      {
+        "@type": "NewsArticle",
+        "headline": "Workshop Featured on Allen's Bubble Life Community Calendar", 
+        "description": "Job Search Workshop featured on local community platform connecting residents with valuable events",
+        "author": {
+          "@type": "Organization",
+          "name": "St. Jude Career Alliance"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Allen's Bubble Life"
+        },
+        "datePublished": "2025-07-01",
+        "url": "https://allen.bubblelife.com/community/allen_calendar/library/35660962/key/3511335240/St._Jude_Career_Alliance_Job_Search_Workshop",
+        "about": {
+          "@type": "Event",
+          "name": "St. Jude Career Alliance Job Search Workshop"
+        }
+      },
+      {
+        "@type": "NewsArticle",
+        "headline": "Devina Valent Features St. Jude Career Alliance on CareerDFW",
+        "description": "Team member shares inspiring post about St. Jude Career Alliance mission and impact in Dallas-Fort Worth community",
+        "author": {
+          "@type": "Person",
+          "name": "Devina Valent"
+        },
+        "publisher": {
+          "@type": "Organization", 
+          "name": "CareerDFW"
+        },
+        "datePublished": "2025-07-01",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7345573774143930368/",
+        "about": {
+          "@type": "Organization",
+          "name": "St. Jude Career Alliance"
+        }
+      }
+    ]
+  };
+
+    return (
     <>
       <SEO
         title="News and Updates - St. Jude Career Alliance"
         description="Stay updated with the latest news, events, and success stories from St. Jude Career Alliance. Empowering job seekers with hope, guidance, and practical tools."
         image="https://stjudecareeralliance.com/assets/og-image.png"
         url="https://stjudecareeralliance.com/news"
+        keywords="news, updates, career alliance, job search, workshops, community events, success stories"
+        schema={newsSchema}
       />
       <HexagonGrid />
       <main className="py-12 px-4 sm:px-6 lg:px-8 animateFadeIn relative">
@@ -25,6 +116,7 @@ const News = () => {
               guidance, and practical tools.
             </p>
           </section>
+
           {/* News Section */}
           <section className="mb-16">
             <h2 className="text-2xl font-semibold text-darkBlue mb-4">
@@ -46,7 +138,6 @@ const News = () => {
                   mentors can make all the difference in the process, St. Jude
                   parishioner Richard Panko said.
                 </p>
-
                 <p className="text-sm text-gray-600 m-2">
                   Published in the Texas Catholic • May 30, 2025
                 </p>
@@ -63,15 +154,12 @@ const News = () => {
                   </span>
                 </a>
               </div>
-              {/* More news items can be added here */}
+
+              {/* City of Allen Calendar */}
               <div className="bg-white rounded-lg shadow-sm p-6">
                 <h3 className="text-xl font-semibold text-darkBlue mb-2">
                   Our upcoming workshop is featured on City of Allen Calendar
                 </h3>
-                {/* <h4 className="text-lg italic text-primary mb-4">
-                  Our upcoming event is now listed on the City of Allen's
-                  official calendar!
-                </h4> */}
                 <p className="text-lg text-primary mb-4">
                   We are excited to share that St. Jude Career Alliance is
                   featured on the City of Allen's community calendar. Check out
@@ -94,36 +182,7 @@ const News = () => {
                 </a>
               </div>
 
-              {/* New LinkedIn Workshop Post */}
-              {/* <div className="bg-white rounded-lg shadow-sm p-6">
-                <h3 className="text-xl font-semibold text-darkBlue mb-2">
-                  2025 Career Alliance Workshop Announced!
-                </h3>
-                <h4 className="text-lg italic text-primary mb-4">
-                  Unlock proven strategies, AI tools, and networking to land
-                  your dream job
-                </h4>
-                <p className="text-lg text-primary mb-4">
-                  Are you ready to take the next step in your career journey?
-                  The 2025 Career Alliance Workshop is your ultimate guide to
-                  job search success!
-                  <br />
-                </p>
-                <p className="text-sm text-gray-600 m-2">
-                  Published on LinkedIn • April 2025
-                </p>
-                <a
-                  href="https://www.linkedin.com/feed/update/urn:li:activity:7309336808511717377/?rcm=ACoAAABvxHsBqARTAjhiBq1hy2fm1MnPyVyO3cc"
-                  className="inline-flex items-center px-4 py-2 bg-secondary text-white rounded-full font-semibold hover:bg-deepTeal transition my-2"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  View LinkedIn Post
-                  <span className="ml-2">&#8594;</span>
-                </a>
-              </div> */}
-
-              {/* Workshop Featured on Allen's Bubble Life Community Calendar */}
+              {/* Bubble Life */}
               <div className="bg-white rounded-lg shadow-sm p-6">
                 <h3 className="text-xl font-semibold text-darkBlue mb-2">
                   Workshop Featured on Allen's Bubble Life Community Calendar
@@ -151,7 +210,7 @@ const News = () => {
                 </a>
               </div>
 
-              {/* Devina Valent's CareerDFW Post */}
+              {/* CareerDFW */}
               <div className="bg-white rounded-lg shadow-sm p-6">
                 <h3 className="text-xl font-semibold text-darkBlue mb-2">
                   Devina Valent Features St. Jude Career Alliance on CareerDFW
@@ -166,7 +225,7 @@ const News = () => {
                   Published on CareerDFW LinkedIn • July 2025
                 </p>
                 <a
-                  href="https://www.linkedin.com/feed/update/urn:li:activity:7345573774143930368/?rcm=ACoAAABvxHsBqARTAjhiBq1hy2fm1MnPyVyO3cc"
+                  href="https://www.linkedin.com/feed/update/urn:li:activity:7345573774143930368/"
                   className="inline-flex items-center px-4 py-2 bg-secondary text-white rounded-full font-semibold hover:bg-deepTeal transition my-2"
                   target="_blank"
                   rel="noopener noreferrer"
