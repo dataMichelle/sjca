@@ -18,15 +18,12 @@ const OptimizedImage = ({
     if (!originalSrc) return [];
     
     // For local images, we can't generate WebP on the fly with Vite alone
-    // But we can detect if WebP versions exist
+    // Only try WebP if we know it exists or for external images
     const sources = [];
-    const basePath = originalSrc.replace(/\.(jpg|jpeg|png)$/i, '');
     
-    // Try WebP first (if available)
-    sources.push({
-      srcSet: `${basePath}.webp`,
-      type: 'image/webp'
-    });
+    // For now, we'll disable automatic WebP detection since we don't have WebP versions
+    // This prevents the browser from trying to load non-existent WebP files
+    // If you add WebP versions later, you can enable this by adding them manually
     
     return sources;
   };

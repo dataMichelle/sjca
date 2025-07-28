@@ -54,12 +54,20 @@ const Footer = () => {
 
           {/* Logo (center) */}
           <div className="my-6 md:my-0 md:w-1/3 flex justify-center">
-            <img
-              src="/assets/logos/SJ_logo.png"
-              alt="St. Jude Church Logo"
-              className="h-32 w-auto mx-auto" // h-32 = 8rem = 128px
-              style={{ maxHeight: "128px" }}
-            />
+            <a
+              href="https://stjudeparish.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:opacity-80 transition-opacity duration-200"
+              aria-label="Visit St. Jude Parish website"
+            >
+              <img
+                src="/assets/logos/SJ_logo.png"
+                alt="St. Jude Church Logo"
+                className="h-32 w-auto mx-auto" // h-32 = 8rem = 128px
+                style={{ maxHeight: "128px" }}
+              />
+            </a>
           </div>
 
           {/* Contact Us (right) */}

@@ -97,14 +97,14 @@ const Workshop = () => {
                     Upcoming Workshop
                   </h3>
                   {/* Add the CTA Button in once we have the new barcode */}
-                  {/* <CtaButton
+                 <CtaButton
                     to={upcoming?.registrationLink || "#"}
                     variant="primary"
                     textColor="text-teal-950"
                     className="px-6 py-2"
                   >
                     Register Now
-                  </CtaButton> */}
+                  </CtaButton> 
                 </div>
                 {upcoming ? (
                   <div>

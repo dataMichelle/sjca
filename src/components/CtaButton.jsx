@@ -6,6 +6,7 @@ const CtaButton = ({
   variant = "primary",
   className = "",
   textColor, // Remove default - will be set based on variant
+  external = false, // New prop to handle external links
 }) => {
   const baseStyles =
     "inline-block px-6 py-3 text-base font-semibold rounded-full shadow-md transition-all";
@@ -24,10 +25,28 @@ const CtaButton = ({
   // Use provided textColor or variant default
   const finalTextColor = textColor || variants[variant].textColor;
 
+  // Check if link is external (starts with http/https) or external prop is true
+  const isExternal = external || (to && (to.startsWith('http://') || to.startsWith('https://')));
+
+  const buttonClass = `${baseStyles} ${variants[variant].styles} ${finalTextColor} ${className}`;
+
+  if (isExternal) {
+    return (
+      <a
+        href={to}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={buttonClass}
+      >
+        {children}
+      </a>
+    );
+  }
+
   return (
     <Link
       to={to}
-      className={`${baseStyles} ${variants[variant].styles} ${finalTextColor} ${className}`}
+      className={buttonClass}
     >
       {children}
     </Link>

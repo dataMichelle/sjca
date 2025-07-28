@@ -7,7 +7,7 @@ export const upcomingWorkshops = [
     time: "8:45 AM – 3:00 PM",
     description: "Our 4th Quarter workshop focused on job search strategies.",
     fee: "$25 fee includes lunch and a program book.",
-    // registrationLink: "",
+    registrationLink: "https://www.osvhub.com/stjudeparish/forms/career-alliance-quarterly-workshop-10-18-25",
   },
   {
     title: "1Q2026 Job Search Workshop",

@@ -35,10 +35,18 @@ const NewsTicker = () => {
 
   // Intercept anchor clicks in news text and use React Router navigation
   const handleNewsClick = (e) => {
-    if (e.target.tagName === "A") {
+    // Check if the clicked element is an anchor or if we clicked on an element inside an anchor
+    const anchor = e.target.closest('a');
+    if (anchor) {
       e.preventDefault();
-      const href = e.target.getAttribute("href");
-      if (href) navigate(href);
+      const href = anchor.getAttribute("href");
+      if (href && href.startsWith('/')) {
+        // Internal link - use React Router
+        navigate(href);
+      } else if (href && (href.startsWith('http://') || href.startsWith('https://'))) {
+        // External link - open in new tab
+        window.open(href, '_blank', 'noopener,noreferrer');
+      }
     }
   };
 
