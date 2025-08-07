@@ -207,8 +207,8 @@ const CornerHexagons = () => {
       {/* Left side */}
       <div
         className="
-          fixed top-0 left-0 z-0 pointer-events-none w-[700px] h-[1000px]
-          max-[1500px]:w-[400px] max-[1500px]:h-[600px]
+          fixed top-0 left-0 z-0 pointer-events-none w-[700px] h-[70vh]
+          max-[1500px]:w-[400px] max-[1500px]:h-[60vh]
           max-md:hidden
         "
         aria-hidden="true"
@@ -226,8 +226,8 @@ const CornerHexagons = () => {
       {/* Right side */}
       <div
         className="
-          fixed top-0 right-0 z-0 pointer-events-none w-[700px] h-[1000px]
-          max-[1500px]:w-[400px] max-[1500px]:h-[600px]
+          fixed top-0 right-0 z-0 pointer-events-none w-[700px] h-[70vh]
+          max-[1500px]:w-[400px] max-[1500px]:h-[60vh]
           max-md:hidden
         "
         aria-hidden="true"

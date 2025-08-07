@@ -4,7 +4,7 @@ import { FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#006F7F] py-10 text-teal-50">
+    <footer className="bg-[#006F7F] py-10 text-teal-50 relative z-10">
       <div className="container mx-auto px-20">
         {/* Footer with Quick Links/Copyright (left), Logo (center), and Contact Us (right) */}
         <div className="flex flex-col md:flex-row md:justify-between gap-8 items-center">

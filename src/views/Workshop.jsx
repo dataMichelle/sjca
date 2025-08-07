@@ -129,23 +129,12 @@ const Workshop = () => {
 
             <fieldset className="w-full md:max-w-sm border-2 border-[#00a181] rounded-lg py-4 px-4 flex flex-col items-center">
               <legend className="px-2 text-[#00a181] font-semibold text-base">
-                Workshop Flyers
+                Workshop Flyer
               </legend> 
-              <div>July workshop for reference</div>
+              {/* <div>July workshop for reference</div> */}
               <div className="flex flex-col md:flex-row gap-4 w-full items-center justify-center px-2">
                
-                <a
-                  href="/assets/workshop/vertical-flyer.png"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex flex-col items-center group"
-                >
-                  <img
-                    src="/assets/workshop/vertical-flyer.png"
-                    alt="Vertical Workshop Flyer"
-                    className="w-28 h-40 object-cover rounded shadow group-hover:scale-105 transition"
-                  />
-                </a>
+               
                 <a
                   href="/assets/workshop/horizontal-flyer.png"
                   target="_blank"
@@ -160,7 +149,7 @@ const Workshop = () => {
                 </a>
               </div>
               <p className="mt-3 text-sm text-gray-700 text-center">
-                Click on a flyer to view the full-size version.
+                Click on the flyer to view the full-size version.
               </p>
             </fieldset>
           </div>

@@ -17,4 +17,9 @@ export const testimonials = [
     content:
       "Your assistance with resume tips, interview questions and follow through allowed me to gain the confidence needed while interviewing with prospective employers. Not only did the team provide me with the technical aspects of the job search, but the spiritual support was something for which I will be forever grateful. Thanks again!",
   },
+  {
+    name: "Seth",
+    role: "Partipcant",
+    content: "The staff at the St. Jude career workshop was organized, professional, and added so many new tactics and perspectives to my own job search. After four months of unemployment, I can say without hesitation that their insights and availability directly led to me finding employment only weeks after completing the workshop."
+  }
 ];

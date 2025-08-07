@@ -55,7 +55,7 @@ const TestimonialCarousel = () => {
         {/* Navigation Arrows */}
         <button
           onClick={handlePrev}
-          className="absolute left-[-0.15rem] top-1/2 -translate-y-1/2 text-2xl text-gray-600 hover:text-gray-800 p-2 transition-colors max-sm:left-1 max-sm:top-[calc(100%+0.5rem)] max-sm:translate-y-0 max-sm:text-xl max-sm:bg-white/80 max-sm:rounded-full max-sm:p-1.5"
+          className="absolute left-0 top-1/2 -translate-y-1/2 text-3xl text-white bg-teal-600 hover:bg-teal-700 p-4 rounded-full transition-all shadow-lg z-20 max-sm:left-2 max-sm:top-[calc(100%+1rem)] max-sm:translate-y-0 max-sm:text-2xl max-sm:p-3"
           aria-label="Previous testimonial"
           tabIndex={0}
           onKeyDown={(e) => {
@@ -69,7 +69,7 @@ const TestimonialCarousel = () => {
         </button>
         <button
           onClick={handleNext}
-          className="absolute right-[-0.15rem] top-1/2 -translate-y-1/2 text-2xl text-gray-600 hover:text-gray-800 p-2 transition-colors max-sm:right-1 max-sm:top-[calc(100%+0.5rem)] max-sm:translate-y-0 max-sm:text-xl max-sm:bg-white/80 max-sm:rounded-full max-sm:p-1.5"
+          className="absolute right-0 top-1/2 -translate-y-1/2 text-3xl text-white bg-teal-600 hover:bg-teal-700 p-4 rounded-full transition-all shadow-lg z-20 max-sm:right-2 max-sm:top-[calc(100%+1rem)] max-sm:translate-y-0 max-sm:text-2xl max-sm:p-3"
           aria-label="Next testimonial"
           tabIndex={0}
           onKeyDown={(e) => {
