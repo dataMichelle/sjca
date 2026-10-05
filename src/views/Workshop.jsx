@@ -137,13 +137,13 @@ const Workshop = () => {
               </p>
               <div className="flex flex-col md:flex-row gap-4 w-full items-center justify-center px-2">
                 <a
-                  href="/assets/workshop/horizontal-flyer-oct26.png"
+                  href="/assets/workshop/images/horizontal-flyer-oct26.png"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex flex-col items-center group"
                 >
                   <img
-                    src="/assets/workshop/horizontal-flyer-aug26.png"
+                    src="/assets/workshop/horizontal-flyer-oct26.png"
                     alt="Horizontal Workshop Flyer"
                     className="w-40 h-28 object-cover rounded shadow group-hover:scale-105 transition"
                   />
