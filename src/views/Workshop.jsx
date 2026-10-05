@@ -1,20 +1,16 @@
-import React, { useState } from "react";
-import { upcomingWorkshops } from "../data/workshops";
-import CtaButton from "../components/CtaButton";
-import workshopTopics from "../data/workshopTopics";
-import HexagonGrid from "../components/HexagonGrid";
-import SEO from "../components/SEO";
-import OptimizedImage from "../components/OptimizedImage";
-import { FaArrowRight } from "react-icons/fa";
+import React, { useState } from 'react';
+import { featuredUpcomingWorkshop, upcomingWorkshops } from '../data/workshops';
+import CtaButton from '../components/CtaButton';
+import workshopTopics from '../data/workshopTopics';
+import HexagonGrid from '../components/HexagonGrid';
+import SEO from '../components/SEO';
+import ImageCarousel from '../components/ImageCarousel';
+import { FaArrowRight } from 'react-icons/fa';
 
 const Workshop = () => {
   const [openTopic, setOpenTopic] = useState(null);
 
-  const today = new Date();
-  const upcoming = upcomingWorkshops.filter((workshop) => {
-    const workshopDate = new Date(workshop.date);
-    return workshopDate >= today;
-  })[0];
+  const upcoming = featuredUpcomingWorkshop;
 
   return (
     <>
@@ -34,7 +30,7 @@ const Workshop = () => {
           className="absolute inset-0 opacity-10 pointer-events-none"
           style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L0 15v30l30 15 30-15V15L30 0z' fill='%23faf7f5' fill-opacity='0.4'/%3E%3C/svg%3E")`,
-            backgroundSize: "60px 60px",
+            backgroundSize: '60px 60px',
           }}
         ></div>
         <div className="max-w-7xl mx-auto relative z-10">
@@ -92,25 +88,25 @@ const Workshop = () => {
           <div className="mb-12 mx-auto pb-12 flex flex-col md:flex-row justify-between max-w-5xl">
             <div className="w-full md:max-w-[31.25rem]">
               <div className="bg-[#006F7F] rounded-lg shadow-md p-6 text-teal-50 w-full">
-                <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-xl font-semibold text-teal-100">
+                <div className="flex items-center justify-center mb-4 text-center gap-2">
+                  <h3 className="text-xl font-semibold text-teal-100 mr-4">
                     Upcoming Workshop
                   </h3>
-                  {/* Add the CTA Button in once we have the new barcode */}
-                 <CtaButton
-                    to={upcoming?.registrationLink || "#"}
+                  <CtaButton
+                    to={upcoming?.registrationLink || '#'}
                     variant="primary"
                     textColor="text-teal-950"
-                    className="px-6 py-2"
+                    className="px-4 py-1 text-sm"
                   >
                     Register Now
-                  </CtaButton> 
+                  </CtaButton>
                 </div>
                 {upcoming ? (
                   <div>
                     <h4 className="text-lg font-semibold text-teal-100 mb-2">
                       {upcoming.date}
                     </h4>
+
                     <p className="text-sm text-teal-50 mb-2">{upcoming.time}</p>
                     <p className="text-sm text-teal-50 mb-2">
                       {upcoming.description}
@@ -130,28 +126,55 @@ const Workshop = () => {
             <fieldset className="w-full md:max-w-sm border-2 border-[#00a181] rounded-lg py-4 px-4 flex flex-col items-center">
               <legend className="px-2 text-[#00a181] font-semibold text-base">
                 Workshop Flyer
-              </legend> 
-              {/* <div>July workshop for reference</div> */}
+              </legend>
+              {/* <div>Oct workshop for reference</div> */}
+              <div className="mt-3 text-sm text-gray-700 text-center">
+                {/* <p>Previous workshop for reference:</p>
+                <p className="mt-1 font-medium">August 1 Workshop</p> */}
+              </div>
+              <p className="mt-3 text-sm text-gray-700 text-center">
+                Click on the flyer to view the full-size version.
+              </p>
               <div className="flex flex-col md:flex-row gap-4 w-full items-center justify-center px-2">
-               
-               
                 <a
-                  href="/assets/workshop/horizontal-flyer.png"
+                  href="/assets/workshop/horizontal-flyer-oct26.png"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex flex-col items-center group"
                 >
                   <img
-                    src="/assets/workshop/horizontal-flyer.png"
+                    src="/assets/workshop/horizontal-flyer-aug26.png"
                     alt="Horizontal Workshop Flyer"
                     className="w-40 h-28 object-cover rounded shadow group-hover:scale-105 transition"
                   />
                 </a>
               </div>
-              <p className="mt-3 text-sm text-gray-700 text-center">
-                Click on the flyer to view the full-size version.
-              </p>
             </fieldset>
+          </div>
+
+          {/* Future Workshop Dates */}
+          <div className="mb-12 max-w-7xl mx-auto">
+            <h3 className="text-2xl font-semibold text-darkBlue text-center mb-8">
+              2027 Workshop Schedule
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {upcomingWorkshops.map((workshop, index) => (
+                <div
+                  key={index}
+                  className="bg-white rounded-lg shadow-sm border border-gray-200 p-4 text-center"
+                >
+                  <p className="text-teal-600 font-semibold text-lg">
+                    {workshop.date}
+                  </p>
+                </div>
+              ))}
+            </div>
+            <div className="text-center mt-6">
+              <p className="text-gray-600 text-sm">
+                Registration links will be available closer to each workshop
+                date
+              </p>
+            </div>
           </div>
 
           <div className="mb-12 max-w-5xl mx-auto">
@@ -182,16 +205,7 @@ const Workshop = () => {
               </div>
               <div className="lg:w-1/2">
                 <div className="max-w-md mx-auto">
-                  <div className="relative w-full h-64 rounded-lg overflow-hidden shadow-sm">
-                    <OptimizedImage
-                      src="/assets/workshop/2017_Workshop.jpg"
-                      alt="Workshop participants learning career development skills"
-                      className="w-full h-full object-cover"
-                      width={400}
-                      height={256}
-                      loading="lazy"
-                    />
-                  </div>
+                  <ImageCarousel />
                 </div>
               </div>
             </div>
@@ -199,8 +213,8 @@ const Workshop = () => {
 
           <div className="max-w-5xl mx-auto mt-8 mb-12">
             <h3 className="text-xl font-semibold text-darkBlue text-center">
-              A free mentoring group is available for ongoing job search support
-              after completion of the workshop.
+              We offer workshop participants a weekly mentoring meeting to
+              support continued momentum and results beyond the workshop.
             </h3>
           </div>
         </div>

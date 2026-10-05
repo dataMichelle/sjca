@@ -1,6 +1,6 @@
-import { testimonials } from "../data/testimonials";
-import HexagonGrid from "../components/HexagonGrid";
-import SEO from "../components/SEO";
+import { testimonials } from '../data/testimonials';
+import HexagonGrid from '../components/HexagonGrid';
+import SEO from '../components/SEO';
 
 const Testimonials = () => {
   return (

@@ -1,11 +1,11 @@
 export const newsItems = [
   {
     id: 1,
-    text: "Deacon Ken Steponaitis takes over as St. Jude Career Alliance point person on May 19, 2025, as Della Doss retires June 13, 2025.",
+    text: 'Breaking: Since our last workshop, 8 participants have landed new jobs!',
   },
   {
     id: 2,
-    text: `Join us for our next Career Workshop on October 18, 2025! Click on the <a href="/workshop" class="text-[#00a181] underline hover:text-[#006f7f]">Workshop page</a> to register.`,
+    text: `Our next Career Workshop is scheduled for October 17. Please check the <a href="/workshop" class="text-[#00a181] underline hover:text-[#006f7f]">Workshop page</a> for updates.`,
   },
   {
     id: 3,

@@ -1,5 +1,5 @@
-import CtaButton from "./CtaButton";
-import { upcomingWorkshops } from "../data/workshops";
+import CtaButton from './CtaButton';
+import { featuredUpcomingWorkshop } from '../data/workshops';
 
 const Hero = () => {
   return (
@@ -24,11 +24,16 @@ const Hero = () => {
           <h2 className="text-2xl font-bold text-teal-900 uppercase my-2">
             Upcoming Workshop
           </h2>
-          {upcomingWorkshops.length > 0 && (
-            <p className="text-lg font-medium text-teal-800 italic mb-4">
-              {upcomingWorkshops[0].date}
-            </p>
+
+          {featuredUpcomingWorkshop && (
+            <>
+              {' '}
+              <p className="text-lg font-medium text-teal-800 italic mb-4">
+                {featuredUpcomingWorkshop.date}
+              </p>
+            </>
           )}
+
           <CtaButton
             to={`/workshop/`}
             variant="secondary"
