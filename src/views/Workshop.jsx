@@ -154,7 +154,7 @@ const Workshop = () => {
                     aria-label="Scan QR code to register for the workshop"
                   >
                     <img
-                      src="/assets/workshop/qr-oct26.png"
+                      src="/assets/workshop/images/qr-oct26.png"
                       alt="QR code for workshop registration"
                       className="h-24 w-24 object-contain"
                     />
