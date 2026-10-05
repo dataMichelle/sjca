@@ -1,12 +1,6 @@
 import CtaButton from "./CtaButton";
 import { FaCalendarPlus } from "react-icons/fa";
-
-// Static workshop data (replace with actual data or import from a file)
-const staticWorkshop = {
-  id: 1,
-  excerpt:
-    "Join us for our upcoming quarterly workshop and take the first step towards a fulfilling career.",
-};
+import { featuredUpcomingWorkshop } from "../data/workshops";
 
 const HeroMobile = () => {
   return (
@@ -30,8 +24,14 @@ const HeroMobile = () => {
           <h2 className="text-lg font-semibold uppercase text-teal-900 mb-3 sm:text-base">
             Upcoming Workshop
           </h2>
+          {featuredUpcomingWorkshop && (
+            <p className="text-base font-medium text-teal-800 italic mb-4 sm:text-sm">
+              {featuredUpcomingWorkshop.date}
+            </p>
+          )}
           <p className="text-base text-teal-800 mb-4 sm:text-sm">
-            {staticWorkshop.excerpt}
+            Join us for our upcoming quarterly workshop and take the first step
+            towards a fulfilling career.
           </p>
           <CtaButton
             to={`/workshop`}
